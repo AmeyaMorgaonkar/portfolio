@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ameya | Portfolio",
+  title: "Ameya M. | Portfolio",
   description: "Developer and researcher based in Pune, India. Building innovative solutions through code and research.",
 };
 

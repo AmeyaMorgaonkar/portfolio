@@ -113,9 +113,9 @@ I believe in building technology that makes a difference. My journey has taken m
 Outside of work, I'm an avid chess player (always up for a game!), a music enthusiast with eclectic taste, and someone who values meaningful conversations over coffee.`,
   resumeUrl: "/resume.pdf",
   professionalLinks: [
-    { name: "LeetCode", url: "https://leetcode.com", icon: "Code" },
-    { name: "GitHub", url: "https://github.com", icon: "Github" },
-    { name: "LinkedIn", url: "https://linkedin.com", icon: "Linkedin" },
+    { name: "LeetCode", url: "https://leetcode.com/AmeyaMorgaonkar", icon: "LucideCode" },
+    { name: "GitHub", url: "https://github.com/AmeyaMorgaonkar", icon: "Github" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/ameyamorgaonkar/", icon: "Linkedin" },
     { name: "Email", url: "mailto:hello@example.com", icon: "Mail" },
   ],
   personalLinks: [

@@ -1,13 +1,14 @@
 "use client";
 
 import { profile } from "@/lib/data";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Code as LucideCode } from "lucide-react";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Github,
   Linkedin,
   Twitter,
   Mail,
+  LucideCode,
 };
 
 export function Footer() {

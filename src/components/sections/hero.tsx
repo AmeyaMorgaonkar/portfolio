@@ -1,14 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, FileDown, Github, Linkedin, Mail, ChevronDown, Code } from "lucide-react";
+import { MapPin, FileDown, Github, Linkedin, Mail, ChevronDown, Code as LucideCode } from "lucide-react";
 import { profile } from "@/lib/data";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Github,
   Linkedin,
   Mail,
-  Code,
+  LucideCode,
 };
 
 export function HeroSection() {
