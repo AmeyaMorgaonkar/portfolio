@@ -122,21 +122,20 @@ export function Navbar() {
     if (item.href.startsWith("/#")) {
       e.preventDefault();
       const sectionId = item.href.substring(2); // Remove "/#"
-      
+
       if (pathname === "/") {
         // Already on home, just scroll
         scrollToSection(sectionId);
       } else {
-        // Navigate to home then scroll
+        // Set section in sessionStorage for ScrollRestoration to handle after navigation
+        if (typeof window !== "undefined" && window.sessionStorage) {
+          window.sessionStorage.setItem("scrollToSectionOnHome", sectionId);
+        }
         router.push("/");
-        // Wait for navigation then scroll
-        setTimeout(() => {
-          scrollToSection(sectionId);
-        }, 100);
+        // Do not scroll here; ScrollRestoration will handle it after navigation
       }
       return;
     }
-    
     // Regular links - let Link handle normally
   };
 
