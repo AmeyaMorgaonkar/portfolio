@@ -2,8 +2,9 @@
 
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Search } from "lucide-react";
+import { Search, ArrowLeft } from "lucide-react";
 import { research } from "@/lib/data";
+import Link from "next/link";
 import { ResearchCard } from "@/components/research-card";
 
 export default function ResearchPage() {
@@ -27,8 +28,21 @@ export default function ResearchPage() {
   const paperCount = research.filter((r) => r.type === "paper").length;
   const patentCount = research.filter((r) => r.type === "patent").length;
 
+  const handleBack = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('scrollToSectionOnHome', 'research');
+      window.location.href = '/';
+    }
+  };
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="mb-6">
+        <a href="/" onClick={handleBack} className="inline-flex items-center gap-2 text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
+          <ArrowLeft className="w-4 h-4" />
+          Back to portfolio
+        </a>
+      </div>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

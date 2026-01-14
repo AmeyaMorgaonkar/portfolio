@@ -9,17 +9,28 @@ export function ScrollRestoration() {
       history.scrollRestoration = "manual";
     }
 
-    // Restore scroll position after hero animation finishes (~1.3s)
-    const savedPosition = sessionStorage.getItem("scrollPosition");
-    if (savedPosition) {
-      const position = parseInt(savedPosition, 10);
-      // Wait for hero animation to complete, then smooth scroll
+    // Section-aware scroll restoration
+    const section = sessionStorage.getItem('scrollToSectionOnHome');
+    if (section) {
+      sessionStorage.removeItem('scrollToSectionOnHome');
       setTimeout(() => {
-        window.scrollTo({
-          top: position,
-          behavior: "smooth"
-        });
+        const el = document.getElementById(section);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
       }, 400);
+    } else {
+      // Restore scroll position after hero animation finishes (~1.3s)
+      const savedPosition = sessionStorage.getItem("scrollPosition");
+      if (savedPosition) {
+        const position = parseInt(savedPosition, 10);
+        setTimeout(() => {
+          window.scrollTo({
+            top: position,
+            behavior: "smooth"
+          });
+        }, 400);
+      }
     }
 
     // Save scroll position on scroll (debounced)

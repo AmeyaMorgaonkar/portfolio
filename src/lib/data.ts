@@ -128,7 +128,7 @@ Outside of work, I'm an avid chess player (always up for a game!), a music enthu
 
 export const experiences: Experience[] = [
   {
-    id: "exp-1",
+    id: "exp-3",
     slug: "tech-innovations-swe-intern",
     company: "Tech Innovations Inc.",
     logo: "/images/company1.png",
@@ -172,6 +172,49 @@ This internship gave me hands-on experience with production ML systems and taugh
   },
   {
     id: "exp-2",
+    slug: "tech-innovations-swe-intern",
+    company: "Tech Innovations Inc.",
+    logo: "/images/company1.png",
+    role: "Software Engineer Intern",
+    location: "Pune, India",
+    startDate: "May 2025",
+    endDate: "August 2025",
+    description: [
+      "Developed and deployed machine learning models for predictive analytics, improving accuracy by 25%",
+      "Built RESTful APIs using Python and FastAPI, handling 10K+ requests daily",
+      "Collaborated with cross-functional teams to deliver features on tight deadlines",
+    ],
+    longDescription: `## About the Role
+
+As a Software Engineer Intern at Tech Innovations Inc., I worked on the Data Science team to develop and deploy machine learning solutions for enterprise clients.
+
+## Key Achievements
+
+### Machine Learning Pipeline
+Designed and implemented an end-to-end ML pipeline for predictive analytics:
+- Built data preprocessing pipelines handling 1M+ records daily
+- Developed custom feature engineering modules
+- Implemented model versioning and A/B testing framework
+- Achieved 25% improvement in prediction accuracy over baseline
+
+### API Development
+Built production-ready APIs serving ML predictions:
+- Designed RESTful endpoints using FastAPI
+- Implemented caching with Redis for low-latency responses
+- Set up monitoring and alerting with Prometheus/Grafana
+- Handled 10K+ requests daily with 99.9% uptime
+
+### Team Collaboration
+- Participated in daily standups and sprint planning
+- Conducted code reviews for fellow interns
+- Presented technical findings to stakeholders
+
+## What I Learned
+This internship gave me hands-on experience with production ML systems and taught me the importance of writing maintainable, testable code.`,
+    technologies: ["Python", "TensorFlow", "FastAPI", "PostgreSQL", "Docker"],
+  },
+  {
+    id: "exp-1",
     slug: "startupxyz-fullstack",
     company: "StartupXYZ",
     logo: "/images/company2.png",

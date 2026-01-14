@@ -2,12 +2,26 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { Briefcase, GraduationCap, MapPin, Calendar, ArrowRight } from "lucide-react";
 import { experiences, education } from "@/lib/data";
 
 export default function ExperiencePage() {
+  const handleBack = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('scrollToSectionOnHome', 'experience');
+      window.location.href = '/';
+    }
+  };
   return (
     <main className="min-h-screen pt-24 pb-16">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+        <a href="/" onClick={handleBack} className="inline-flex items-center gap-2 text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
+          <ArrowLeft className="w-4 h-4" />
+          Back to portfolio
+        </a>
+      </div>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page Header */}
         <motion.div

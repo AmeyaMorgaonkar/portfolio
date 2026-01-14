@@ -86,7 +86,16 @@ export function Navbar() {
     if (pathname === "/") {
       return activeSection === item.sectionId;
     }
-    // For non-homepage routes
+    // For main pages, highlight based on pathname
+    if (
+      (pathname.startsWith("/experience") && item.sectionId === "experience") ||
+      (pathname.startsWith("/projects") && item.sectionId === "projects") ||
+      (pathname.startsWith("/research") && item.sectionId === "research") ||
+      (pathname.startsWith("/about") && item.sectionId === "about") ||
+      (pathname.startsWith("/blog") && item.sectionId === "blog")
+    ) {
+      return true;
+    }
     return false;
   };
 
@@ -175,12 +184,12 @@ export function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <ThemeToggle />
+            {/* <ThemeToggle /> removed for permanent dark mode */}
           </div>
 
           {/* Mobile menu button */}
           <div className="flex md:hidden items-center space-x-4">
-            <ThemeToggle />
+            {/* <ThemeToggle /> removed for permanent dark mode */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2"

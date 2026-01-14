@@ -2,8 +2,9 @@
 
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Search, Filter } from "lucide-react";
+import { Search, Filter, ArrowLeft } from "lucide-react";
 import { projects, getAllTechnologies, getAllTags } from "@/lib/data";
+import Link from "next/link";
 import { ProjectCard } from "@/components/project-card";
 
 export default function ProjectsPage() {
@@ -50,8 +51,21 @@ export default function ProjectsPage() {
   const hasActiveFilters =
     searchQuery || selectedTech || selectedTag || filterType;
 
+  const handleBack = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('scrollToSectionOnHome', 'projects');
+      window.location.href = '/';
+    }
+  };
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="mb-6">
+        <a href="/" onClick={handleBack} className="inline-flex items-center gap-2 text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
+          <ArrowLeft className="w-4 h-4" />
+          Back to portfolio
+        </a>
+      </div>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

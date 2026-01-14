@@ -73,6 +73,11 @@ export function ExperienceSection() {
                     <Link
                       href={`/experience/${exp.slug}`}
                       className="inline-flex items-center gap-2 text-sm text-[var(--muted)] hover:text-[var(--foreground)] transition-colors group"
+                      onClick={() => {
+                        if (typeof window !== 'undefined') {
+                          sessionStorage.setItem('returnSection', 'experience');
+                        }
+                      }}
                     >
                       Read more
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

@@ -2,13 +2,27 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import { blogPosts } from "@/lib/data";
 import { format } from "date-fns";
 
 export default function BlogPage() {
+  const handleBack = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('scrollToSectionOnHome', 'blog');
+      window.location.href = '/';
+    }
+  };
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="mb-6">
+        <a href="/" onClick={handleBack} className="inline-flex items-center gap-2 text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
+          <ArrowLeft className="w-4 h-4" />
+          Back to portfolio
+        </a>
+      </div>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
