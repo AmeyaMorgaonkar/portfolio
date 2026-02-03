@@ -25,12 +25,12 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 id="hero-name" className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-2">
+          <h1 id="hero-name" className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-bold mb-2 break-words">
             Ameya Morgaonkar
           </h1>
-          <p className="text-xl sm:text-2xl text-[var(--muted)] mb-4">
+          {/* <p className="text-lg xs:text-xl sm:text-2xl text-[var(--muted)] mb-4">
             Full Stack Developer
-          </p>
+          </p> */}
         </motion.div>
 
         <motion.div

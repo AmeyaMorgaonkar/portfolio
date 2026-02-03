@@ -143,15 +143,15 @@ export function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-[var(--background)]/80 backdrop-blur-md border-b"
+      className="fixed top-0 left-0 right-0 z-50 bg-[var(--background)]/80 backdrop-blur-md border-b w-full"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 w-full">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
           <Link
             href="/"
             onClick={(e) => handleNavClick(e, { href: "/", sectionId: "hero" })}
-            className={`font-bold text-lg h-6 flex items-center min-w-[80px] ${showName ? "cursor-pointer" : "cursor-default"}`}
+            className={`font-bold text-base sm:text-lg h-6 flex items-center min-w-[70px] sm:min-w-[80px] ${showName ? "cursor-pointer" : "cursor-default"}`}
           >
             <AnimatePresence mode="wait">
               {showName && (

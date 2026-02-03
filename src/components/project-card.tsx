@@ -185,9 +185,21 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <h3 className="font-semibold mb-2 group-hover:underline">
               {project.title}
             </h3>
-            <p className="text-sm text-[var(--muted)] mb-4 line-clamp-2">
+            <p className="text-base text-[var(--muted)] mb-3 line-clamp-2">
               {project.shortDescription}
             </p>
+
+            {/* Features */}
+            {project.features && project.features.length > 0 && (
+              <ul className="text-sm text-[var(--muted)] mb-3 space-y-1">
+                {project.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-start gap-1.5">
+                    <span className="text-[var(--foreground)] mt-0.5">•</span>
+                    <span className="line-clamp-1">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
 
             {/* Technologies */}
             <div className="flex flex-wrap gap-2 mb-4 content-start">

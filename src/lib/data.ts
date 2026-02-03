@@ -38,6 +38,7 @@ export interface Project {
   title: string;
   shortDescription: string;
   longDescription: string;
+  features?: string[];
   images: string[];
   demoVideo?: string;
   liveUrl?: string;
@@ -102,7 +103,7 @@ export interface Education {
 export const profile: Profile = {
   name: "Ameya",
   location: "Pune, India",
-  tagline: "Full stack developer specializing in React, Python, and AI/ML. I build web apps and research solutions that solve real problems.",
+  tagline: "Full stack developer with a stronger interest in backend. I like to focus on problem-solving, data flow and edge cases.",
   bio: "A passionate developer and researcher focused on creating impactful technology solutions.",
   heroPhoto: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
   aboutPhoto: "/images/about-photo.jpg",
@@ -323,6 +324,12 @@ The system uses a custom CNN architecture based on ResNet-50, fine-tuned on a da
 - Expand to CT scan analysis
 - Mobile application for remote consultations
 - Integration with hospital management systems`,
+    features: [
+      "Real-time X-ray analysis in under 2 seconds",
+      "94% accuracy with minimal false positives",
+      "HIPAA compliant healthcare data security",
+      "Intuitive dashboard for medical professionals"
+    ],
     images: [
       "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=800&h=600&fit=crop",
@@ -361,6 +368,12 @@ Built using a microservices architecture to handle data from thousands of IoT se
 ## Future Scope
 - Expand sensor network coverage
 - Add predictive maintenance for infrastructure`,
+    features: [
+      "Live traffic flow visualization and monitoring",
+      "Environmental sensors for air quality and noise",
+      "ML-based congestion predictions",
+      "Automated anomaly detection alerts"
+    ],
     images: [
       "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop",
@@ -394,6 +407,12 @@ A powerful NLP tool that analyzes sentiment across multiple languages for social
 
 ## Technical Details
 Uses transformer-based models fine-tuned on multilingual datasets.`,
+    features: [
+      "Supports 12+ languages for global coverage",
+      "Processes thousands of posts per minute",
+      "Detects emerging trends and sentiment shifts",
+      "RESTful API for easy integration"
+    ],
     images: [
       "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
@@ -425,6 +444,12 @@ A decentralized application for transparent supply chain tracking using blockcha
 
 ## Technical Details
 Built on Ethereum with Solidity smart contracts and a React frontend.`,
+    features: [
+      "Tamper-proof immutable tracking history",
+      "Automated verification via smart contracts",
+      "QR code scanning for product verification",
+      "Real-time updates across supply chain"
+    ],
     images: [
       "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1642104704074-907c0698cbd9?w=800&h=600&fit=crop",
@@ -457,6 +482,12 @@ A modern project management tool designed for teams to collaborate effectively.
 
 ## Technical Details
 Built with Next.js and Socket.io for real-time features, with PostgreSQL for data persistence.`,
+    features: [
+      "Real-time collaboration with live updates",
+      "Visual Kanban boards for task organization",
+      "Built-in time tracking and logging",
+      "Integrations with Slack, GitHub, and more"
+    ],
     images: [
       "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&h=600&fit=crop",
@@ -489,6 +520,12 @@ An AI-powered tool that automatically reviews pull requests and suggests improve
 
 ## Technical Details
 Uses OpenAI's GPT-4 API with custom prompts for code analysis, integrated via GitHub Actions.`,
+    features: [
+      "Automated AI-powered code reviews",
+      "Best practices and standards suggestions",
+      "Security vulnerability scanning",
+      "Seamless GitHub PR integration"
+    ],
     images: [
       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",

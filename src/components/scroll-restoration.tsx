@@ -1,15 +1,23 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export function ScrollRestoration() {
+  const pathname = usePathname();
+
   useEffect(() => {
     // Disable browser's default scroll restoration
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
+  }, []);
 
-    // Section-aware scroll restoration
+  // This runs every time pathname changes (including navigation to home)
+  useEffect(() => {
+    // Only handle scroll-to-section on homepage
+    if (pathname !== "/") return;
+
     const section = sessionStorage.getItem('scrollToSectionOnHome');
     if (section) {
       sessionStorage.removeItem('scrollToSectionOnHome');
@@ -20,7 +28,7 @@ export function ScrollRestoration() {
         }
       }, 400);
     } else {
-      // Restore scroll position after hero animation finishes (~1.3s)
+      // Restore scroll position on refresh
       const savedPosition = sessionStorage.getItem("scrollPosition");
       if (savedPosition) {
         const position = parseInt(savedPosition, 10);
@@ -32,7 +40,9 @@ export function ScrollRestoration() {
         }, 400);
       }
     }
+  }, [pathname]);
 
+  useEffect(() => {
     // Save scroll position on scroll (debounced)
     let timeoutId: NodeJS.Timeout;
     const handleScroll = () => {

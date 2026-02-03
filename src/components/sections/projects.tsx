@@ -7,7 +7,7 @@ import { getFeaturedProjects } from "@/lib/data";
 import { ProjectCard } from "../project-card";
 
 export function ProjectsSection() {
-  const featuredProjects = getFeaturedProjects().slice(0, 6);
+  const featuredProjects = getFeaturedProjects().slice(0, 4);
 
   return (
     <section id="projects" className="pt-16 pb-20 scroll-mt-8">
@@ -27,7 +27,7 @@ export function ProjectsSection() {
           </Link>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {featuredProjects.map((project, index) => (
             <motion.div
               key={project.id}
