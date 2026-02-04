@@ -1,20 +1,29 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 export function ScrollRestoration() {
   const pathname = usePathname();
+  const isPopState = useRef(false);
 
+  // Track back/forward navigation
   useEffect(() => {
-    // Disable browser's default scroll restoration
-    if ("scrollRestoration" in history) {
-      history.scrollRestoration = "manual";
-    }
+    const handlePopState = () => {
+      isPopState.current = true;
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
   // This runs every time pathname changes (including navigation to home)
   useEffect(() => {
+    // If this is a back/forward navigation, let browser handle scroll
+    if (isPopState.current) {
+      isPopState.current = false;
+      return;
+    }
+
     // Only handle scroll-to-section on homepage
     if (pathname !== "/") return;
 
@@ -27,45 +36,8 @@ export function ScrollRestoration() {
           el.scrollIntoView({ behavior: 'smooth' });
         }
       }, 400);
-    } else {
-      // Restore scroll position on refresh
-      const savedPosition = sessionStorage.getItem("scrollPosition");
-      if (savedPosition) {
-        const position = parseInt(savedPosition, 10);
-        setTimeout(() => {
-          window.scrollTo({
-            top: position,
-            behavior: "smooth"
-          });
-        }, 400);
-      }
     }
   }, [pathname]);
-
-  useEffect(() => {
-    // Save scroll position on scroll (debounced)
-    let timeoutId: NodeJS.Timeout;
-    const handleScroll = () => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        sessionStorage.setItem("scrollPosition", window.scrollY.toString());
-      }, 100);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // Save position before unload
-    const handleBeforeUnload = () => {
-      sessionStorage.setItem("scrollPosition", window.scrollY.toString());
-    };
-    window.addEventListener("beforeunload", handleBeforeUnload);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("beforeunload", handleBeforeUnload);
-      clearTimeout(timeoutId);
-    };
-  }, []);
 
   return null;
 }
