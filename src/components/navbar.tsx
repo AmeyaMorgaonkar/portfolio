@@ -5,7 +5,6 @@ import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import { ThemeToggle } from "./theme-toggle";
 import { experiences, research, blogPosts } from "@/lib/data";
 
 const baseNavItems = [
