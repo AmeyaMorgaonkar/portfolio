@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { ExternalLink, Github, ChevronLeft, ChevronRight, Play, X } from "lucide-react";
@@ -70,15 +69,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <>
-      <motion.article
+      <article
         onClick={navigateToProject}
-        onHoverStart={() => setIsHovered(true)}
-        onHoverEnd={() => {
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => {
           setIsHovered(false);
           setShowVideo(false);
         }}
-        whileHover={{ scale: 1.02 }}
-        className="bg-[var(--card)] rounded-lg overflow-hidden cursor-pointer group h-full flex flex-col"
+        className="bg-[var(--card)] rounded-lg overflow-hidden cursor-pointer group h-full flex flex-col hover:-translate-y-1 transition-transform duration-200"
       >
           {/* Image Section */}
           <div className="relative h-56 overflow-hidden">
@@ -258,7 +256,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             )}
           </div>
         </div>
-      </motion.article>
+      </article>
 
     {/* Image Lightbox */}
     <ImageLightbox

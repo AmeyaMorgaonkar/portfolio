@@ -1,9 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { FileText, Award, ExternalLink } from "lucide-react";
+import { FileText, Award } from "lucide-react";
 import { Research } from "@/lib/data";
 import { format } from "date-fns";
 
@@ -16,10 +15,7 @@ export function ResearchCard({ research }: ResearchCardProps) {
 
   return (
     <Link href={`/research/${research.slug}`}>
-      <motion.article
-        whileHover={{ y: -4 }}
-        className="bg-[var(--background)] rounded-lg overflow-hidden cursor-pointer group h-full flex flex-col"
-      >
+      <article className="bg-[var(--background)] rounded-lg overflow-hidden cursor-pointer group h-full flex flex-col hover:-translate-y-1 transition-transform duration-200">
         {/* Thumbnail */}
         <div className="relative h-36 overflow-hidden">
           <Image
@@ -72,7 +68,7 @@ export function ResearchCard({ research }: ResearchCardProps) {
             )}
           </div>
         </div>
-      </motion.article>
+      </article>
     </Link>
   );
 }

@@ -8,7 +8,7 @@ export function ScrollToTop() {
 
   useEffect(() => {
     // Always scroll to top on page load/refresh
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }, [pathname]);
 
   return null;

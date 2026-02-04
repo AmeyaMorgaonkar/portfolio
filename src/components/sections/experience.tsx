@@ -1,11 +1,33 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { experiences } from "@/lib/data";
 
 export function ExperienceSection() {
+  const headingRef = useRef<HTMLHeadingElement>(null);
+
+  // Signature animation: underline draws in when heading enters viewport
+  useEffect(() => {
+    const heading = headingRef.current;
+    if (!heading) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            heading.classList.add("in-view");
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(heading);
+    return () => observer.disconnect();
+  }, []);
+
   if (experiences.length === 0) {
     return null;
   }
@@ -16,23 +38,17 @@ export function ExperienceSection() {
   return (
     <section id="experience" className="pt-4 pb-20 scroll-mt-16 border-b border-[var(--border)]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-2xl sm:text-3xl font-bold mb-12 text-center"
+        <h2
+          ref={headingRef}
+          className="text-2xl sm:text-3xl font-bold mb-12 text-center section-heading mx-auto"
         >
           Experience
-        </motion.h2>
+        </h2>
 
         <div className="space-y-6">
-          {latestExperiences.map((exp, index) => (
-            <motion.div
+          {latestExperiences.map((exp) => (
+            <div
               key={exp.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
               className="relative pl-8 border-l-2 border-[var(--border)]"
             >
               {/* Timeline dot */}
@@ -72,7 +88,7 @@ export function ExperienceSection() {
                   {exp.longDescription && (
                     <Link
                       href={`/experience/${exp.slug}`}
-                      className="inline-flex items-center gap-2 text-sm text-[var(--muted)] hover:text-[var(--foreground)] transition-colors group"
+                      className="inline-flex items-center gap-2 text-sm text-[var(--muted)] hover:text-[var(--foreground)] hover:gap-3 transition-all duration-200"
                       onClick={() => {
                         if (typeof window !== 'undefined') {
                           sessionStorage.setItem('returnSection', 'experience');
@@ -80,29 +96,23 @@ export function ExperienceSection() {
                       }}
                     >
                       Read more
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-4 h-4" />
                     </Link>
                   )}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="text-center mt-8"
-        >
+        <div className="text-center mt-8">
           <Link
             href="/experience"
-            className="inline-flex items-center gap-2 text-sm px-4 py-2 bg-[var(--foreground)] text-[var(--background)] hover:opacity-80 rounded-full transition-opacity group"
+            className="inline-flex items-center gap-2 text-sm px-4 py-2 bg-[var(--foreground)] text-[var(--background)] rounded-full transition-all duration-200 hover:gap-3"
           >
             View full experience & education
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4" />
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
