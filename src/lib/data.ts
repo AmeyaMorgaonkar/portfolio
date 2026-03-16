@@ -117,7 +117,7 @@ Outside of work, I'm an avid chess player (always up for a game!), a music enthu
     { name: "LeetCode", url: "https://leetcode.com/AmeyaMorgaonkar", icon: "LucideCode" },
     { name: "GitHub", url: "https://github.com/AmeyaMorgaonkar", icon: "Github" },
     { name: "LinkedIn", url: "https://www.linkedin.com/in/ameyamorgaonkar/", icon: "Linkedin" },
-    { name: "Email", url: "mailto:hello@example.com", icon: "Mail" },
+    { name: "Email", url: "mailto:ameyamorgaonkar@gmail.com", icon: "Mail" },
   ],
   personalLinks: [
     { name: "Instagram", url: "https://instagram.com", icon: "Instagram" },
