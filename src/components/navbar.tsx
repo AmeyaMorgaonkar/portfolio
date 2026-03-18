@@ -5,12 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import { experiences, research, blogPosts } from "@/lib/data";
-
-const baseNavItems = [
-  { name: "Home", href: "/", sectionId: "hero" },
-  { name: "Projects", href: "/#projects", sectionId: "projects" },
-];
+import { experiences, research, blogPosts, skills } from "@/lib/data";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -39,7 +34,7 @@ export function Navbar() {
           return;
         }
 
-        const sections = ["hero", "experience", "projects", "research", "about", "blog"];
+        const sections = ["hero", "experience", "skills", "projects", "research", "about", "blog", "contact"];
         const navbarHeight = 80;
         
         for (let i = sections.length - 1; i >= 0; i--) {
@@ -62,22 +57,30 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
 
-  // Build nav items based on content availability
-  const navItems = [...baseNavItems];
-  
+  // Build nav items based on content availability with deterministic order
+  const navItems = [{ name: "Home", href: "/", sectionId: "hero" }];
+
   if (experiences.length > 0) {
-    navItems.splice(1, 0, { name: "Experience", href: "/#experience", sectionId: "experience" });
+    navItems.push({ name: "Experience", href: "/#experience", sectionId: "experience" });
   }
-  
+
+  if (skills.length > 0) {
+    navItems.push({ name: "Skills", href: "/#skills", sectionId: "skills" });
+  }
+
+  navItems.push({ name: "Projects", href: "/#projects", sectionId: "projects" });
+
   if (research.length > 0) {
     navItems.push({ name: "Research", href: "/#research", sectionId: "research" });
   }
-  
+
   navItems.push({ name: "About", href: "/#about", sectionId: "about" });
-  
+
   if (blogPosts.length > 0) {
     navItems.push({ name: "Blog", href: "/#blog", sectionId: "blog" });
   }
+
+  navItems.push({ name: "Contact", href: "/#contact", sectionId: "contact" });
 
   // Determine if a nav item is active
   const isActive = (item: { href: string; sectionId: string }) => {
@@ -91,7 +94,8 @@ export function Navbar() {
       (pathname.startsWith("/projects") && item.sectionId === "projects") ||
       (pathname.startsWith("/research") && item.sectionId === "research") ||
       (pathname.startsWith("/about") && item.sectionId === "about") ||
-      (pathname.startsWith("/blog") && item.sectionId === "blog")
+      (pathname.startsWith("/blog") && item.sectionId === "blog") ||
+      (pathname.startsWith("/contact") && item.sectionId === "contact")
     ) {
       return true;
     }

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, FileDown, Github, Linkedin, Mail, ChevronDown, Code as LucideCode } from "lucide-react";
+import { MapPin, GraduationCap, Github, Linkedin, Mail, ChevronDown, Code as LucideCode } from "lucide-react";
 import { profile } from "@/lib/data";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -58,18 +58,17 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex items-start justify-center gap-6 sm:gap-8"
         >
-          {/* Resume Button - First */}
+          {/* Education Button - First */}
           <motion.a
-            href={profile.resumeUrl}
-            download
+            href="http://localhost:3000/experience"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="flex flex-col items-center gap-2 group"
           >
             <div className="p-4 bg-[var(--foreground)] text-[var(--background)] rounded-full group-hover:opacity-90 transition-opacity">
-              <FileDown className="w-6 h-6" />
+              <GraduationCap className="w-6 h-6" />
             </div>
-            <span className="text-sm text-[var(--muted)] group-hover:text-[var(--foreground)] transition-colors">Resume</span>
+            <span className="text-sm text-[var(--muted)] group-hover:text-[var(--foreground)] transition-colors">View Education</span>
           </motion.a>
 
           {/* Social Links */}

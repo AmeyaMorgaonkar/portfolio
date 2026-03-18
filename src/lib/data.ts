@@ -99,14 +99,18 @@ export interface Education {
   location: string;
 }
 
+export interface Skill {
+  name: string;
+}
+
 // Dummy Data
 export const profile: Profile = {
   name: "Ameya",
   location: "Pune, India",
-  tagline: "Full stack developer with a stronger interest in backend. Computer Engineering Undergrad at VIT, Pune.",
+  tagline: "Full stack developer with a stronger interest in backend.",
   bio: "A passionate developer and researcher focused on creating impactful technology solutions.",
   heroPhoto: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-  aboutPhoto: "/images/about-photo.jpg",
+  aboutPhoto: "/images/Ameya Morgaonkar.jpeg",
   aboutText: `Hey there! I'm Ameya, a developer and researcher based in Pune, India. When I'm not coding or working on research papers, you'll find me exploring new music, playing chess, or diving into a good book.
 
 I believe in building technology that makes a difference. My journey has taken me through various projects spanning AI, web development, and systems design. Each project is an opportunity to learn something new and push the boundaries of what's possible.
@@ -128,298 +132,295 @@ Outside of work, I'm an avid chess player (always up for a game!), a music enthu
 };
 
 export const experiences: Experience[] = [
-  {
-    id: "exp-3",
-    slug: "tech-innovations-swe-intern",
-    company: "Tech Innovations Inc.",
-    logo: "/images/company1.png",
-    role: "Software Engineer Intern",
-    location: "Pune, India",
-    startDate: "May 2025",
-    endDate: "August 2025",
-    description: [
-      "Developed and deployed machine learning models for predictive analytics, improving accuracy by 25%",
-      "Built RESTful APIs using Python and FastAPI, handling 10K+ requests daily",
-      "Collaborated with cross-functional teams to deliver features on tight deadlines",
-    ],
-    longDescription: `## About the Role
+//   {
+//     id: "exp-3",
+//     slug: "tech-innovations-swe-intern",
+//     company: "Tech Innovations Inc.",
+//     logo: "/images/company1.png",
+//     role: "Software Engineer Intern",
+//     location: "Pune, India",
+//     startDate: "May 2025",
+//     endDate: "August 2025",
+//     description: [
+//       "Developed and deployed machine learning models for predictive analytics, improving accuracy by 25%",
+//       "Built RESTful APIs using Python and FastAPI, handling 10K+ requests daily",
+//       "Collaborated with cross-functional teams to deliver features on tight deadlines",
+//     ],
+//     longDescription: `## About the Role
 
-As a Software Engineer Intern at Tech Innovations Inc., I worked on the Data Science team to develop and deploy machine learning solutions for enterprise clients.
+// As a Software Engineer Intern at Tech Innovations Inc., I worked on the Data Science team to develop and deploy machine learning solutions for enterprise clients.
 
-## Key Achievements
+// ## Key Achievements
 
-### Machine Learning Pipeline
-Designed and implemented an end-to-end ML pipeline for predictive analytics:
-- Built data preprocessing pipelines handling 1M+ records daily
-- Developed custom feature engineering modules
-- Implemented model versioning and A/B testing framework
-- Achieved 25% improvement in prediction accuracy over baseline
+// ### Machine Learning Pipeline
+// Designed and implemented an end-to-end ML pipeline for predictive analytics:
+// - Built data preprocessing pipelines handling 1M+ records daily
+// - Developed custom feature engineering modules
+// - Implemented model versioning and A/B testing framework
+// - Achieved 25% improvement in prediction accuracy over baseline
 
-### API Development
-Built production-ready APIs serving ML predictions:
-- Designed RESTful endpoints using FastAPI
-- Implemented caching with Redis for low-latency responses
-- Set up monitoring and alerting with Prometheus/Grafana
-- Handled 10K+ requests daily with 99.9% uptime
+// ### API Development
+// Built production-ready APIs serving ML predictions:
+// - Designed RESTful endpoints using FastAPI
+// - Implemented caching with Redis for low-latency responses
+// - Set up monitoring and alerting with Prometheus/Grafana
+// - Handled 10K+ requests daily with 99.9% uptime
 
-### Team Collaboration
-- Participated in daily standups and sprint planning
-- Conducted code reviews for fellow interns
-- Presented technical findings to stakeholders
+// ### Team Collaboration
+// - Participated in daily standups and sprint planning
+// - Conducted code reviews for fellow interns
+// - Presented technical findings to stakeholders
 
-## What I Learned
-This internship gave me hands-on experience with production ML systems and taught me the importance of writing maintainable, testable code.`,
-    technologies: ["Python", "TensorFlow", "FastAPI", "PostgreSQL", "Docker"],
-  },
-  {
-    id: "exp-2",
-    slug: "tech-innovations-swe-intern",
-    company: "Tech Innovations Inc.",
-    logo: "/images/company1.png",
-    role: "Software Engineer Intern",
-    location: "Pune, India",
-    startDate: "May 2025",
-    endDate: "August 2025",
-    description: [
-      "Developed and deployed machine learning models for predictive analytics, improving accuracy by 25%",
-      "Built RESTful APIs using Python and FastAPI, handling 10K+ requests daily",
-      "Collaborated with cross-functional teams to deliver features on tight deadlines",
-    ],
-    longDescription: `## About the Role
+// ## What I Learned
+// This internship gave me hands-on experience with production ML systems and taught me the importance of writing maintainable, testable code.`,
+//     technologies: ["Python", "TensorFlow", "FastAPI", "PostgreSQL", "Docker"],
+//   },
+//   {
+//     id: "exp-2",
+//     slug: "tech-innovations-swe-intern",
+//     company: "Tech Innovations Inc.",
+//     logo: "/images/company1.png",
+//     role: "Software Engineer Intern",
+//     location: "Pune, India",
+//     startDate: "May 2025",
+//     endDate: "August 2025",
+//     description: [
+//       "Developed and deployed machine learning models for predictive analytics, improving accuracy by 25%",
+//       "Built RESTful APIs using Python and FastAPI, handling 10K+ requests daily",
+//       "Collaborated with cross-functional teams to deliver features on tight deadlines",
+//     ],
+//     longDescription: `## About the Role
 
-As a Software Engineer Intern at Tech Innovations Inc., I worked on the Data Science team to develop and deploy machine learning solutions for enterprise clients.
+// As a Software Engineer Intern at Tech Innovations Inc., I worked on the Data Science team to develop and deploy machine learning solutions for enterprise clients.
 
-## Key Achievements
+// ## Key Achievements
 
-### Machine Learning Pipeline
-Designed and implemented an end-to-end ML pipeline for predictive analytics:
-- Built data preprocessing pipelines handling 1M+ records daily
-- Developed custom feature engineering modules
-- Implemented model versioning and A/B testing framework
-- Achieved 25% improvement in prediction accuracy over baseline
+// ### Machine Learning Pipeline
+// Designed and implemented an end-to-end ML pipeline for predictive analytics:
+// - Built data preprocessing pipelines handling 1M+ records daily
+// - Developed custom feature engineering modules
+// - Implemented model versioning and A/B testing framework
+// - Achieved 25% improvement in prediction accuracy over baseline
 
-### API Development
-Built production-ready APIs serving ML predictions:
-- Designed RESTful endpoints using FastAPI
-- Implemented caching with Redis for low-latency responses
-- Set up monitoring and alerting with Prometheus/Grafana
-- Handled 10K+ requests daily with 99.9% uptime
+// ### API Development
+// Built production-ready APIs serving ML predictions:
+// - Designed RESTful endpoints using FastAPI
+// - Implemented caching with Redis for low-latency responses
+// - Set up monitoring and alerting with Prometheus/Grafana
+// - Handled 10K+ requests daily with 99.9% uptime
 
-### Team Collaboration
-- Participated in daily standups and sprint planning
-- Conducted code reviews for fellow interns
-- Presented technical findings to stakeholders
+// ### Team Collaboration
+// - Participated in daily standups and sprint planning
+// - Conducted code reviews for fellow interns
+// - Presented technical findings to stakeholders
 
-## What I Learned
-This internship gave me hands-on experience with production ML systems and taught me the importance of writing maintainable, testable code.`,
-    technologies: ["Python", "TensorFlow", "FastAPI", "PostgreSQL", "Docker"],
-  },
-  {
-    id: "exp-1",
-    slug: "startupxyz-fullstack",
-    company: "StartupXYZ",
-    logo: "/images/company2.png",
-    role: "Full Stack Developer",
-    location: "Remote",
-    startDate: "January 2025",
-    endDate: "April 2025",
-    description: [
-      "Led the development of a real-time dashboard using React and WebSockets",
-      "Optimized database queries, reducing page load times by 40%",
-      "Mentored junior developers and conducted code reviews",
-    ],
-    longDescription: `## About the Role
+// ## What I Learned
+// This internship gave me hands-on experience with production ML systems and taught me the importance of writing maintainable, testable code.`,
+//     technologies: ["Python", "TensorFlow", "FastAPI", "PostgreSQL", "Docker"],
+//   },
+//   {
+//     id: "exp-1",
+//     slug: "startupxyz-fullstack",
+//     company: "StartupXYZ",
+//     logo: "/images/company2.png",
+//     role: "Full Stack Developer",
+//     location: "Remote",
+//     startDate: "January 2025",
+//     endDate: "April 2025",
+//     description: [
+//       "Led the development of a real-time dashboard using React and WebSockets",
+//       "Optimized database queries, reducing page load times by 40%",
+//       "Mentored junior developers and conducted code reviews",
+//     ],
+//     longDescription: `## About the Role
 
-At StartupXYZ, I worked as a Full Stack Developer building real-time analytics tools for e-commerce businesses.
+// At StartupXYZ, I worked as a Full Stack Developer building real-time analytics tools for e-commerce businesses.
 
-## Key Projects
+// ## Key Projects
 
-### Real-time Analytics Dashboard
-Led the development of a live dashboard showing business metrics:
-- Built React frontend with real-time WebSocket updates
-- Implemented efficient data aggregation on the backend
-- Created customizable widget system for user preferences
-- Dashboard used by 50+ enterprise clients
+// ### Real-time Analytics Dashboard
+// Led the development of a live dashboard showing business metrics:
+// - Built React frontend with real-time WebSocket updates
+// - Implemented efficient data aggregation on the backend
+// - Created customizable widget system for user preferences
+// - Dashboard used by 50+ enterprise clients
 
-### Performance Optimization
-Significantly improved application performance:
-- Profiled and optimized slow database queries
-- Implemented query result caching
-- Added database indexes for common access patterns
-- Reduced average page load time by 40%
+// ### Performance Optimization
+// Significantly improved application performance:
+// - Profiled and optimized slow database queries
+// - Implemented query result caching
+// - Added database indexes for common access patterns
+// - Reduced average page load time by 40%
 
-### Team Leadership
-- Mentored 2 junior developers
-- Established code review practices
-- Wrote technical documentation
+// ### Team Leadership
+// - Mentored 2 junior developers
+// - Established code review practices
+// - Wrote technical documentation
 
-## Impact
-The dashboard became the company's flagship product and was instrumental in closing several enterprise deals.`,
-    technologies: ["React", "Node.js", "MongoDB", "WebSocket", "AWS"],
-  },
+// ## Impact
+// The dashboard became the company's flagship product and was instrumental in closing several enterprise deals.`,
+//     technologies: ["React", "Node.js", "MongoDB", "WebSocket", "AWS"],
+//   },
 ];
 
 export const education: Education[] = [
   {
     id: "edu-1",
-    institution: "University of Technology",
+    institution: "Vishwakarma Institute of Technology, Pune",
     logo: "/images/university1.png",
-    degree: "Master of Science",
-    field: "Computer Science",
-    startDate: "August 2024",
-    endDate: "May 2026 (Expected)",
-    gpa: "3.9/4.0",
+    degree: "B. Tech",
+    field: "Computer Engineering",
+    startDate: "September 2025",
+    endDate: "May 2029",
+    gpa: "9.45/10",
     highlights: [
-      "Specialization in Machine Learning and Artificial Intelligence",
-      "Graduate Research Assistant - NLP Lab",
-      "Teaching Assistant for Data Structures course",
+      "Followed a project-based curriculum with hands-on implementation across all semesters",
+      "Completed course projects for every subject, applying theoretical concepts to real-world problems",
+      "Built working prototypes / full-stack applications with emphasis on usability and scalability",
     ],
     location: "Pune, India",
   },
   {
     id: "edu-2",
-    institution: "State Engineering College",
+    institution: "Arham Juniour College",
     logo: "/images/university2.png",
-    degree: "Bachelor of Engineering",
-    field: "Computer Engineering",
-    startDate: "August 2020",
-    endDate: "May 2024",
-    gpa: "3.8/4.0",
+    degree: "High School",
+    field: "Science",
+    startDate: "June 2023",
+    endDate: "May 2025",
+    gpa: "7.8/10",
     highlights: [
-      "Dean's List - All semesters",
-      "President of Computer Science Club",
-      "Hackathon Winner - Smart India Hackathon 2023",
+      "Built a strong foundation in Physics, Chemistry, and Mathematics with focus on analytical problem-solving",
+      "Completed subject-level projects and practical files as part of curriculum",
+      "Prepared for engineering entrance exams like JEE Main, JEE Advanced, MHT-CET, etc.",
     ],
-    location: "Mumbai, India",
+    location: "Pune, India",
   },
+];
+
+export const skills: Skill[] = [
+  { name: "Next.js" },
+  { name: "React" },
+  { name: "Tailwind CSS" },
+  { name: "TypeScript" },
+  { name: "JavaScript" },
+  { name: "Node.js" },
+  { name: "Python" },
+  { name: "Django" },
+  { name: "FastAPI" },
+  { name: "PostgreSQL" },
+  { name: "MongoDB" },
+  { name: "Docker" },
+  { name: "Git" },
+  { name: "AWS" },
 ];
 
 export const projects: Project[] = [
   {
     id: "proj-1",
-    slug: "ai-medical-imaging",
-    title: "AI Medical Imaging System",
-    shortDescription: "Deep learning system for detecting anomalies in X-ray images with 94% accuracy",
-    longDescription: `# AI Medical Imaging System
+    slug: "monolity",
+    title: "Monolity - The pinnacle of Modern Living",
+    shortDescription: "Developed a modern real estate web application UI featuring property listings, interactive browsing, and responsive design, built with a scalable frontend architecture and deployed on Vercel.000",
+    longDescription: `Built a high-performance real estate platform UI that enables users to explore, filter, and view property listings through a clean and intuitive interface. The application focuses on modern UX patterns such as smooth navigation, responsive layouts, and visually rich property cards.
 
-## Overview
-A comprehensive deep learning solution designed to assist radiologists in detecting anomalies in medical X-ray images. The system achieves 94% accuracy in identifying potential health issues.
+  Implemented using a component-based architecture, the project emphasizes scalability and reusability of UI elements. Designed key sections including featured listings, property detail pages, and structured navigation to simulate a production-level real estate product.
 
-## Features
-- **Real-time Analysis**: Process X-ray images in under 2 seconds
-- **High Accuracy**: 94% detection rate with minimal false positives
-- **User-friendly Interface**: Intuitive dashboard for medical professionals
-- **HIPAA Compliant**: Built with healthcare data security in mind
-
-## Technical Details
-The system uses a custom CNN architecture based on ResNet-50, fine-tuned on a dataset of over 100,000 labeled X-ray images. The model was trained using transfer learning techniques to achieve high accuracy with limited computational resources.
-
-### Architecture
-- Frontend: React with TypeScript
-- Backend: Python FastAPI
-- ML Pipeline: TensorFlow, OpenCV
-- Database: PostgreSQL for metadata, S3 for images
-
-## Future Scope
-- Expand to CT scan analysis
-- Mobile application for remote consultations
-- Integration with hospital management systems`,
+  Optimized for performance and deployment using modern frontend tooling, ensuring fast load times and seamless user experience across devices. The project demonstrates strong skills in frontend development, UI/UX design, and real-world product thinking.
+  
+  ## Features
+  - Responsive real estate UI optimized for mobile, tablet, and desktop
+  - Dynamic property listing interface with clean, card-based layout
+  - Smooth navigation and transitions for enhanced user experience
+  - Optimized performance with fast load times via Vercel deployment
+  - *EO-friendly structure for improved discoverability`,
     features: [
-      "Real-time X-ray analysis in under 2 seconds",
-      "94% accuracy with minimal false positives",
-      "HIPAA compliant healthcare data security",
-      "Intuitive dashboard for medical professionals"
+    "Responsive real estate UI optimized for mobile, tablet, and desktop",
+    "Dynamic property listing interface with clean, card-based layout",
+    "Smooth navigation and transitions for enhanced user experience",
+    "Optimized performance with fast load times via Vercel deployment",
+    "SEO-friendly structure for improved discoverability",
     ],
     images: [
-      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&h=600&fit=crop",
+      "/images/projects/proj-1/1.png",
+      "/images/projects/proj-1/2.png",
+      "/images/projects/proj-1/3.png",
     ],
-    demoVideo: "https://www.youtube.com/watch?v=aircAruvnKk",
-    liveUrl: "https://medical-ai-demo.vercel.app",
-    codeUrl: "https://github.com/example/medical-ai",
-    technologies: ["Python", "TensorFlow", "React", "FastAPI", "PostgreSQL"],
-    tags: ["AI/ML", "Healthcare", "Deep Learning"],
+    // demoVideo: "https://www.youtube.com/watch?v=aircAruvnKk",
+    liveUrl: "https://monolith-estates-ui.vercel.app/",
+    codeUrl: "https://github.com/AmeyaMorgaonkar/monolith-estates-ui",
+    technologies: ["Next.js", "Typescript", "React", "Vercel"],
+    tags: [],
     featured: true,
-    hasResearchPaper: true,
-    hasPatent: true,
+    hasResearchPaper: false,
+    hasPatent: false,
     relatedResearch: ["research-1", "patent-1"],
-    createdAt: "2025-06-15",
+    createdAt: "2026-02-15",
   },
   {
     id: "proj-2",
-    slug: "smart-city-dashboard",
-    title: "Smart City Analytics Dashboard",
-    shortDescription: "Real-time IoT dashboard for monitoring urban infrastructure and traffic patterns",
-    longDescription: `# Smart City Analytics Dashboard
+    slug: "sterling",
+    title: "STERLING - Visionary Living.",
+    shortDescription: "Developed a modern, responsive real estate web application UI with structured property browsing, interactive navigation, and production-level design, deployed on Vercel.",
+    longDescription: `Built a high-fidelity real estate web application UI that simulates a production-grade property platform, enabling users to explore listings through a structured and visually rich interface. Designed a complete user flow including homepage, property listings, and detailed property views with clear information hierarchy.
 
-## Overview
-A comprehensive IoT-powered dashboard for city administrators to monitor and analyze urban infrastructure in real-time.
+Implemented a scalable component-based architecture to ensure reusability and maintainability across the application. Focused heavily on modern UI/UX principles, incorporating smooth transitions, responsive layouts, and high-quality visuals to create a premium user experience suitable for real-world clients.
 
-## Features
-- **Live Traffic Monitoring**: Real-time traffic flow visualization
-- **Environmental Sensors**: Air quality, noise levels, temperature tracking
-- **Predictive Analytics**: ML-based predictions for traffic congestion
-- **Alert System**: Automated alerts for anomalies
+Optimized the application for performance and seamless deployment, leveraging modern frontend practices to achieve fast load times and consistent behavior across devices. The project demonstrates strong capabilities in frontend engineering, design systems, and building production-ready interfaces.
 
-## Technical Details
-Built using a microservices architecture to handle data from thousands of IoT sensors deployed across the city.
-
-## Future Scope
-- Expand sensor network coverage
-- Add predictive maintenance for infrastructure`,
+**Features**
+- Advanced property browsing with structured listing and detail pages
+- Scalable component-based architecture for reusable UI elements
+- Production-level layout mimicking real-world real estate platforms
+- Optimized frontend performance with fast loading and routing`,
     features: [
-      "Live traffic flow visualization and monitoring",
-      "Environmental sensors for air quality and noise",
-      "ML-based congestion predictions",
-      "Automated anomaly detection alerts"
-    ],
+  "Advanced property browsing with structured listing and detail pages",
+  "Scalable component-based architecture for reusable UI elements",
+  "Production-level layout mimicking real-world real estate platforms",
+  "Optimized frontend performance with fast loading and routing",
+],
     images: [
-      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&h=600&fit=crop",
+      "/images/projects/proj-2/1.png",
+      "/images/projects/proj-2/2.png",
     ],
-    liveUrl: "https://smartcity-demo.vercel.app",
-    codeUrl: "https://github.com/example/smart-city",
-    technologies: ["React", "Node.js", "InfluxDB", "Kafka", "D3.js"],
-    tags: ["IoT", "Data Visualization", "Hackathon Winner"],
+    liveUrl: "https://monolith-estates-ui-5k16.vercel.app/",
+    codeUrl: "https://github.com/AmeyaMorgaonkar/sterling-estates-ui",
+    technologies: ["React", "Node.js", "InfluxDB", "Next.js", "TypeScript"],
+    tags: [],
     featured: true,
-    hasResearchPaper: true,
+    hasResearchPaper: false,
     hasPatent: false,
     relatedResearch: ["research-2"],
     createdAt: "2025-03-20",
   },
   {
     id: "proj-3",
-    slug: "nlp-sentiment-analyzer",
-    title: "NLP Sentiment Analyzer",
-    shortDescription: "Multi-language sentiment analysis tool for social media monitoring",
-    longDescription: `# NLP Sentiment Analyzer
+    slug: "aurelia",
+    title: "Aurelia - Premium Luxury",
+    shortDescription: "Built a modern real estate agency web platform enabling users to explore, buy, sell, and evaluate properties through a structured, high-conversion UI with service-focused sections.",
+    longDescription: `Developed a full-scale real estate agency web application UI that simulates a production-ready platform for buying, selling, and renting properties. The platform includes structured property browsing, service offerings, and conversion-focused sections such as pricing models, lead capture forms, and call-to-action flows.
 
-## Overview
-A powerful NLP tool that analyzes sentiment across multiple languages for social media monitoring and brand analytics.
+Designed a high-converting user experience with clear information hierarchy, showcasing features like property listings, agent services, and value propositions (e.g., flat-fee selling model). Integrated visually rich sections, dynamic layouts, and responsive design to ensure a seamless experience across devices.
 
-## Features
-- **Multi-language Support**: Works with 12+ languages
-- **Real-time Processing**: Analyze thousands of posts per minute
-- **Trend Detection**: Identify emerging topics and sentiment shifts
-- **API Access**: RESTful API for integration
-
-## Technical Details
-Uses transformer-based models fine-tuned on multilingual datasets.`,
+Built using a component-driven architecture, enabling scalable development and reusable UI elements across multiple pages. The project demonstrates strong understanding of frontend engineering, product thinking, and real-world business-oriented design, particularly for service-based platforms
+**Features**
+- Structured property listings with categorized browsing and location-based filtering
+- Lead generation forms and strong call-to-action components for user conversion
+- Modern, responsive UI optimized for mobile, tablet, and desktop devices
+- Component-based architecture for scalable and maintainable frontend development`,
     features: [
-      "Supports 12+ languages for global coverage",
-      "Processes thousands of posts per minute",
-      "Detects emerging trends and sentiment shifts",
-      "RESTful API for easy integration"
-    ],
+  "Structured property listings with categorized browsing and location-based filtering",
+  "Lead generation forms and strong call-to-action components for user conversion",
+  "Modern, responsive UI optimized for mobile, tablet, and desktop devices",
+  "Component-based architecture for scalable and maintainable frontend development",
+],
     images: [
-      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+      "/images/projects/proj-3/1.png",
+      "/images/projects/proj-3/2.png",
     ],
-    codeUrl: "https://github.com/example/sentiment-analyzer",
-    technologies: ["Python", "PyTorch", "Transformers", "FastAPI", "Redis"],
-    tags: ["NLP", "AI/ML", "Python"],
+    liveUrl: "https://real-estate-agency-fixed-ia48.vercel.app/",
+    codeUrl: "https://github.com/AmeyaMorgaonkar/real-estate-agency",
+    technologies: ["Next.js", "TypeScript", "React", "Tailwind"],
+    tags: [],
     featured: true,
     hasResearchPaper: false,
     hasPatent: false,
@@ -428,314 +429,316 @@ Uses transformer-based models fine-tuned on multilingual datasets.`,
   },
   {
     id: "proj-4",
-    slug: "blockchain-supply-chain",
-    title: "Blockchain Supply Chain Tracker",
-    shortDescription: "Decentralized supply chain management system using Ethereum smart contracts",
-    longDescription: `# Blockchain Supply Chain Tracker
+    slug: "face-recognition",
+    title: "Face recognition Attendence System",
+    shortDescription: "Developed a face recognition-based attendance system with anti-spoofing, enabling secure, real-time attendance marking while preventing fraudulent access using photos or videos.",
+    longDescription: `Built a secure face recognition attendance system that automates attendance marking using real-time computer vision, enhanced with anti-spoofing mechanisms to prevent fraudulent identification attempts. The system captures facial data, trains recognition models, and verifies users through live detection before marking attendance.
 
-## Overview
-A decentralized application for transparent supply chain tracking using blockchain technology.
+Implemented a complete pipeline including face detection, recognition, and liveness verification, ensuring that only genuine users (not images or recorded videos) are authenticated. Integrated webcam-based input with real-time processing to deliver fast and reliable identification.
 
-## Features
-- **Immutable Records**: Tamper-proof tracking history
-- **Smart Contracts**: Automated verification and payments
-- **QR Code Scanning**: Easy product verification
-- **Real-time Updates**: Live tracking across supply chain
+Attendance data is automatically recorded with timestamps and stored in structured formats for tracking and analysis. The project demonstrates strong understanding of computer vision, security-focused ML systems, and real-time application design, making it suitable for deployment in educational institutions or workplaces.
 
-## Technical Details
-Built on Ethereum with Solidity smart contracts and a React frontend.`,
+**Features**
+- Real-time face detection and recognition using webcam input
+- Anti-spoofing (liveness detection) to prevent photo/video-based fraud
+- Automated attendance marking with accurate timestamp logging
+- Efficient computer vision processing using OpenCV and ML techniques
+- End-to-end pipeline from data collection to real-time deployment`,
     features: [
-      "Tamper-proof immutable tracking history",
-      "Automated verification via smart contracts",
-      "QR code scanning for product verification",
-      "Real-time updates across supply chain"
-    ],
+  "Real-time face detection and recognition using webcam input",
+  "Anti-spoofing (liveness detection) to prevent photo/video-based fraud",
+  "Automated attendance marking with accurate timestamp logging",
+  "Efficient computer vision processing using OpenCV and ML techniques",
+  "End-to-end pipeline from data collection to real-time deployment",
+],
     images: [
-      "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1642104704074-907c0698cbd9?w=800&h=600&fit=crop",
+      "/images/projects/proj-4/1.png",
+      "/images/projects/proj-4/2.png",
+      "/images/projects/proj-4/3.png",
+      "/images/projects/proj-4/4.png",
     ],
-    liveUrl: "https://supply-chain-demo.vercel.app",
-    codeUrl: "https://github.com/example/supply-chain",
-    technologies: ["Solidity", "Ethereum", "React", "Web3.js", "IPFS"],
-    tags: ["Blockchain", "Web3", "Hackathon"],
+    // liveUrl: "https://supply-chain-demo.vercel.app",
+    codeUrl: "https://github.com/AmeyaMorgaonkar/face-recognition-attendance-system",
+    technologies: ["Python", "OpenCV", "Django", "MySQL", "CNN"],
+    tags: [],
     featured: true,
     hasResearchPaper: false,
     hasPatent: false,
     relatedResearch: [],
     createdAt: "2024-11-05",
   },
-  {
-    id: "proj-5",
-    slug: "task-management-app",
-    title: "TaskFlow - Project Management Tool",
-    shortDescription: "A collaborative task management application with real-time updates and team features",
-    longDescription: `# TaskFlow - Project Management Tool
+//   {
+//     id: "proj-5",
+//     slug: "task-management-app",
+//     title: "TaskFlow - Project Management Tool",
+//     shortDescription: "A collaborative task management application with real-time updates and team features",
+//     longDescription: `# TaskFlow - Project Management Tool
 
-## Overview
-A modern project management tool designed for teams to collaborate effectively.
+// ## Overview
+// A modern project management tool designed for teams to collaborate effectively.
 
-## Features
-- **Real-time Collaboration**: Live updates across all team members
-- **Kanban Boards**: Visual task organization
-- **Time Tracking**: Built-in time logging
-- **Integrations**: Slack, GitHub, and more
+// ## Features
+// - **Real-time Collaboration**: Live updates across all team members
+// - **Kanban Boards**: Visual task organization
+// - **Time Tracking**: Built-in time logging
+// - **Integrations**: Slack, GitHub, and more
 
-## Technical Details
-Built with Next.js and Socket.io for real-time features, with PostgreSQL for data persistence.`,
-    features: [
-      "Real-time collaboration with live updates",
-      "Visual Kanban boards for task organization",
-      "Built-in time tracking and logging",
-      "Integrations with Slack, GitHub, and more"
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&h=600&fit=crop",
-    ],
-    liveUrl: "https://taskflow-demo.vercel.app",
-    codeUrl: "https://github.com/example/taskflow",
-    technologies: ["Next.js", "Socket.io", "PostgreSQL", "Prisma", "TailwindCSS"],
-    tags: ["Full Stack", "SaaS", "Productivity"],
-    featured: true,
-    hasResearchPaper: false,
-    hasPatent: false,
-    relatedResearch: [],
-    createdAt: "2024-09-15",
-  },
-  {
-    id: "proj-6",
-    slug: "ai-code-reviewer",
-    title: "CodeSense - AI Code Reviewer",
-    shortDescription: "An intelligent code review assistant powered by GPT-4 for automated PR reviews",
-    longDescription: `# CodeSense - AI Code Reviewer
+// ## Technical Details
+// Built with Next.js and Socket.io for real-time features, with PostgreSQL for data persistence.`,
+//     features: [
+//       "Real-time collaboration with live updates",
+//       "Visual Kanban boards for task organization",
+//       "Built-in time tracking and logging",
+//       "Integrations with Slack, GitHub, and more"
+//     ],
+//     images: [
+//       "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
+//       "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&h=600&fit=crop",
+//     ],
+//     liveUrl: "https://taskflow-demo.vercel.app",
+//     codeUrl: "https://github.com/example/taskflow",
+//     technologies: ["Next.js", "Socket.io", "PostgreSQL", "Prisma", "TailwindCSS"],
+//     tags: ["Full Stack", "SaaS", "Productivity"],
+//     featured: true,
+//     hasResearchPaper: false,
+//     hasPatent: false,
+//     relatedResearch: [],
+//     createdAt: "2024-09-15",
+//   },
+//   {
+//     id: "proj-6",
+//     slug: "ai-code-reviewer",
+//     title: "CodeSense - AI Code Reviewer",
+//     shortDescription: "An intelligent code review assistant powered by GPT-4 for automated PR reviews",
+//     longDescription: `# CodeSense - AI Code Reviewer
 
-## Overview
-An AI-powered tool that automatically reviews pull requests and suggests improvements.
+// ## Overview
+// An AI-powered tool that automatically reviews pull requests and suggests improvements.
 
-## Features
-- **Automated Reviews**: AI analyzes code changes automatically
-- **Best Practices**: Suggests improvements based on coding standards
-- **Security Scanning**: Identifies potential vulnerabilities
-- **GitHub Integration**: Seamless integration with GitHub PRs
+// ## Features
+// - **Automated Reviews**: AI analyzes code changes automatically
+// - **Best Practices**: Suggests improvements based on coding standards
+// - **Security Scanning**: Identifies potential vulnerabilities
+// - **GitHub Integration**: Seamless integration with GitHub PRs
 
-## Technical Details
-Uses OpenAI's GPT-4 API with custom prompts for code analysis, integrated via GitHub Actions.`,
-    features: [
-      "Automated AI-powered code reviews",
-      "Best practices and standards suggestions",
-      "Security vulnerability scanning",
-      "Seamless GitHub PR integration"
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
-    ],
-    codeUrl: "https://github.com/example/codesense",
-    technologies: ["Python", "OpenAI", "GitHub Actions", "FastAPI", "Redis"],
-    tags: ["AI/ML", "DevTools", "Automation"],
-    featured: true,
-    hasResearchPaper: false,
-    hasPatent: false,
-    relatedResearch: [],
-    createdAt: "2024-08-20",
-  },
+// ## Technical Details
+// Uses OpenAI's GPT-4 API with custom prompts for code analysis, integrated via GitHub Actions.`,
+//     features: [
+//       "Automated AI-powered code reviews",
+//       "Best practices and standards suggestions",
+//       "Security vulnerability scanning",
+//       "Seamless GitHub PR integration"
+//     ],
+//     images: [
+//       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop",
+//       "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
+//     ],
+//     codeUrl: "https://github.com/example/codesense",
+//     technologies: ["Python", "OpenAI", "GitHub Actions", "FastAPI", "Redis"],
+//     tags: ["AI/ML", "DevTools", "Automation"],
+//     featured: true,
+//     hasResearchPaper: false,
+//     hasPatent: false,
+//     relatedResearch: [],
+//     createdAt: "2024-08-20",
+//   },
 ];
 
 export const research: Research[] = [
-  {
-    id: "research-1",
-    slug: "deep-learning-medical-imaging",
-    type: "paper",
-    title: "Deep Learning Approaches for Automated Medical Image Analysis: A Comprehensive Study",
-    abstract: "This paper presents a comprehensive study of deep learning techniques applied to medical image analysis. We propose a novel CNN architecture that achieves state-of-the-art results in X-ray anomaly detection while maintaining computational efficiency suitable for clinical deployment.",
-    authors: ["Ameya", "Dr. Smith", "Prof. Johnson"],
-    venue: "IEEE Journal of Biomedical and Health Informatics",
-    date: "2025-06-01",
-    thumbnail: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
-    pdfUrl: "/papers/medical-imaging.pdf",
-    externalLinks: {
-      doi: "https://doi.org/10.1234/example",
-      arxiv: "https://arxiv.org/abs/2501.12345",
-      ieee: "https://ieeexplore.ieee.org/example",
-      googleScholar: "https://scholar.google.com/example",
-    },
-    relatedProject: "proj-1",
-    status: "Published",
-  },
-  {
-    id: "research-2",
-    slug: "iot-smart-cities",
-    type: "paper",
-    title: "IoT-Enabled Smart City Infrastructure: Challenges and Solutions",
-    abstract: "We present a scalable IoT architecture for smart city applications, addressing challenges in data aggregation, real-time processing, and privacy. Our system demonstrates 40% improvement in response time compared to existing solutions.",
-    authors: ["Ameya", "Dr. Patel"],
-    venue: "ACM Conference on Embedded Networked Sensor Systems",
-    date: "2025-03-15",
-    thumbnail: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=400&h=300&fit=crop",
-    pdfUrl: "/papers/smart-city.pdf",
-    externalLinks: {
-      doi: "https://doi.org/10.1234/smartcity",
-      arxiv: "https://arxiv.org/abs/2503.67890",
-    },
-    relatedProject: "proj-2",
-    status: "Published",
-  },
-  {
-    id: "research-3",
-    slug: "efficient-transformers",
-    type: "paper",
-    title: "Efficient Transformer Architectures for Edge Deployment",
-    abstract: "This work introduces novel compression techniques for transformer models, enabling deployment on resource-constrained edge devices without significant accuracy loss. We achieve 8x compression with only 2% accuracy reduction.",
-    authors: ["Ameya", "Prof. Williams", "Dr. Chen"],
-    venue: "NeurIPS Workshop on Efficient Deep Learning",
-    date: "2024-12-01",
-    thumbnail: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
-    externalLinks: {
-      arxiv: "https://arxiv.org/abs/2412.11111",
-      googleScholar: "https://scholar.google.com/example2",
-    },
-    status: "Published",
-  },
-  {
-    id: "patent-1",
-    slug: "real-time-medical-detection",
-    type: "patent",
-    title: "Method and System for Real-time Medical Image Anomaly Detection",
-    abstract: "A system and method for real-time detection of anomalies in medical images using a novel deep learning architecture optimized for clinical environments. The invention includes techniques for reducing inference time while maintaining diagnostic accuracy.",
-    authors: ["Ameya", "Tech Innovations Inc."],
-    venue: "United States Patent and Trademark Office",
-    date: "2025-08-01",
-    thumbnail: "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=400&h=300&fit=crop",
-    externalLinks: {
-      patentOffice: "https://patents.google.com/patent/US12345678",
-    },
-    relatedProject: "proj-1",
-    status: "Granted",
-  },
+  // {
+  //   id: "research-1",
+  //   slug: "deep-learning-medical-imaging",
+  //   type: "paper",
+  //   title: "Deep Learning Approaches for Automated Medical Image Analysis: A Comprehensive Study",
+  //   abstract: "This paper presents a comprehensive study of deep learning techniques applied to medical image analysis. We propose a novel CNN architecture that achieves state-of-the-art results in X-ray anomaly detection while maintaining computational efficiency suitable for clinical deployment.",
+  //   authors: ["Ameya", "Dr. Smith", "Prof. Johnson"],
+  //   venue: "IEEE Journal of Biomedical and Health Informatics",
+  //   date: "2025-06-01",
+  //   thumbnail: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
+  //   pdfUrl: "/papers/medical-imaging.pdf",
+  //   externalLinks: {
+  //     doi: "https://doi.org/10.1234/example",
+  //     arxiv: "https://arxiv.org/abs/2501.12345",
+  //     ieee: "https://ieeexplore.ieee.org/example",
+  //     googleScholar: "https://scholar.google.com/example",
+  //   },
+  //   relatedProject: "proj-1",
+  //   status: "Published",
+  // },
+  // {
+  //   id: "research-2",
+  //   slug: "iot-smart-cities",
+  //   type: "paper",
+  //   title: "IoT-Enabled Smart City Infrastructure: Challenges and Solutions",
+  //   abstract: "We present a scalable IoT architecture for smart city applications, addressing challenges in data aggregation, real-time processing, and privacy. Our system demonstrates 40% improvement in response time compared to existing solutions.",
+  //   authors: ["Ameya", "Dr. Patel"],
+  //   venue: "ACM Conference on Embedded Networked Sensor Systems",
+  //   date: "2025-03-15",
+  //   thumbnail: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=400&h=300&fit=crop",
+  //   pdfUrl: "/papers/smart-city.pdf",
+  //   externalLinks: {
+  //     doi: "https://doi.org/10.1234/smartcity",
+  //     arxiv: "https://arxiv.org/abs/2503.67890",
+  //   },
+  //   relatedProject: "proj-2",
+  //   status: "Published",
+  // },
+  // {
+  //   id: "research-3",
+  //   slug: "efficient-transformers",
+  //   type: "paper",
+  //   title: "Efficient Transformer Architectures for Edge Deployment",
+  //   abstract: "This work introduces novel compression techniques for transformer models, enabling deployment on resource-constrained edge devices without significant accuracy loss. We achieve 8x compression with only 2% accuracy reduction.",
+  //   authors: ["Ameya", "Prof. Williams", "Dr. Chen"],
+  //   venue: "NeurIPS Workshop on Efficient Deep Learning",
+  //   date: "2024-12-01",
+  //   thumbnail: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
+  //   externalLinks: {
+  //     arxiv: "https://arxiv.org/abs/2412.11111",
+  //     googleScholar: "https://scholar.google.com/example2",
+  //   },
+  //   status: "Published",
+  // },
+  // {
+  //   id: "patent-1",
+  //   slug: "real-time-medical-detection",
+  //   type: "patent",
+  //   title: "Method and System for Real-time Medical Image Anomaly Detection",
+  //   abstract: "A system and method for real-time detection of anomalies in medical images using a novel deep learning architecture optimized for clinical environments. The invention includes techniques for reducing inference time while maintaining diagnostic accuracy.",
+  //   authors: ["Ameya", "Tech Innovations Inc."],
+  //   venue: "United States Patent and Trademark Office",
+  //   date: "2025-08-01",
+  //   thumbnail: "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=400&h=300&fit=crop",
+  //   externalLinks: {
+  //     patentOffice: "https://patents.google.com/patent/US12345678",
+  //   },
+  //   relatedProject: "proj-1",
+  //   status: "Granted",
+  // },
 ];
 
 export const blogPosts: BlogPost[] = [
-  {
-    id: "blog-1",
-    slug: "getting-started-with-ml",
-    title: "Getting Started with Machine Learning: A Practical Guide",
-    excerpt: "A comprehensive guide for beginners looking to dive into the world of machine learning, covering essential concepts, tools, and your first project.",
-    content: `# Getting Started with Machine Learning: A Practical Guide
+//   {
+//     id: "blog-1",
+//     slug: "getting-started-with-ml",
+//     title: "Getting Started with Machine Learning: A Practical Guide",
+//     excerpt: "A comprehensive guide for beginners looking to dive into the world of machine learning, covering essential concepts, tools, and your first project.",
+//     content: `# Getting Started with Machine Learning: A Practical Guide
 
-Machine learning has become one of the most exciting fields in technology. In this post, I'll share my journey and provide a practical roadmap for beginners.
+// Machine learning has become one of the most exciting fields in technology. In this post, I'll share my journey and provide a practical roadmap for beginners.
 
-## Why Machine Learning?
+// ## Why Machine Learning?
 
-Machine learning is transforming industries from healthcare to finance. Understanding these fundamentals opens doors to countless opportunities.
+// Machine learning is transforming industries from healthcare to finance. Understanding these fundamentals opens doors to countless opportunities.
 
-## Prerequisites
+// ## Prerequisites
 
-Before diving in, make sure you have:
-- Basic Python programming skills
-- Understanding of linear algebra and statistics
-- Curiosity and patience!
+// Before diving in, make sure you have:
+// - Basic Python programming skills
+// - Understanding of linear algebra and statistics
+// - Curiosity and patience!
 
-## Your First Steps
+// ## Your First Steps
 
-1. **Learn Python**: If you haven't already, master Python basics
-2. **Understand the Math**: Linear algebra, calculus, and statistics
-3. **Pick a Framework**: Start with scikit-learn, then move to TensorFlow or PyTorch
-4. **Build Projects**: Apply what you learn to real problems
+// 1. **Learn Python**: If you haven't already, master Python basics
+// 2. **Understand the Math**: Linear algebra, calculus, and statistics
+// 3. **Pick a Framework**: Start with scikit-learn, then move to TensorFlow or PyTorch
+// 4. **Build Projects**: Apply what you learn to real problems
 
-## Resources I Recommend
+// ## Resources I Recommend
 
-- Andrew Ng's Coursera course
-- Fast.ai practical deep learning
-- Kaggle competitions for practice
+// - Andrew Ng's Coursera course
+// - Fast.ai practical deep learning
+// - Kaggle competitions for practice
 
-## Final Thoughts
+// ## Final Thoughts
 
-The key is consistency. Spend time every day learning and building. The field is vast, but every expert started as a beginner.`,
-    coverImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
-    date: "2025-09-15",
-    tags: ["Machine Learning", "Tutorial", "Python"],
-    readingTime: "8 min read",
-  },
-  {
-    id: "blog-2",
-    slug: "building-scalable-systems",
-    title: "Lessons Learned Building Scalable Systems",
-    excerpt: "Insights from building systems that handle millions of requests, including architecture decisions, pitfalls to avoid, and best practices.",
-    content: `# Lessons Learned Building Scalable Systems
+// The key is consistency. Spend time every day learning and building. The field is vast, but every expert started as a beginner.`,
+//     coverImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
+//     date: "2025-09-15",
+//     tags: ["Machine Learning", "Tutorial", "Python"],
+//     readingTime: "8 min read",
+//   },
+//   {
+//     id: "blog-2",
+//     slug: "building-scalable-systems",
+//     title: "Lessons Learned Building Scalable Systems",
+//     excerpt: "Insights from building systems that handle millions of requests, including architecture decisions, pitfalls to avoid, and best practices.",
+//     content: `# Lessons Learned Building Scalable Systems
 
-After working on several high-traffic applications, I've gathered some insights that might help others facing similar challenges.
+// After working on several high-traffic applications, I've gathered some insights that might help others facing similar challenges.
 
-## Start Simple, Scale Later
+// ## Start Simple, Scale Later
 
-One of the biggest mistakes I see is over-engineering from day one. Start with a monolith, understand your bottlenecks, then optimize.
+// One of the biggest mistakes I see is over-engineering from day one. Start with a monolith, understand your bottlenecks, then optimize.
 
-## Key Principles
+// ## Key Principles
 
-### 1. Measure Everything
-You can't optimize what you don't measure. Implement comprehensive logging and monitoring from the start.
+// ### 1. Measure Everything
+// You can't optimize what you don't measure. Implement comprehensive logging and monitoring from the start.
 
-### 2. Cache Aggressively
-Most read-heavy applications benefit enormously from caching. Redis is your friend.
+// ### 2. Cache Aggressively
+// Most read-heavy applications benefit enormously from caching. Redis is your friend.
 
-### 3. Database Design Matters
-Spend time on your schema. Bad database design is expensive to fix later.
+// ### 3. Database Design Matters
+// Spend time on your schema. Bad database design is expensive to fix later.
 
-## Tools That Helped
+// ## Tools That Helped
 
-- **Prometheus + Grafana**: For monitoring
-- **Redis**: For caching
-- **Kafka**: For async processing
+// - **Prometheus + Grafana**: For monitoring
+// - **Redis**: For caching
+// - **Kafka**: For async processing
 
-## Conclusion
+// ## Conclusion
 
-Building scalable systems is an iterative process. Learn from your metrics, and don't be afraid to refactor.`,
-    coverImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop",
-    date: "2025-08-20",
-    tags: ["System Design", "Architecture", "Backend"],
-    readingTime: "6 min read",
-  },
-  {
-    id: "blog-3",
-    slug: "research-to-production",
-    title: "From Research Paper to Production: Bridging the Gap",
-    excerpt: "The journey of taking a research prototype and turning it into a production-ready system, with all the challenges in between.",
-    content: `# From Research Paper to Production: Bridging the Gap
+// Building scalable systems is an iterative process. Learn from your metrics, and don't be afraid to refactor.`,
+//     coverImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop",
+//     date: "2025-08-20",
+//     tags: ["System Design", "Architecture", "Backend"],
+//     readingTime: "6 min read",
+//   },
+//   {
+//     id: "blog-3",
+//     slug: "research-to-production",
+//     title: "From Research Paper to Production: Bridging the Gap",
+//     excerpt: "The journey of taking a research prototype and turning it into a production-ready system, with all the challenges in between.",
+//     content: `# From Research Paper to Production: Bridging the Gap
 
-The gap between a research prototype and a production system is often underestimated. Here's what I learned deploying our medical imaging model.
+// The gap between a research prototype and a production system is often underestimated. Here's what I learned deploying our medical imaging model.
 
-## The Reality Check
+// ## The Reality Check
 
-Research code is optimized for experimentation. Production code needs to be:
-- Reliable
-- Maintainable
-- Scalable
-- Secure
+// Research code is optimized for experimentation. Production code needs to be:
+// - Reliable
+// - Maintainable
+// - Scalable
+// - Secure
 
-## Challenges We Faced
+// ## Challenges We Faced
 
-### 1. Data Quality
-Research datasets are clean. Real-world data is messy. We spent weeks building data validation pipelines.
+// ### 1. Data Quality
+// Research datasets are clean. Real-world data is messy. We spent weeks building data validation pipelines.
 
-### 2. Latency Requirements
-Our model worked great offline but was too slow for real-time use. Model optimization became crucial.
+// ### 2. Latency Requirements
+// Our model worked great offline but was too slow for real-time use. Model optimization became crucial.
 
-### 3. Integration
-Healthcare systems have strict requirements. HIPAA compliance added complexity.
+// ### 3. Integration
+// Healthcare systems have strict requirements. HIPAA compliance added complexity.
 
-## What Worked
+// ## What Worked
 
-- **Iterative deployment**: Start with a small pilot
-- **Feedback loops**: Work closely with end users
-- **Monitoring**: Catch issues before users report them
+// - **Iterative deployment**: Start with a small pilot
+// - **Feedback loops**: Work closely with end users
+// - **Monitoring**: Catch issues before users report them
 
-## Key Takeaway
+// ## Key Takeaway
 
-Production is a different beast. Plan for it from the start of your research project.`,
-    coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-    date: "2025-07-10",
-    tags: ["Research", "MLOps", "Production"],
-    readingTime: "7 min read",
-  },
+// Production is a different beast. Plan for it from the start of your research project.`,
+//     coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+//     date: "2025-07-10",
+//     tags: ["Research", "MLOps", "Production"],
+//     readingTime: "7 min read",
+//   },
 ];
 
 // Helper functions
