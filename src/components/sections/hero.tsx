@@ -66,7 +66,7 @@ export function HeroSection() {
         >
           {/* Education Button - First */}
           <motion.a
-            href="http://localhost:3000/experience"
+            href="https://ameya-morgaonkar.vercel.app/experience"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="flex flex-col items-center gap-2 group"
