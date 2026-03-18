@@ -19,7 +19,6 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   const router = useRouter();
-  const [isHovered, setIsHovered] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showVideo, setShowVideo] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -71,11 +70,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <>
       <article
         onClick={navigateToProject}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => {
-          setIsHovered(false);
-          setShowVideo(false);
-        }}
+        onMouseLeave={() => setShowVideo(false)}
         className="bg-[var(--card)] rounded-lg overflow-hidden cursor-pointer group h-full flex flex-col hover:-translate-y-1 transition-transform duration-200"
       >
           {/* Image Section */}
@@ -129,17 +124,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
             )}
 
             {/* Carousel Controls - Show on hover */}
-            {isHovered && carouselItems.length > 1 && !showVideo && (
+            {carouselItems.length > 1 && !showVideo && (
               <>
                 <button
                   onClick={prevImage}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 bg-[var(--background)]/80 rounded-full hover:bg-[var(--background)] transition-colors z-10"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 bg-[var(--background)]/70 rounded-full hover:bg-[var(--background)] transition-colors z-10 opacity-85 group-hover:opacity-100"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
                 <button
                   onClick={nextImage}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 bg-[var(--background)]/80 rounded-full hover:bg-[var(--background)] transition-colors z-10"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 bg-[var(--background)]/70 rounded-full hover:bg-[var(--background)] transition-colors z-10 opacity-85 group-hover:opacity-100"
                 >
                   <ChevronRight className="w-4 h-4" />
                 </button>

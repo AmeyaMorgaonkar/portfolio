@@ -18,8 +18,14 @@ export function HeroSection() {
   };
 
   return (
-    <section className="min-h-[calc(100vh-4rem)] flex flex-col justify-center relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="min-h-[calc(100vh-4rem)] flex flex-col justify-center relative isolate">
+      <div aria-hidden className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(237,237,237,0.14),transparent_62%)]" />
+        <div className="absolute inset-0 [background-size:30px_30px] [background-image:linear-gradient(to_right,rgba(163,163,163,0.14)_1px,transparent_1px),linear-gradient(to_bottom,rgba(163,163,163,0.14)_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_at_center,black_58%,transparent_96%)]" />
+        <div className="absolute inset-0 [background-size:40px_40px] [background-image:linear-gradient(45deg,rgba(163,163,163,0.06)_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_at_top,black_40%,transparent_85%)]" />
+      </div>
+
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -100,7 +106,7 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 p-2 text-[var(--muted)] hover:text-[var(--foreground)] transition-colors cursor-pointer"
+        className="absolute z-10 bottom-8 left-1/2 -translate-x-1/2 p-2 text-[var(--muted)] hover:text-[var(--foreground)] transition-colors cursor-pointer"
         aria-label="Scroll to content"
       >
         <motion.div

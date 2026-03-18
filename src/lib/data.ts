@@ -344,6 +344,7 @@ export const projects: Project[] = [
       "/images/projects/proj-1/1.png",
       "/images/projects/proj-1/2.png",
       "/images/projects/proj-1/3.png",
+      "/images/projects/proj-1/Screenshot 2026-03-18 220801.png"
     ],
     // demoVideo: "https://www.youtube.com/watch?v=aircAruvnKk",
     liveUrl: "https://monolith-estates-ui.vercel.app/",
