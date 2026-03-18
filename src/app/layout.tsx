@@ -22,6 +22,11 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Ameya M. | Portfolio",
   description: "Developer and researcher based in Pune, India. Building innovative solutions through code and research.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({

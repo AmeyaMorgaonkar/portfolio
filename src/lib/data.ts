@@ -357,42 +357,6 @@ export const projects: Project[] = [
     createdAt: "2026-02-15",
   },
   {
-    id: "proj-2",
-    slug: "sterling",
-    title: "STERLING - Visionary Living.",
-    shortDescription: "Developed a modern, responsive real estate web application UI with structured property browsing, interactive navigation, and production-level design, deployed on Vercel.",
-    longDescription: `Built a high-fidelity real estate web application UI that simulates a production-grade property platform, enabling users to explore listings through a structured and visually rich interface. Designed a complete user flow including homepage, property listings, and detailed property views with clear information hierarchy.
-
-Implemented a scalable component-based architecture to ensure reusability and maintainability across the application. Focused heavily on modern UI/UX principles, incorporating smooth transitions, responsive layouts, and high-quality visuals to create a premium user experience suitable for real-world clients.
-
-Optimized the application for performance and seamless deployment, leveraging modern frontend practices to achieve fast load times and consistent behavior across devices. The project demonstrates strong capabilities in frontend engineering, design systems, and building production-ready interfaces.
-
-**Features**
-- Advanced property browsing with structured listing and detail pages
-- Scalable component-based architecture for reusable UI elements
-- Production-level layout mimicking real-world real estate platforms
-- Optimized frontend performance with fast loading and routing`,
-    features: [
-  "Advanced property browsing with structured listing and detail pages",
-  "Scalable component-based architecture for reusable UI elements",
-  "Production-level layout mimicking real-world real estate platforms",
-  "Optimized frontend performance with fast loading and routing",
-],
-    images: [
-      "/images/projects/proj-2/1.png",
-      "/images/projects/proj-2/2.png",
-    ],
-    liveUrl: "https://monolith-estates-ui-5k16.vercel.app/",
-    codeUrl: "https://github.com/AmeyaMorgaonkar/sterling-estates-ui",
-    technologies: ["React", "Node.js", "InfluxDB", "Next.js", "TypeScript"],
-    tags: [],
-    featured: true,
-    hasResearchPaper: false,
-    hasPatent: false,
-    relatedResearch: ["research-2"],
-    createdAt: "2025-03-20",
-  },
-  {
     id: "proj-3",
     slug: "aurelia",
     title: "Aurelia - Premium Luxury",
@@ -427,7 +391,7 @@ Built using a component-driven architecture, enabling scalable development and r
     relatedResearch: [],
     createdAt: "2025-01-10",
   },
-  {
+   {
     id: "proj-4",
     slug: "face-recognition",
     title: "Face recognition Attendence System",
@@ -466,6 +430,42 @@ Attendance data is automatically recorded with timestamps and stored in structur
     hasPatent: false,
     relatedResearch: [],
     createdAt: "2024-11-05",
+  },
+  {
+    id: "proj-2",
+    slug: "sterling",
+    title: "STERLING - Visionary Living.",
+    shortDescription: "Developed a modern, responsive real estate web application UI with structured property browsing, interactive navigation, and production-level design, deployed on Vercel.",
+    longDescription: `Built a high-fidelity real estate web application UI that simulates a production-grade property platform, enabling users to explore listings through a structured and visually rich interface. Designed a complete user flow including homepage, property listings, and detailed property views with clear information hierarchy.
+
+Implemented a scalable component-based architecture to ensure reusability and maintainability across the application. Focused heavily on modern UI/UX principles, incorporating smooth transitions, responsive layouts, and high-quality visuals to create a premium user experience suitable for real-world clients.
+
+Optimized the application for performance and seamless deployment, leveraging modern frontend practices to achieve fast load times and consistent behavior across devices. The project demonstrates strong capabilities in frontend engineering, design systems, and building production-ready interfaces.
+
+**Features**
+- Advanced property browsing with structured listing and detail pages
+- Scalable component-based architecture for reusable UI elements
+- Production-level layout mimicking real-world real estate platforms
+- Optimized frontend performance with fast loading and routing`,
+    features: [
+  "Advanced property browsing with structured listing and detail pages",
+  "Scalable component-based architecture for reusable UI elements",
+  "Production-level layout mimicking real-world real estate platforms",
+  "Optimized frontend performance with fast loading and routing",
+],
+    images: [
+      "/images/projects/proj-2/1.png",
+      "/images/projects/proj-2/2.png",
+    ],
+    liveUrl: "https://monolith-estates-ui-5k16.vercel.app/",
+    codeUrl: "https://github.com/AmeyaMorgaonkar/sterling-estates-ui",
+    technologies: ["React", "Node.js", "InfluxDB", "Next.js", "TypeScript"],
+    tags: [],
+    featured: true,
+    hasResearchPaper: false,
+    hasPatent: false,
+    relatedResearch: ["research-2"],
+    createdAt: "2025-03-20",
   },
 //   {
 //     id: "proj-5",

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AM monogram favicon">
+  <defs>
+    <linearGradient id="am-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f0f0f" />
+      <stop offset="100%" stop-color="#080808" />
+    </linearGradient>
+  </defs>
+
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#am-bg)" stroke="#262626" stroke-width="2" />
+
+  <path d="M17 47L24 18H28L35 47H31L29.6 41H22.2L20.8 47H17ZM22.9 37.8H28.9L25.9 24.5L22.9 37.8Z" fill="#ededed" />
+  <path d="M37 47V18H41.8L46.9 32.5L52 18H57V47H53.2V26L48.3 39.5H45.5L40.6 26V47H37Z" fill="#ededed" />
+</svg>
