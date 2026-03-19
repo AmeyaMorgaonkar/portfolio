@@ -107,7 +107,7 @@ export interface Skill {
 export const profile: Profile = {
   name: "Ameya",
   location: "Pune, India",
-  tagline: "Full stack developer with a stronger interest in backend.",
+  tagline: "Full stack developer with a stronger interest in backend. Computer Engineering Undergrad at Vishwakarma Institute of Technology.",
   bio: "A passionate developer and researcher focused on creating impactful technology solutions.",
   heroPhoto: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
   aboutPhoto: "/images/Ameya Morgaonkar.jpeg",
