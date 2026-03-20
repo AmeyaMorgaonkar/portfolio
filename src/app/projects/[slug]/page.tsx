@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, use } from "react";
+import { useState, use, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -54,12 +54,20 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     project.relatedResearch.includes(r.id)
   );
 
-  const nextItem = () => {
+  // Preload all project images on mount for instant carousel
+  useEffect(() => {
+    project.images.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+  }, [project.images]);
+
+  const handleNextItem = () => {
     setCurrentImageIndex((prev) => (prev + 1) % carouselItems.length);
     setShowVideo(false);
   };
 
-  const prevItem = () => {
+  const handlePrevItem = () => {
     setCurrentImageIndex(
       (prev) => (prev - 1 + carouselItems.length) % carouselItems.length
     );
@@ -120,6 +128,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               alt={`${project.title} Demo Video`}
               fill
               className="object-cover"
+              sizes="(max-width: 896px) 100vw, 896px"
             />
             {/* Play overlay */}
             <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-colors">
@@ -140,6 +149,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 alt={project.title}
                 fill
                 className="object-cover"
+                priority={currentImageIndex === 0}
+                sizes="(max-width: 896px) 100vw, 896px"
               />
             </div>
           </>
@@ -149,13 +160,13 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         {carouselItems.length > 1 && !showVideo && (
           <>
             <button
-              onClick={(e) => { e.stopPropagation(); prevItem(); }}
+              onClick={(e) => { e.stopPropagation(); handlePrevItem(); }}
               className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-[var(--background)]/80 rounded-full hover:bg-[var(--background)] transition-colors z-10"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
-              onClick={(e) => { e.stopPropagation(); nextItem(); }}
+              onClick={(e) => { e.stopPropagation(); handleNextItem(); }}
               className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-[var(--background)]/80 rounded-full hover:bg-[var(--background)] transition-colors z-10"
             >
               <ChevronRight className="w-5 h-5" />
@@ -358,7 +369,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         </motion.div>
       )}
 
-      {/* Image Lightbox - includes video */}
+      {/* Image Lightbox — includes video */}
       <ImageLightbox
         items={carouselItems}
         currentIndex={currentImageIndex}
@@ -366,6 +377,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         onClose={() => setLightboxOpen(false)}
         onNext={() => setCurrentImageIndex((prev) => (prev + 1) % carouselItems.length)}
         onPrev={() => setCurrentImageIndex((prev) => (prev - 1 + carouselItems.length) % carouselItems.length)}
+        onGoTo={(idx) => setCurrentImageIndex(idx)}
         title={project.title}
         youtubeId={youtubeId}
       />

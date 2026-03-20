@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { ExternalLink, Github, ChevronLeft, ChevronRight, Play, X } from "lucide-react";
@@ -34,25 +34,33 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const currentItem = carouselItems[currentImageIndex];
   const isVideoSlide = currentItem?.type === "video";
 
+  // Preload all project images on mount for instant carousel
+  useEffect(() => {
+    project.images.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+  }, [project.images]);
+
   const navigateToProject = () => {
     router.push(`/projects/${project.slug}`);
   };
 
-  const nextImage = (e: React.MouseEvent) => {
+  const handleNextImage = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     setCurrentImageIndex((prev) => (prev + 1) % carouselItems.length);
     setShowVideo(false);
   };
 
-  const prevImage = (e: React.MouseEvent) => {
+  const handlePrevImage = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     setCurrentImageIndex((prev) => (prev - 1 + carouselItems.length) % carouselItems.length);
     setShowVideo(false);
   };
 
-  const openLightbox = (e: React.MouseEvent) => {
+  const handleOpenLightbox = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     if (!isVideoSlide) {
@@ -60,7 +68,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     }
   };
 
-  const toggleVideo = (e: React.MouseEvent) => {
+  const handleToggleVideo = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     setShowVideo(!showVideo);
@@ -73,142 +81,143 @@ export function ProjectCard({ project }: ProjectCardProps) {
         onMouseLeave={() => setShowVideo(false)}
         className="bg-[var(--card)] rounded-lg overflow-hidden cursor-pointer group h-full flex flex-col hover:-translate-y-1 transition-transform duration-200"
       >
-          {/* Image Section */}
-          <div className="relative h-56 overflow-hidden">
-            {showVideo && youtubeId ? (
-              <div className="absolute inset-0">
-                <iframe
-                  src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`}
-                  className="absolute inset-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-                {/* Close video button */}
-                <button
-                  onClick={toggleVideo}
-                  className="absolute top-2 right-2 z-10 p-1.5 bg-black/60 rounded-full hover:bg-black/80 transition-colors"
-                >
-                  <X className="w-4 h-4 text-white" />
-                </button>
-              </div>
-            ) : isVideoSlide ? (
-              /* Video thumbnail slide */
-              <div 
-                onClick={toggleVideo}
-                className="absolute inset-0 cursor-pointer"
+        {/* Image Section */}
+        <div className="relative h-56 overflow-hidden">
+          {showVideo && youtubeId ? (
+            <div className="absolute inset-0">
+              <iframe
+                src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`}
+                className="absolute inset-0 w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+              {/* Close video button */}
+              <button
+                onClick={handleToggleVideo}
+                className="absolute top-2 right-2 z-10 p-1.5 bg-black/60 rounded-full hover:bg-black/80 transition-colors"
               >
+                <X className="w-4 h-4 text-white" />
+              </button>
+            </div>
+          ) : isVideoSlide ? (
+            /* Video thumbnail slide */
+            <div 
+              onClick={handleToggleVideo}
+              className="absolute inset-0 cursor-pointer"
+            >
+              <Image
+                src={currentItem.src}
+                alt={`${project.title} Demo Video`}
+                fill
+                className="object-cover transition-transform duration-300"
+              />
+              {/* Play overlay */}
+              <div className="absolute inset-0 bg-black/30 flex items-center justify-center hover:bg-black/40 transition-colors">
+                <div className="w-14 h-14 rounded-full bg-[var(--foreground)] flex items-center justify-center hover:scale-110 transition-transform">
+                  <Play className="w-6 h-6 text-[var(--background)] fill-[var(--background)] ml-0.5" />
+                </div>
+              </div>
+            </div>
+          ) : (
+            <>
+              <div onClick={handleOpenLightbox} className="absolute inset-0 cursor-zoom-in">
                 <Image
                   src={currentItem.src}
-                  alt={`${project.title} Demo Video`}
+                  alt={project.title}
                   fill
                   className="object-cover transition-transform duration-300"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                {/* Play overlay */}
-                <div className="absolute inset-0 bg-black/30 flex items-center justify-center hover:bg-black/40 transition-colors">
-                  <div className="w-14 h-14 rounded-full bg-[var(--foreground)] flex items-center justify-center hover:scale-110 transition-transform">
-                    <Play className="w-6 h-6 text-[var(--background)] fill-[var(--background)] ml-0.5" />
-                  </div>
-                </div>
               </div>
-            ) : (
-              <>
-                <div onClick={openLightbox} className="absolute inset-0 cursor-zoom-in">
-                  <Image
-                    src={currentItem.src}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-300"
+            </>
+          )}
+
+          {/* Carousel Controls — Show on hover */}
+          {carouselItems.length > 1 && !showVideo && (
+            <>
+              <button
+                onClick={handlePrevImage}
+                className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 bg-[var(--background)]/70 rounded-full hover:bg-[var(--background)] transition-colors z-10 opacity-85 group-hover:opacity-100"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button
+                onClick={handleNextImage}
+                className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 bg-[var(--background)]/70 rounded-full hover:bg-[var(--background)] transition-colors z-10 opacity-85 group-hover:opacity-100"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+
+              {/* Dots */}
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                {carouselItems.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(idx); setShowVideo(false); }}
+                    className={`w-1.5 h-1.5 rounded-full transition-colors ${
+                      idx === currentImageIndex
+                        ? "bg-[var(--foreground)]"
+                        : "bg-[var(--foreground)]/40"
+                    }`}
                   />
-                </div>
-              </>
-            )}
-
-            {/* Carousel Controls - Show on hover */}
-            {carouselItems.length > 1 && !showVideo && (
-              <>
-                <button
-                  onClick={prevImage}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 bg-[var(--background)]/70 rounded-full hover:bg-[var(--background)] transition-colors z-10 opacity-85 group-hover:opacity-100"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={nextImage}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 bg-[var(--background)]/70 rounded-full hover:bg-[var(--background)] transition-colors z-10 opacity-85 group-hover:opacity-100"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-
-                {/* Dots */}
-                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
-                  {carouselItems.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(idx); setShowVideo(false); }}
-                      className={`w-1.5 h-1.5 rounded-full transition-colors ${
-                        idx === currentImageIndex
-                          ? "bg-[var(--foreground)]"
-                          : "bg-[var(--foreground)]/40"
-                      }`}
-                    />
-                  ))}
-                </div>
-              </>
-            )}
-
-            {/* Tags overlay */}
-            {!showVideo && !isVideoSlide && (
-              <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10">
-                {project.hasResearchPaper && (
-                  <span className="text-xs px-2 py-1 bg-[var(--background)]/80 rounded-full">
-                    📄 Paper
-                  </span>
-                )}
-                {project.hasPatent && (
-                  <span className="text-xs px-2 py-1 bg-[var(--background)]/80 rounded-full">
-                    📜 Patent
-                  </span>
-                )}
-              </div>
-            )}
-          </div>
-
-          {/* Content Section */}
-          <div className="p-5 flex flex-col flex-grow">
-            <h3 className="font-semibold mb-2 group-hover:underline">
-              {project.title}
-            </h3>
-            <p className="text-base text-[var(--muted)] mb-3 line-clamp-2">
-              {project.shortDescription}
-            </p>
-
-            {/* Features */}
-            {project.features && project.features.length > 0 && (
-              <ul className="text-sm text-[var(--muted)] mb-3 space-y-1">
-                {project.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-1.5">
-                    <span className="text-[var(--foreground)] mt-0.5">•</span>
-                    <span className="line-clamp-1">{feature}</span>
-                  </li>
                 ))}
-              </ul>
-            )}
+              </div>
+            </>
+          )}
 
-            {/* Technologies */}
-            <div className="flex flex-wrap gap-2 mb-4 content-start">
-              {project.technologies.slice(0, 4).map((tech) => (
-                <span
-                  key={tech}
-                  className="text-xs px-2 py-1 bg-[var(--background)] rounded h-fit"
-                >
-                  {tech}
-                </span>
-              ))}
-              {project.technologies.length > 4 && (
-                <span className="text-xs px-2 py-1 text-[var(--muted)] h-fit">
-                  +{project.technologies.length - 4}
+          {/* Tags overlay */}
+          {!showVideo && !isVideoSlide && (
+            <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10">
+              {project.hasResearchPaper && (
+                <span className="text-xs px-2 py-1 bg-[var(--background)]/80 rounded-full">
+                  📄 Paper
                 </span>
               )}
+              {project.hasPatent && (
+                <span className="text-xs px-2 py-1 bg-[var(--background)]/80 rounded-full">
+                  📜 Patent
+                </span>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* Content Section */}
+        <div className="p-5 flex flex-col flex-grow">
+          <h3 className="font-semibold mb-2 group-hover:underline">
+            {project.title}
+          </h3>
+          <p className="text-base text-[var(--muted)] mb-3 line-clamp-2">
+            {project.shortDescription}
+          </p>
+
+          {/* Features */}
+          {project.features && project.features.length > 0 && (
+            <ul className="text-sm text-[var(--muted)] mb-3 space-y-1">
+              {project.features.map((feature, idx) => (
+                <li key={idx} className="flex items-start gap-1.5">
+                  <span className="text-[var(--foreground)] mt-0.5">•</span>
+                  <span className="line-clamp-1">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {/* Technologies */}
+          <div className="flex flex-wrap gap-2 mb-4 content-start">
+            {project.technologies.slice(0, 4).map((tech) => (
+              <span
+                key={tech}
+                className="text-xs px-2 py-1 bg-[var(--background)] rounded h-fit"
+              >
+                {tech}
+              </span>
+            ))}
+            {project.technologies.length > 4 && (
+              <span className="text-xs px-2 py-1 text-[var(--muted)] h-fit">
+                +{project.technologies.length - 4}
+              </span>
+            )}
           </div>
 
           {/* Spacer to push links to bottom */}
@@ -242,7 +251,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             )}
             {youtubeId && (
               <button
-                onClick={toggleVideo}
+                onClick={handleToggleVideo}
                 className="flex items-center gap-1.5 text-sm text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
               >
                 <Play className="w-4 h-4" />
@@ -253,17 +262,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </article>
 
-    {/* Image Lightbox */}
-    <ImageLightbox
-      items={carouselItems}
-      currentIndex={currentImageIndex}
-      isOpen={lightboxOpen}
-      onClose={() => setLightboxOpen(false)}
-      onNext={() => setCurrentImageIndex((prev) => (prev + 1) % carouselItems.length)}
-      onPrev={() => setCurrentImageIndex((prev) => (prev - 1 + carouselItems.length) % carouselItems.length)}
-      title={project.title}
-      youtubeId={youtubeId}
-    />
-  </>
+      {/* Image Lightbox */}
+      <ImageLightbox
+        items={carouselItems}
+        currentIndex={currentImageIndex}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        onNext={() => setCurrentImageIndex((prev) => (prev + 1) % carouselItems.length)}
+        onPrev={() => setCurrentImageIndex((prev) => (prev - 1 + carouselItems.length) % carouselItems.length)}
+        onGoTo={(idx) => setCurrentImageIndex(idx)}
+        title={project.title}
+        youtubeId={youtubeId}
+      />
+    </>
   );
 }
