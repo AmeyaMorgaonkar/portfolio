@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useCallback, useState, useRef } from "react";
+import { useEffect, useCallback, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, Play } from "lucide-react";
@@ -34,42 +34,16 @@ export function ImageLightbox({
   youtubeId,
 }: ImageLightboxProps) {
   const [playingVideo, setPlayingVideo] = useState(false);
-  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
-  const [direction, setDirection] = useState(0); // -1 = prev, 1 = next
 
   const currentItem = items[currentIndex];
   const isVideoSlide = currentItem?.type === "video";
 
-  // Preload adjacent images
-  useEffect(() => {
-    if (!isOpen || items.length === 0) return;
-
-    const indicesToPreload = [
-      currentIndex,
-      (currentIndex + 1) % items.length,
-      (currentIndex - 1 + items.length) % items.length,
-    ];
-
-    indicesToPreload.forEach((idx) => {
-      const item = items[idx];
-      if (item && item.type === "image" && !loadedImages.has(idx)) {
-        const img = new window.Image();
-        img.src = item.src;
-        img.onload = () => {
-          setLoadedImages((prev) => new Set(prev).add(idx));
-        };
-      }
-    });
-  }, [isOpen, currentIndex, items, loadedImages]);
-
   const handleNext = useCallback(() => {
-    setDirection(1);
     setPlayingVideo(false);
     onNext();
   }, [onNext]);
 
   const handlePrev = useCallback(() => {
-    setDirection(-1);
     setPlayingVideo(false);
     onPrev();
   }, [onPrev]);
@@ -96,28 +70,6 @@ export function ImageLightbox({
       document.body.style.overflow = "unset";
     };
   }, [handleKeyDown, isOpen]);
-
-  // Reset loaded images when lightbox closes
-  useEffect(() => {
-    if (!isOpen) {
-      setLoadedImages(new Set());
-    }
-  }, [isOpen]);
-
-  const slideVariants = {
-    enter: (dir: number) => ({
-      x: dir > 0 ? 80 : -80,
-      opacity: 0,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-    },
-    exit: (dir: number) => ({
-      x: dir > 0 ? -80 : 80,
-      opacity: 0,
-    }),
-  };
 
   return (
     <AnimatePresence>
@@ -175,62 +127,72 @@ export function ImageLightbox({
             </>
           )}
 
-          {/* Main Content — Image or Video */}
+          {/* Main Content — All images rendered, visibility toggled */}
           <div
             className="relative w-[96vw] h-[90vh] max-w-[1800px]"
             onClick={(e) => e.stopPropagation()}
           >
-            <AnimatePresence mode="popLayout" custom={direction}>
-              <motion.div
-                key={currentIndex}
-                custom={direction}
-                variants={slideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.25, ease: "easeInOut" }}
-                className="absolute inset-0"
-              >
-                {isVideoSlide && youtubeId ? (
-                  playingVideo ? (
-                    <iframe
-                      src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`}
-                      className="absolute inset-0 w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  ) : (
-                    <div
-                      onClick={() => setPlayingVideo(true)}
-                      className="absolute inset-0 cursor-pointer group"
-                    >
-                      <Image
-                        src={currentItem.src}
-                        alt={`${title} - Demo Video`}
-                        fill
-                        className="object-contain"
-                        priority
+            {items.map((item, idx) => {
+              const isActive = idx === currentIndex;
+              const isVideo = item.type === "video";
+
+              if (isVideo && youtubeId) {
+                // Only render video slide when it is active
+                if (!isActive) return null;
+                return (
+                  <div key={`video-${idx}`} className="absolute inset-0">
+                    {playingVideo ? (
+                      <iframe
+                        src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`}
+                        className="absolute inset-0 w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
                       />
-                      {/* Play overlay */}
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-24 h-24 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 group-hover:scale-110 transition-all">
-                          <Play className="w-10 h-10 text-white fill-white ml-1" />
+                    ) : (
+                      <div
+                        onClick={() => setPlayingVideo(true)}
+                        className="absolute inset-0 cursor-pointer group"
+                      >
+                        <Image
+                          src={item.src}
+                          alt={`${title} - Demo Video`}
+                          fill
+                          className="object-contain"
+                          priority
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-24 h-24 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 group-hover:scale-110 transition-all">
+                            <Play className="w-10 h-10 text-white fill-white ml-1" />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  )
-                ) : (
+                    )}
+                  </div>
+                );
+              }
+
+              // Render ALL image slides at once, toggle visibility via CSS
+              return (
+                <div
+                  key={`img-${idx}`}
+                  className="absolute inset-0 transition-opacity duration-200"
+                  style={{
+                    opacity: isActive ? 1 : 0,
+                    pointerEvents: isActive ? "auto" : "none",
+                  }}
+                >
                   <Image
-                    src={currentItem.src}
-                    alt={`${title} - Image ${currentIndex + 1}`}
+                    src={item.src}
+                    alt={`${title} - Image ${idx + 1}`}
                     fill
                     className="object-contain"
-                    priority
+                    priority={isActive}
+                    loading={isActive ? "eager" : "lazy"}
                     sizes="96vw"
                   />
-                )}
-              </motion.div>
-            </AnimatePresence>
+                </div>
+              );
+            })}
           </div>
 
           {/* Dot indicators */}
@@ -241,7 +203,6 @@ export function ImageLightbox({
                   key={idx}
                   onClick={(e) => {
                     e.stopPropagation();
-                    setDirection(idx > currentIndex ? 1 : -1);
                     onGoTo(idx);
                     setPlayingVideo(false);
                   }}

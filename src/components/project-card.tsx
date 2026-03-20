@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { ExternalLink, Github, ChevronLeft, ChevronRight, Play, X } from "lucide-react";
@@ -33,14 +33,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   const currentItem = carouselItems[currentImageIndex];
   const isVideoSlide = currentItem?.type === "video";
-
-  // Preload all project images on mount for instant carousel
-  useEffect(() => {
-    project.images.forEach((src) => {
-      const img = new window.Image();
-      img.src = src;
-    });
-  }, [project.images]);
 
   const navigateToProject = () => {
     router.push(`/projects/${project.slug}`);
@@ -81,7 +73,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         onMouseLeave={() => setShowVideo(false)}
         className="bg-[var(--card)] rounded-lg overflow-hidden cursor-pointer group h-full flex flex-col hover:-translate-y-1 transition-transform duration-200"
       >
-        {/* Image Section */}
+        {/* Image Section — all images rendered, visibility toggled */}
         <div className="relative h-56 overflow-hidden">
           {showVideo && youtubeId ? (
             <div className="absolute inset-0">
@@ -91,7 +83,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
-              {/* Close video button */}
               <button
                 onClick={handleToggleVideo}
                 className="absolute top-2 right-2 z-10 p-1.5 bg-black/60 rounded-full hover:bg-black/80 transition-colors"
@@ -99,36 +90,59 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 <X className="w-4 h-4 text-white" />
               </button>
             </div>
-          ) : isVideoSlide ? (
-            /* Video thumbnail slide */
-            <div 
-              onClick={handleToggleVideo}
-              className="absolute inset-0 cursor-pointer"
-            >
-              <Image
-                src={currentItem.src}
-                alt={`${project.title} Demo Video`}
-                fill
-                className="object-cover transition-transform duration-300"
-              />
-              {/* Play overlay */}
-              <div className="absolute inset-0 bg-black/30 flex items-center justify-center hover:bg-black/40 transition-colors">
-                <div className="w-14 h-14 rounded-full bg-[var(--foreground)] flex items-center justify-center hover:scale-110 transition-transform">
-                  <Play className="w-6 h-6 text-[var(--background)] fill-[var(--background)] ml-0.5" />
-                </div>
-              </div>
-            </div>
           ) : (
             <>
-              <div onClick={handleOpenLightbox} className="absolute inset-0 cursor-zoom-in">
-                <Image
-                  src={currentItem.src}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-300"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
+              {/* Render ALL slides at once, toggle visibility */}
+              {carouselItems.map((item, idx) => {
+                const isActive = idx === currentImageIndex;
+                const isVideo = item.type === "video";
+
+                if (isVideo) {
+                  // Video thumbnail — only render when active
+                  if (!isActive) return null;
+                  return (
+                    <div
+                      key={`video-${idx}`}
+                      onClick={handleToggleVideo}
+                      className="absolute inset-0 cursor-pointer"
+                    >
+                      <Image
+                        src={item.src}
+                        alt={`${project.title} Demo Video`}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/30 flex items-center justify-center hover:bg-black/40 transition-colors">
+                        <div className="w-14 h-14 rounded-full bg-[var(--foreground)] flex items-center justify-center hover:scale-110 transition-transform">
+                          <Play className="w-6 h-6 text-[var(--background)] fill-[var(--background)] ml-0.5" />
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+
+                return (
+                  <div
+                    key={`img-${idx}`}
+                    onClick={handleOpenLightbox}
+                    className="absolute inset-0 cursor-zoom-in transition-opacity duration-200"
+                    style={{
+                      opacity: isActive ? 1 : 0,
+                      pointerEvents: isActive ? "auto" : "none",
+                    }}
+                  >
+                    <Image
+                      src={item.src}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      priority={idx === 0}
+                      loading={idx === 0 ? "eager" : "lazy"}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                );
+              })}
             </>
           )}
 

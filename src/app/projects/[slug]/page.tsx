@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, use, useEffect } from "react";
+import { useState, use } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -54,14 +54,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     project.relatedResearch.includes(r.id)
   );
 
-  // Preload all project images on mount for instant carousel
-  useEffect(() => {
-    project.images.forEach((src) => {
-      const img = new window.Image();
-      img.src = src;
-    });
-  }, [project.images]);
-
   const handleNextItem = () => {
     setCurrentImageIndex((prev) => (prev + 1) % carouselItems.length);
     setShowVideo(false);
@@ -94,13 +86,12 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         </Link>
       </motion.div>
 
-      {/* Image Carousel / Video */}
+      {/* Image Carousel / Video — all images rendered, visibility toggled */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="relative aspect-video rounded-lg overflow-hidden bg-[var(--card)] mb-8"
       >
-        {/* Video playing */}
         {showVideo && youtubeId ? (
           <div className="absolute inset-0">
             <iframe
@@ -109,7 +100,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
-            {/* Close video button */}
             <button
               onClick={() => setShowVideo(false)}
               className="absolute top-4 right-4 z-10 p-2 bg-black/60 rounded-full hover:bg-black/80 transition-colors"
@@ -117,42 +107,59 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               <X className="w-5 h-5 text-white" />
             </button>
           </div>
-        ) : isVideoSlide ? (
-          /* Video thumbnail slide */
-          <div 
-            onClick={() => setShowVideo(true)}
-            className="absolute inset-0 cursor-pointer group"
-          >
-            <Image
-              src={currentItem.src}
-              alt={`${project.title} Demo Video`}
-              fill
-              className="object-cover"
-              sizes="(max-width: 896px) 100vw, 896px"
-            />
-            {/* Play overlay */}
-            <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-colors">
-              <div className="w-20 h-20 rounded-full bg-[var(--foreground)] flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Play className="w-8 h-8 text-[var(--background)] fill-[var(--background)] ml-1" />
-              </div>
-            </div>
-          </div>
         ) : (
-          /* Regular image slide */
           <>
-            <div 
-              onClick={() => setLightboxOpen(true)}
-              className="absolute inset-0 cursor-zoom-in"
-            >
-              <Image
-                src={currentItem.src}
-                alt={project.title}
-                fill
-                className="object-cover"
-                priority={currentImageIndex === 0}
-                sizes="(max-width: 896px) 100vw, 896px"
-              />
-            </div>
+            {/* Render ALL slides at once, toggle visibility */}
+            {carouselItems.map((item, idx) => {
+              const isActive = idx === currentImageIndex;
+              const isVideo = item.type === "video";
+
+              if (isVideo) {
+                if (!isActive) return null;
+                return (
+                  <div
+                    key={`video-${idx}`}
+                    onClick={() => setShowVideo(true)}
+                    className="absolute inset-0 cursor-pointer group"
+                  >
+                    <Image
+                      src={item.src}
+                      alt={`${project.title} Demo Video`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 896px) 100vw, 896px"
+                    />
+                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-colors">
+                      <div className="w-20 h-20 rounded-full bg-[var(--foreground)] flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <Play className="w-8 h-8 text-[var(--background)] fill-[var(--background)] ml-1" />
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              return (
+                <div
+                  key={`img-${idx}`}
+                  onClick={() => setLightboxOpen(true)}
+                  className="absolute inset-0 cursor-zoom-in transition-opacity duration-200"
+                  style={{
+                    opacity: isActive ? 1 : 0,
+                    pointerEvents: isActive ? "auto" : "none",
+                  }}
+                >
+                  <Image
+                    src={item.src}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    priority={idx === 0}
+                    loading={idx === 0 ? "eager" : "lazy"}
+                    sizes="(max-width: 896px) 100vw, 896px"
+                  />
+                </div>
+              );
+            })}
           </>
         )}
 
@@ -225,12 +232,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           {youtubeId && (
             <button
               onClick={() => {
-                // Jump to video slide and play
                 const videoIndex = carouselItems.findIndex(item => item.type === "video");
                 if (videoIndex !== -1) {
                   setCurrentImageIndex(videoIndex);
                   setShowVideo(true);
-                  // Scroll to carousel
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }
               }}
