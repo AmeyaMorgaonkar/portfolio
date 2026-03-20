@@ -6,7 +6,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { ScrollRestoration } from "@/components/scroll-restoration";
-import { SmoothScroll } from "@/components/smooth-scroll";
+// import { SmoothScroll } from "@/components/smooth-scroll";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-heading",
@@ -52,7 +52,7 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${dmSans.variable} ${cormorantGaramond.variable} ${inter.variable} antialiased`}
       >
-        <SmoothScroll />
+        {/* <SmoothScroll /> */}
         <ScrollRestoration />
         <ScrollToTop />
         <Navbar />
