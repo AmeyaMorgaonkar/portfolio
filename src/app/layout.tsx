@@ -105,7 +105,7 @@ export const metadata: Metadata = {
   },
   verification: {
     // Replace with your actual Google Search Console verification code
-    // google: "YOUR_GOOGLE_SITE_VERIFICATION_CODE",
+    google: "bc65e3bd6290b776",
   },
 };
 
