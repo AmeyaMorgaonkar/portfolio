@@ -21,10 +21,10 @@ export function Footer() {
           {/* Left side */}
           <div className="text-center md:text-left">
             <p className="text-sm text-[var(--muted)]">
-              © {currentYear} {profile.name}. All rights reserved.
+              © {currentYear} {profile.name} {profile.lastName}. All rights reserved.
             </p>
             <p className="text-xs text-[var(--muted)] mt-1">
-              Built with Next.js & Tailwind CSS
+              {/* Built with Next.js & Tailwind CSS */}
             </p>
           </div>
 
