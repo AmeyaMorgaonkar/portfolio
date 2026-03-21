@@ -45,22 +45,22 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="min-h-[calc(100vh-4rem)] flex flex-col justify-center pt-2 pb-20 sm:justify-center sm:pt-0 sm:pb-0 relative">
+    <section className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center pt-2 pb-20 sm:justify-center sm:pt-0 sm:pb-0 relative">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="w-full flex justify-center px-4"
+        className="w-full mx-auto flex justify-center px-4"
       >
         <h1
           id="hero-name"
-          className={`${inter.className} w-[92vw] max-w-[92vw] sm:w-[80vw] sm:max-w-[80vw] min-w-0 text-center whitespace-normal sm:whitespace-nowrap text-[clamp(2.7rem,11vw,8.5rem)] sm:text-[clamp(2rem,8.3vw,8.5rem)] leading-[0.95] tracking-[-0.035em] font-extrabold mb-5 sm:mb-6`}
+          className={`${inter.className} mx-auto w-[92vw] max-w-[92vw] sm:w-[80vw] sm:max-w-[80vw] min-w-0 text-center whitespace-normal sm:whitespace-nowrap text-[clamp(3rem,13vw,8.5rem)] sm:text-[clamp(2rem,8.3vw,8.5rem)] leading-[.95] tracking-[-0.035em] font-extrabold mb-5 sm:mb-6`}
         >
           Ameya Morgaonkar
         </h1>
       </motion.div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* <p className="text-lg xs:text-xl sm:text-2xl text-[var(--muted)] mb-4">
           Full Stack Developer
         </p> */}
