@@ -36,25 +36,30 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  applicationName: "Ameya Morgaonkar Portfolio",
   title: {
-    default: "Ameya Morgaonkar | Portfolio",
+    default: "Ameya Morgaonkar Portfolio",
     template: "%s | Ameya Morgaonkar",
   },
   description:
-    "Ameya Morgaonkar — Full stack developer and Computer Engineering undergrad at VIT Pune. Explore projects in React, Next.js, Python, AI/ML, and more.",
+    "Ameya Morgaonkar is a full stack developer with strong backend experience, building scalable and efficient systems.",
   keywords: [
     "Ameya Morgaonkar",
+    "portfolio",
     "Ameya Morgaonkar portfolio",
     "Ameya Morgaonkar developer",
-    "Ameya Morgaonkar VIT Pune",
-    "Ameya Morgaonkar full stack",
-    "full stack developer Pune",
-    "computer engineering student VIT",
-    "React developer India",
+    "software engineer",
+    "full stack developer",
+    "backend engineer",
+    "backend developer",
+    "React developer",
     "Next.js portfolio",
-    "Python developer Pune",
-    "web developer Pune India",
+    "Python developer",
+    "web developer",
     "software engineer portfolio",
+    "Computer Engineering",
+    "Computer Science and Engineering",
+    "Computer Science",
   ],
   authors: [{ name: "Ameya Morgaonkar", url: SITE_URL }],
   creator: "Ameya Morgaonkar",
@@ -73,14 +78,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
   },
+  manifest: "/manifest.webmanifest",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: SITE_URL,
-    siteName: "Ameya Morgaonkar – Portfolio",
-    title: "Ameya Morgaonkar | Full Stack Developer & Computer Engineering Student",
+    siteName: "Ameya Morgaonkar",
+    title: "Ameya Morgaonkar | Full Stack Developer",
     description:
-      "Full stack developer and CS undergrad at VIT Pune. Projects in React, Next.js, Python, AI/ML, and systems design.",
+      "Ameya Morgaonkar is a full stack developer with strong backend experience, building scalable and efficient systems.",
     images: [
       {
         url: "/images/Ameya Morgaonkar.jpeg",
@@ -94,14 +100,16 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ameya Morgaonkar | Full Stack Developer & CS Student",
     description:
-      "Full stack developer and Computer Engineering undergrad at VIT Pune. Explore projects, research, and more.",
+      "Ameya Morgaonkar is a full stack developer with strong backend experience, building scalable and efficient systems.",
     images: ["/images/Ameya Morgaonkar.jpeg"],
     creator: "@AmeyaMorgaonkar",
   },
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml", sizes: "any" },
+    ],
+    shortcut: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/icon.svg", type: "image/svg+xml" }],
   },
   verification: {
     // Replace with your actual Google Search Console verification code
@@ -109,8 +117,8 @@ export const metadata: Metadata = {
   },
 };
 
-// JSON-LD structured data for the Person entity
-const jsonLd = {
+// JSON-LD structured data for Person + WebSite
+const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Ameya Morgaonkar",
@@ -118,7 +126,7 @@ const jsonLd = {
   image: `${SITE_URL}/images/Ameya%20Morgaonkar.jpeg`,
   jobTitle: "Full Stack Developer",
   description:
-    "Full stack developer with a stronger interest in backend. Computer Engineering Undergrad at Vishwakarma Institute of Technology, Pune.",
+    "Ameya Morgaonkar is a full stack developer with strong backend experience, building scalable and efficient systems.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Pune",
@@ -153,6 +161,15 @@ const jsonLd = {
   ],
 };
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Ameya Morgaonkar Portfolio",
+  alternateName: "Ameya Morgaonkar",
+  url: SITE_URL,
+  inLanguage: "en-IN",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -163,7 +180,11 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body
