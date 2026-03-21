@@ -37,9 +37,9 @@ export function ProjectsSection() {
           <h2 ref={headingRef} className="text-2xl sm:text-3xl font-bold section-heading">Projects</h2>
           <Link
             href="/projects"
-            className="flex items-center gap-2 text-sm px-4 py-2 bg-[var(--foreground)] text-[var(--background)] rounded-full transition-all duration-200 hover:gap-3 group"
+            className="inline-flex items-center gap-2 text-sm px-4 py-2 bg-[var(--foreground)] text-[var(--background)] rounded-full transition-colors duration-200 group"
           >
-            View all <ArrowRight className="w-4 h-4" />
+            View all <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
           </Link>
         </div>
 

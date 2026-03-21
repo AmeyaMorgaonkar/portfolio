@@ -198,7 +198,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Content Section */}
         <div className="p-5 flex flex-col flex-grow">
-          <h3 className="font-semibold mb-2 group-hover:underline">
+          <h3 className="text-xl font-semibold mb-3 group-hover:underline">
             {project.title}
           </h3>
           <p className="text-base text-[var(--muted)] mb-3 line-clamp-2">
@@ -222,7 +222,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.technologies.slice(0, 4).map((tech) => (
               <span
                 key={tech}
-                className="text-xs px-2 py-1 bg-[var(--background)] rounded h-fit"
+                className="text-xs text-[var(--muted)] px-2 py-1 bg-[var(--background)] rounded h-fit"
               >
                 {tech}
               </span>
@@ -245,7 +245,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="flex items-center gap-1.5 text-sm text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
+                className="flex items-center gap-1.5 text-sm text-[var(--foreground)] hover:opacity-80 transition-opacity"
               >
                 <ExternalLink className="w-4 h-4" />
                 Live
@@ -257,7 +257,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="flex items-center gap-1.5 text-sm text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
+                className="flex items-center gap-1.5 text-sm text-[var(--foreground)] hover:opacity-80 transition-opacity"
               >
                 <Github className="w-4 h-4" />
                 Code
@@ -266,7 +266,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {youtubeId && (
               <button
                 onClick={handleToggleVideo}
-                className="flex items-center gap-1.5 text-sm text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
+                className="flex items-center gap-1.5 text-sm text-[var(--foreground)] hover:opacity-80 transition-opacity"
               >
                 <Play className="w-4 h-4" />
                 Demo

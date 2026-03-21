@@ -79,11 +79,11 @@ export function ImageLightbox({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center"
+          className="fixed inset-0 z-[100] isolate flex items-center justify-center"
           onClick={onClose}
         >
           {/* Backdrop */}
-          <div className="absolute inset-0 bg-black/95 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-black/95" />
 
           {/* Close button */}
           <button
@@ -99,7 +99,7 @@ export function ImageLightbox({
           </div>
 
           {/* Title */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 text-white/80 text-sm bg-black/40 px-4 py-1.5 rounded-full">
+          <div className="absolute bottom-16 sm:bottom-14 left-1/2 -translate-x-1/2 z-20 text-white/80 text-sm bg-black/40 px-4 py-1.5 rounded-full max-w-[92vw] truncate">
             {title}
           </div>
 
@@ -111,7 +111,7 @@ export function ImageLightbox({
                   e.stopPropagation();
                   handlePrev();
                 }}
-                className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 z-20 p-3 sm:p-4 bg-white/20 rounded-full hover:bg-white/40 transition-all hover:scale-105 active:scale-95"
+                className="absolute left-3 sm:left-4 top-[45%] -translate-y-1/2 z-20 p-3 sm:p-4 bg-white/20 rounded-full hover:bg-white/40 transition-all hover:scale-105 active:scale-95"
               >
                 <ChevronLeft className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
               </button>
@@ -120,84 +120,66 @@ export function ImageLightbox({
                   e.stopPropagation();
                   handleNext();
                 }}
-                className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 z-20 p-3 sm:p-4 bg-white/20 rounded-full hover:bg-white/40 transition-all hover:scale-105 active:scale-95"
+                className="absolute right-3 sm:right-4 top-[45%] -translate-y-1/2 z-20 p-3 sm:p-4 bg-white/20 rounded-full hover:bg-white/40 transition-all hover:scale-105 active:scale-95"
               >
                 <ChevronRight className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
               </button>
             </>
           )}
 
-          {/* Main Content — All images rendered, visibility toggled */}
+          {/* Main Content */}
           <div
-            className="relative w-[96vw] h-[90vh] max-w-[1800px]"
+            className="relative -translate-y-4 sm:-translate-y-3 w-[92vw] h-[70vh] sm:h-[76vh] max-w-[1040px] max-h-[680px]"
             onClick={(e) => e.stopPropagation()}
           >
-            {items.map((item, idx) => {
-              const isActive = idx === currentIndex;
-              const isVideo = item.type === "video";
-
-              if (isVideo && youtubeId) {
-                // Only render video slide when it is active
-                if (!isActive) return null;
-                return (
-                  <div key={`video-${idx}`} className="absolute inset-0">
-                    {playingVideo ? (
-                      <iframe
-                        src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`}
-                        className="absolute inset-0 w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    ) : (
-                      <div
-                        onClick={() => setPlayingVideo(true)}
-                        className="absolute inset-0 cursor-pointer group"
-                      >
-                        <Image
-                          src={item.src}
-                          alt={`${title} - Demo Video`}
-                          fill
-                          className="object-contain"
-                          priority
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="w-24 h-24 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 group-hover:scale-110 transition-all">
-                            <Play className="w-10 h-10 text-white fill-white ml-1" />
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                );
-              }
-
-              // Render ALL image slides at once, toggle visibility via CSS
-              return (
-                <div
-                  key={`img-${idx}`}
-                  className="absolute inset-0 transition-opacity duration-200"
-                  style={{
-                    opacity: isActive ? 1 : 0,
-                    pointerEvents: isActive ? "auto" : "none",
-                  }}
-                >
-                  <Image
-                    src={item.src}
-                    alt={`${title} - Image ${idx + 1}`}
-                    fill
-                    className="object-contain"
-                    priority={isActive}
-                    loading={isActive ? "eager" : "lazy"}
-                    sizes="96vw"
+            {isVideoSlide && youtubeId ? (
+              <div className="absolute inset-0">
+                {playingVideo ? (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`}
+                    className="absolute inset-0 w-full h-full rounded-xl"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
                   />
-                </div>
-              );
-            })}
+                ) : (
+                  <div
+                    onClick={() => setPlayingVideo(true)}
+                    className="absolute inset-0 cursor-pointer group"
+                  >
+                    <Image
+                      src={currentItem.src}
+                      alt={`${title} - Demo Video`}
+                      fill
+                      className="object-contain"
+                      priority
+                      sizes="(max-width: 1024px) 92vw, 1040px"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-24 h-24 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 group-hover:scale-110 transition-all">
+                        <Play className="w-10 h-10 text-white fill-white ml-1" />
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="absolute inset-0">
+                <Image
+                  src={currentItem.src}
+                  alt={`${title} - Image ${currentIndex + 1}`}
+                  fill
+                  className="object-contain"
+                  priority
+                  loading="eager"
+                  sizes="(max-width: 1024px) 92vw, 1040px"
+                />
+              </div>
+            )}
           </div>
 
           {/* Dot indicators */}
           {items.length > 1 && (
-            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+            <div className="absolute bottom-7 left-1/2 -translate-x-1/2 flex gap-2 z-20">
               {items.map((_, idx) => (
                 <button
                   key={idx}

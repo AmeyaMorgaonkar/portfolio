@@ -339,8 +339,6 @@ export const projects: Project[] = [
     "Responsive real estate UI optimized for mobile, tablet, and desktop",
     "Dynamic property listing interface with clean, card-based layout",
     "Smooth navigation and transitions for enhanced user experience",
-    "Optimized performance with fast load times via Vercel deployment",
-    "SEO-friendly structure for improved discoverability",
     ],
     images: [
       "/images/projects/proj-1/img1.png",
@@ -370,6 +368,7 @@ export const projects: Project[] = [
 Designed a high-converting user experience with clear information hierarchy, showcasing features like property listings, agent services, and value propositions (e.g., flat-fee selling model). Integrated visually rich sections, dynamic layouts, and responsive design to ensure a seamless experience across devices.
 
 Built using a component-driven architecture, enabling scalable development and reusable UI elements across multiple pages. The project demonstrates strong understanding of frontend engineering, product thinking, and real-world business-oriented design, particularly for service-based platforms
+
 **Features**
 - Structured property listings with categorized browsing and location-based filtering
 - Lead generation forms and strong call-to-action components for user conversion
@@ -379,7 +378,6 @@ Built using a component-driven architecture, enabling scalable development and r
   "Structured property listings with categorized browsing and location-based filtering",
   "Lead generation forms and strong call-to-action components for user conversion",
   "Modern, responsive UI optimized for mobile, tablet, and desktop devices",
-  "Component-based architecture for scalable and maintainable frontend development",
 ],
     images: [
       "/images/projects/proj-3/img1.png",
@@ -418,8 +416,6 @@ Attendance data is automatically recorded with timestamps and stored in structur
   "Real-time face detection and recognition using webcam input",
   "Anti-spoofing (liveness detection) to prevent photo/video-based fraud",
   "Automated attendance marking with accurate timestamp logging",
-  "Efficient computer vision processing using OpenCV and ML techniques",
-  "End-to-end pipeline from data collection to real-time deployment",
 ],
     images: [
       "/images/projects/proj-4/img1.png",
@@ -457,7 +453,6 @@ Optimized the application for performance and seamless deployment, leveraging mo
   "Advanced property browsing with structured listing and detail pages",
   "Scalable component-based architecture for reusable UI elements",
   "Production-level layout mimicking real-world real estate platforms",
-  "Optimized frontend performance with fast loading and routing",
 ],
     images: [
       "/images/projects/proj-2/img1.png",

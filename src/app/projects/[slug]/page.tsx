@@ -212,10 +212,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-[var(--foreground)] text-[var(--background)] rounded-lg text-base font-medium hover:opacity-90 transition-opacity cursor-pointer shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--foreground)] focus:ring-offset-2"
+              className="flex items-center gap-2 px-4 py-2 bg-[var(--card)] text-[var(--foreground)] rounded-lg text-base font-medium hover:bg-[var(--border)] transition-colors cursor-pointer shadow-sm"
             >
               <ExternalLink className="w-4 h-4" />
-              Live Demo
+              Live
             </a>
           )}
           {project.codeUrl && (
@@ -223,7 +223,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               href={project.codeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-[var(--card)] rounded-lg text-sm hover:bg-[var(--border)] transition-colors"
+              className="flex items-center gap-2 px-4 py-2 bg-[var(--card)] text-[var(--foreground)] rounded-lg text-sm hover:bg-[var(--border)] transition-colors"
             >
               <Github className="w-4 h-4" />
               View Code
@@ -239,20 +239,20 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }
               }}
-              className="flex items-center gap-2 px-4 py-2 bg-[var(--card)] rounded-lg text-sm hover:bg-[var(--border)] transition-colors cursor-pointer"
+              className="flex items-center gap-2 px-4 py-2 bg-[var(--card)] text-[var(--foreground)] rounded-lg text-sm hover:bg-[var(--border)] transition-colors cursor-pointer"
             >
               <Play className="w-4 h-4" />
               Watch Demo
             </button>
           )}
           {project.hasResearchPaper && (
-            <span className="flex items-center gap-2 px-3 py-2 bg-[var(--card)] rounded-lg text-sm">
+            <span className="flex items-center gap-2 px-3 py-2 bg-[var(--card)] text-[var(--foreground)] rounded-lg text-sm">
               <FileText className="w-4 h-4" />
               Research Paper
             </span>
           )}
           {project.hasPatent && (
-            <span className="flex items-center gap-2 px-3 py-2 bg-[var(--card)] rounded-lg text-sm">
+            <span className="flex items-center gap-2 px-3 py-2 bg-[var(--card)] text-[var(--foreground)] rounded-lg text-sm">
               <Award className="w-4 h-4" />
               Patent
             </span>
@@ -264,7 +264,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           {project.technologies.map((tech) => (
             <span
               key={tech}
-              className="text-sm px-3 py-1 bg-[var(--card)] rounded-full"
+              className="text-sm text-[var(--muted)] px-3 py-1 bg-[var(--card)] rounded-full"
             >
               {tech}
             </span>
