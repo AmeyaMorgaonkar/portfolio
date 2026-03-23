@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Search, Filter, ArrowLeft } from "lucide-react";
-import { projects, getAllTechnologies, getAllTags } from "@/lib/data";
-import Link from "next/link";
+import { Search, ArrowLeft } from "lucide-react";
+import { projects } from "@/lib/data";
 import { ProjectCard } from "@/components/project-card";
 
 export default function ProjectsPage() {
@@ -13,33 +12,36 @@ export default function ProjectsPage() {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [filterType, setFilterType] = useState<string | null>(null);
 
-  const technologies = getAllTechnologies();
-  const tags = getAllTags();
+  const technologies = Array.from(
+    new Set(projects.flatMap((project) => project.technologies))
+  ).sort((a, b) => a.localeCompare(b));
 
-  const filteredProjects = useMemo(() => {
-    return projects.filter((project) => {
-      // Search filter
-      const matchesSearch =
-        searchQuery === "" ||
-        project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.shortDescription.toLowerCase().includes(searchQuery.toLowerCase());
+  const tags = Array.from(
+    new Set(projects.flatMap((project) => project.tags))
+  ).sort((a, b) => a.localeCompare(b));
 
-      // Technology filter
-      const matchesTech =
-        !selectedTech || project.technologies.includes(selectedTech);
+  const hasTags = tags.length > 0;
 
-      // Tag filter
-      const matchesTag = !selectedTag || project.tags.includes(selectedTag);
+  const normalizedQuery = searchQuery.trim().toLowerCase();
 
-      // Special filters
-      const matchesType =
-        !filterType ||
-        (filterType === "paper" && project.hasResearchPaper) ||
-        (filterType === "patent" && project.hasPatent);
+  const filteredProjects = projects.filter((project) => {
+    const matchesSearch =
+      normalizedQuery === "" ||
+      project.title.toLowerCase().includes(normalizedQuery) ||
+      project.shortDescription.toLowerCase().includes(normalizedQuery) ||
+      project.technologies.some((tech) => tech.toLowerCase().includes(normalizedQuery)) ||
+      project.tags.some((tag) => tag.toLowerCase().includes(normalizedQuery));
 
-      return matchesSearch && matchesTech && matchesTag && matchesType;
-    });
-  }, [searchQuery, selectedTech, selectedTag, filterType]);
+    const matchesTech = !selectedTech || project.technologies.includes(selectedTech);
+    const matchesTag = !selectedTag || project.tags.includes(selectedTag);
+
+    const matchesType =
+      !filterType ||
+      (filterType === "paper" && project.hasResearchPaper) ||
+      (filterType === "patent" && project.hasPatent);
+
+    return matchesSearch && matchesTech && matchesTag && matchesType;
+  });
 
   const clearFilters = () => {
     setSearchQuery("");
@@ -48,8 +50,9 @@ export default function ProjectsPage() {
     setFilterType(null);
   };
 
-  const hasActiveFilters =
-    searchQuery || selectedTech || selectedTag || filterType;
+  const hasActiveFilters = Boolean(
+    searchQuery || selectedTech || selectedTag || filterType
+  );
 
   const handleBack = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -85,7 +88,6 @@ export default function ProjectsPage() {
         transition={{ delay: 0.1 }}
         className="mb-8 space-y-4"
       >
-        {/* Search */}
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--muted)]" />
           <input
@@ -97,62 +99,34 @@ export default function ProjectsPage() {
           />
         </div>
 
-        {/* Filter Pills */}
-        <div className="flex flex-wrap gap-2">
-          {/* Technology Filter */}
-          <div className="relative group">
-            <button className="flex items-center gap-2 px-3 py-2 bg-[var(--card)] rounded-lg text-sm hover:bg-[var(--border)] transition-colors">
-              <Filter className="w-4 h-4" />
-              {selectedTech || "Technology"}
-            </button>
-            <div className="absolute top-full left-0 mt-2 w-48 bg-[var(--card)] border border-[var(--border)] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10 max-h-60 overflow-y-auto">
-              <button
-                onClick={() => setSelectedTech(null)}
-                className="w-full px-3 py-2 text-left text-sm hover:bg-[var(--border)] transition-colors"
-              >
-                All Technologies
-              </button>
-              {technologies.map((tech) => (
-                <button
-                  key={tech}
-                  onClick={() => setSelectedTech(tech)}
-                  className={`w-full px-3 py-2 text-left text-sm hover:bg-[var(--border)] transition-colors ${
-                    selectedTech === tech ? "bg-[var(--border)]" : ""
-                  }`}
-                >
-                  {tech}
-                </button>
-              ))}
-            </div>
-          </div>
+        <div className="flex flex-wrap items-center gap-2">
+          <select
+            value={selectedTech ?? ""}
+            onChange={(e) => setSelectedTech(e.target.value || null)}
+            className="min-w-[180px] px-3 py-2 bg-[var(--card)] border border-[var(--border)] rounded-lg text-sm text-[var(--foreground)] focus:outline-none focus:border-[var(--foreground)]"
+          >
+            <option value="">All Technologies</option>
+            {technologies.map((tech) => (
+              <option key={tech} value={tech}>
+                {tech}
+              </option>
+            ))}
+          </select>
 
-          {/* Tag Filter */}
-          <div className="relative group">
-            <button className="flex items-center gap-2 px-3 py-2 bg-[var(--card)] rounded-lg text-sm hover:bg-[var(--border)] transition-colors">
-              {selectedTag || "Tag"}
-            </button>
-            <div className="absolute top-full left-0 mt-2 w-48 bg-[var(--card)] border border-[var(--border)] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10 max-h-60 overflow-y-auto">
-              <button
-                onClick={() => setSelectedTag(null)}
-                className="w-full px-3 py-2 text-left text-sm hover:bg-[var(--border)] transition-colors"
-              >
-                All Tags
-              </button>
-              {tags.map((tag) => (
-                <button
-                  key={tag}
-                  onClick={() => setSelectedTag(tag)}
-                  className={`w-full px-3 py-2 text-left text-sm hover:bg-[var(--border)] transition-colors ${
-                    selectedTag === tag ? "bg-[var(--border)]" : ""
-                  }`}
-                >
-                  {tag}
-                </button>
-              ))}
-            </div>
-          </div>
+          <select
+            value={selectedTag ?? ""}
+            onChange={(e) => setSelectedTag(e.target.value || null)}
+            disabled={!hasTags}
+            className="min-w-[150px] px-3 py-2 bg-[var(--card)] border border-[var(--border)] rounded-lg text-sm text-[var(--foreground)] focus:outline-none focus:border-[var(--foreground)] disabled:opacity-50"
+          >
+            <option value="">{hasTags ? "All Tags" : "No Tags Available"}</option>
+            {tags.map((tag) => (
+              <option key={tag} value={tag}>
+                {tag}
+              </option>
+            ))}
+          </select>
 
-          {/* Special Filters */}
           <button
             onClick={() => setFilterType(filterType === "paper" ? null : "paper")}
             className={`px-3 py-2 rounded-lg text-sm transition-colors ${

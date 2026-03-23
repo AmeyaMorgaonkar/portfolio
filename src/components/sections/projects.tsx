@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { getFeaturedProjects } from "@/lib/data";
 import { ProjectCard } from "../project-card";
@@ -43,11 +44,18 @@ export function ProjectsSection() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {featuredProjects.map((project) => (
-            <div key={project.id} className="h-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-9 lg:gap-10">
+          {featuredProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              className="h-full"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.35, delay: index * 0.06, ease: "easeOut" }}
+            >
               <ProjectCard project={project} />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

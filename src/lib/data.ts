@@ -423,7 +423,7 @@ Attendance data is automatically recorded with timestamps and stored in structur
       "/images/projects/proj-4/img3.png",
       "/images/projects/proj-4/img4.png",
     ],
-    // liveUrl: "https://supply-chain-demo.vercel.app",
+    demoVideo: "https://www.youtube.com/watch?v=ldsA45p05M0",
     codeUrl: "https://github.com/AmeyaMorgaonkar/face-recognition-attendance-system",
     technologies: ["Python", "OpenCV", "Django", "MySQL", "CNN"],
     tags: [],

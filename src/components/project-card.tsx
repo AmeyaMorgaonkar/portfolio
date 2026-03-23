@@ -70,7 +70,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <>
       <article
         onClick={navigateToProject}
-        onMouseLeave={() => setShowVideo(false)}
         className="bg-[var(--card)] rounded-lg overflow-hidden cursor-pointer group h-full flex flex-col hover:-translate-y-1 transition-transform duration-200"
       >
         {/* Image Section — all images rendered, visibility toggled */}
@@ -266,7 +265,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {youtubeId && (
               <button
                 onClick={handleToggleVideo}
-                className="flex items-center gap-1.5 text-sm text-[var(--foreground)] hover:opacity-80 transition-opacity"
+                className="flex items-center gap-1.5 text-sm text-[var(--foreground)] hover:opacity-80 transition-opacity cursor-pointer"
               >
                 <Play className="w-4 h-4" />
                 Demo

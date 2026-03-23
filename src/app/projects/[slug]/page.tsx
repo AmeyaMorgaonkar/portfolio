@@ -226,7 +226,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               className="flex items-center gap-2 px-4 py-2 bg-[var(--card)] text-[var(--foreground)] rounded-lg text-sm hover:bg-[var(--border)] transition-colors"
             >
               <Github className="w-4 h-4" />
-              View Code
+              Code
             </a>
           )}
           {youtubeId && (
@@ -242,7 +242,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               className="flex items-center gap-2 px-4 py-2 bg-[var(--card)] text-[var(--foreground)] rounded-lg text-sm hover:bg-[var(--border)] transition-colors cursor-pointer"
             >
               <Play className="w-4 h-4" />
-              Watch Demo
+              Demo
             </button>
           )}
           {project.hasResearchPaper && (
