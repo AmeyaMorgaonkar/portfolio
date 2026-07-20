@@ -126,10 +126,10 @@ Outside of work, I'm an avid chess player (always up for a game!), a music enthu
     { name: "Email", url: "mailto:ameyamorgaonkar@gmail.com", icon: "Mail" },
   ],
   personalLinks: [
-    { name: "Instagram", url: "https://instagram.com", icon: "Instagram" },
-    { name: "Spotify", url: "https://spotify.com", icon: "Music" },
-    { name: "Chess.com", url: "https://chess.com", icon: "Trophy" },
-    { name: "Goodreads", url: "https://goodreads.com", icon: "BookOpen" },
+    // { name: "Instagram", url: "https://instagram.com", icon: "Instagram" },
+    // { name: "Spotify", url: "https://spotify.com", icon: "Music" },
+    // { name: "Chess.com", url: "https://chess.com", icon: "Trophy" },
+    // { name: "Goodreads", url: "https://goodreads.com", icon: "BookOpen" },
   ],
 };
 
