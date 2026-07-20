@@ -115,9 +115,7 @@ export const profile: Profile = {
   aboutPhoto: "/images/Ameya Morgaonkar.jpeg",
   aboutText: `Hey there! I'm Ameya, a developer and researcher based in Pune, India. When I'm not coding or working on research papers, you'll find me exploring new music, playing chess, or diving into a good book.
 
-I believe in building technology that makes a difference. My journey has taken me through various projects spanning AI, web development, and systems design. Each project is an opportunity to learn something new and push the boundaries of what's possible.
-
-Outside of work, I'm an avid chess player (always up for a game!), a music enthusiast with eclectic taste, and someone who values meaningful conversations over coffee.`,
+I believe in building technology that makes a difference. My journey has taken me through various projects spanning AI, web development, and systems design. Each project is an opportunity to learn something new and push the boundaries of what's possible.`,
   resumeUrl: "/resume.pdf",
   professionalLinks: [
     { name: "LeetCode", url: "https://leetcode.com/AmeyaMorgaonkar", icon: "LucideCode" },
@@ -126,7 +124,7 @@ Outside of work, I'm an avid chess player (always up for a game!), a music enthu
     { name: "Email", url: "mailto:ameyamorgaonkar@gmail.com", icon: "Mail" },
   ],
   personalLinks: [
-    // { name: "Instagram", url: "https://instagram.com", icon: "Instagram" },
+    { name: "Instagram", url: "https://www.instagram.com/ameyamorgaonkar/", icon: "Instagram" },
     // { name: "Spotify", url: "https://spotify.com", icon: "Music" },
     // { name: "Chess.com", url: "https://chess.com", icon: "Trophy" },
     // { name: "Goodreads", url: "https://goodreads.com", icon: "BookOpen" },
