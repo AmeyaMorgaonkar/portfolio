@@ -274,7 +274,7 @@ export const education: Education[] = [
     field: "Computer Engineering",
     startDate: "September 2025",
     endDate: "May 2029",
-    gpa: "9.45/10",
+    gpa: "9.38/10",
     highlights: [
       "Followed a project-based curriculum with hands-on implementation across all semesters",
       "Completed course projects for every subject, applying theoretical concepts to real-world problems",
