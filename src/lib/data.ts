@@ -134,135 +134,135 @@ Outside of work, I'm an avid chess player (always up for a game!), a music enthu
 };
 
 export const experiences: Experience[] = [
-//   {
-//     id: "exp-3",
-//     slug: "tech-innovations-swe-intern",
-//     company: "Tech Innovations Inc.",
-//     logo: "/images/company1.png",
-//     role: "Software Engineer Intern",
-//     location: "Pune, India",
-//     startDate: "May 2025",
-//     endDate: "August 2025",
-//     description: [
-//       "Developed and deployed machine learning models for predictive analytics, improving accuracy by 25%",
-//       "Built RESTful APIs using Python and FastAPI, handling 10K+ requests daily",
-//       "Collaborated with cross-functional teams to deliver features on tight deadlines",
-//     ],
-//     longDescription: `## About the Role
+  //   {
+  //     id: "exp-3",
+  //     slug: "tech-innovations-swe-intern",
+  //     company: "Tech Innovations Inc.",
+  //     logo: "/images/company1.png",
+  //     role: "Software Engineer Intern",
+  //     location: "Pune, India",
+  //     startDate: "May 2025",
+  //     endDate: "August 2025",
+  //     description: [
+  //       "Developed and deployed machine learning models for predictive analytics, improving accuracy by 25%",
+  //       "Built RESTful APIs using Python and FastAPI, handling 10K+ requests daily",
+  //       "Collaborated with cross-functional teams to deliver features on tight deadlines",
+  //     ],
+  //     longDescription: `## About the Role
 
-// As a Software Engineer Intern at Tech Innovations Inc., I worked on the Data Science team to develop and deploy machine learning solutions for enterprise clients.
+  // As a Software Engineer Intern at Tech Innovations Inc., I worked on the Data Science team to develop and deploy machine learning solutions for enterprise clients.
 
-// ## Key Achievements
+  // ## Key Achievements
 
-// ### Machine Learning Pipeline
-// Designed and implemented an end-to-end ML pipeline for predictive analytics:
-// - Built data preprocessing pipelines handling 1M+ records daily
-// - Developed custom feature engineering modules
-// - Implemented model versioning and A/B testing framework
-// - Achieved 25% improvement in prediction accuracy over baseline
+  // ### Machine Learning Pipeline
+  // Designed and implemented an end-to-end ML pipeline for predictive analytics:
+  // - Built data preprocessing pipelines handling 1M+ records daily
+  // - Developed custom feature engineering modules
+  // - Implemented model versioning and A/B testing framework
+  // - Achieved 25% improvement in prediction accuracy over baseline
 
-// ### API Development
-// Built production-ready APIs serving ML predictions:
-// - Designed RESTful endpoints using FastAPI
-// - Implemented caching with Redis for low-latency responses
-// - Set up monitoring and alerting with Prometheus/Grafana
-// - Handled 10K+ requests daily with 99.9% uptime
+  // ### API Development
+  // Built production-ready APIs serving ML predictions:
+  // - Designed RESTful endpoints using FastAPI
+  // - Implemented caching with Redis for low-latency responses
+  // - Set up monitoring and alerting with Prometheus/Grafana
+  // - Handled 10K+ requests daily with 99.9% uptime
 
-// ### Team Collaboration
-// - Participated in daily standups and sprint planning
-// - Conducted code reviews for fellow interns
-// - Presented technical findings to stakeholders
+  // ### Team Collaboration
+  // - Participated in daily standups and sprint planning
+  // - Conducted code reviews for fellow interns
+  // - Presented technical findings to stakeholders
 
-// ## What I Learned
-// This internship gave me hands-on experience with production ML systems and taught me the importance of writing maintainable, testable code.`,
-//     technologies: ["Python", "TensorFlow", "FastAPI", "PostgreSQL", "Docker"],
-//   },
-//   {
-//     id: "exp-2",
-//     slug: "tech-innovations-swe-intern",
-//     company: "Tech Innovations Inc.",
-//     logo: "/images/company1.png",
-//     role: "Software Engineer Intern",
-//     location: "Pune, India",
-//     startDate: "May 2025",
-//     endDate: "August 2025",
-//     description: [
-//       "Developed and deployed machine learning models for predictive analytics, improving accuracy by 25%",
-//       "Built RESTful APIs using Python and FastAPI, handling 10K+ requests daily",
-//       "Collaborated with cross-functional teams to deliver features on tight deadlines",
-//     ],
-//     longDescription: `## About the Role
+  // ## What I Learned
+  // This internship gave me hands-on experience with production ML systems and taught me the importance of writing maintainable, testable code.`,
+  //     technologies: ["Python", "TensorFlow", "FastAPI", "PostgreSQL", "Docker"],
+  //   },
+  //   {
+  //     id: "exp-2",
+  //     slug: "tech-innovations-swe-intern",
+  //     company: "Tech Innovations Inc.",
+  //     logo: "/images/company1.png",
+  //     role: "Software Engineer Intern",
+  //     location: "Pune, India",
+  //     startDate: "May 2025",
+  //     endDate: "August 2025",
+  //     description: [
+  //       "Developed and deployed machine learning models for predictive analytics, improving accuracy by 25%",
+  //       "Built RESTful APIs using Python and FastAPI, handling 10K+ requests daily",
+  //       "Collaborated with cross-functional teams to deliver features on tight deadlines",
+  //     ],
+  //     longDescription: `## About the Role
 
-// As a Software Engineer Intern at Tech Innovations Inc., I worked on the Data Science team to develop and deploy machine learning solutions for enterprise clients.
+  // As a Software Engineer Intern at Tech Innovations Inc., I worked on the Data Science team to develop and deploy machine learning solutions for enterprise clients.
 
-// ## Key Achievements
+  // ## Key Achievements
 
-// ### Machine Learning Pipeline
-// Designed and implemented an end-to-end ML pipeline for predictive analytics:
-// - Built data preprocessing pipelines handling 1M+ records daily
-// - Developed custom feature engineering modules
-// - Implemented model versioning and A/B testing framework
-// - Achieved 25% improvement in prediction accuracy over baseline
+  // ### Machine Learning Pipeline
+  // Designed and implemented an end-to-end ML pipeline for predictive analytics:
+  // - Built data preprocessing pipelines handling 1M+ records daily
+  // - Developed custom feature engineering modules
+  // - Implemented model versioning and A/B testing framework
+  // - Achieved 25% improvement in prediction accuracy over baseline
 
-// ### API Development
-// Built production-ready APIs serving ML predictions:
-// - Designed RESTful endpoints using FastAPI
-// - Implemented caching with Redis for low-latency responses
-// - Set up monitoring and alerting with Prometheus/Grafana
-// - Handled 10K+ requests daily with 99.9% uptime
+  // ### API Development
+  // Built production-ready APIs serving ML predictions:
+  // - Designed RESTful endpoints using FastAPI
+  // - Implemented caching with Redis for low-latency responses
+  // - Set up monitoring and alerting with Prometheus/Grafana
+  // - Handled 10K+ requests daily with 99.9% uptime
 
-// ### Team Collaboration
-// - Participated in daily standups and sprint planning
-// - Conducted code reviews for fellow interns
-// - Presented technical findings to stakeholders
+  // ### Team Collaboration
+  // - Participated in daily standups and sprint planning
+  // - Conducted code reviews for fellow interns
+  // - Presented technical findings to stakeholders
 
-// ## What I Learned
-// This internship gave me hands-on experience with production ML systems and taught me the importance of writing maintainable, testable code.`,
-//     technologies: ["Python", "TensorFlow", "FastAPI", "PostgreSQL", "Docker"],
-//   },
-//   {
-//     id: "exp-1",
-//     slug: "startupxyz-fullstack",
-//     company: "StartupXYZ",
-//     logo: "/images/company2.png",
-//     role: "Full Stack Developer",
-//     location: "Remote",
-//     startDate: "January 2025",
-//     endDate: "April 2025",
-//     description: [
-//       "Led the development of a real-time dashboard using React and WebSockets",
-//       "Optimized database queries, reducing page load times by 40%",
-//       "Mentored junior developers and conducted code reviews",
-//     ],
-//     longDescription: `## About the Role
+  // ## What I Learned
+  // This internship gave me hands-on experience with production ML systems and taught me the importance of writing maintainable, testable code.`,
+  //     technologies: ["Python", "TensorFlow", "FastAPI", "PostgreSQL", "Docker"],
+  //   },
+  //   {
+  //     id: "exp-1",
+  //     slug: "startupxyz-fullstack",
+  //     company: "StartupXYZ",
+  //     logo: "/images/company2.png",
+  //     role: "Full Stack Developer",
+  //     location: "Remote",
+  //     startDate: "January 2025",
+  //     endDate: "April 2025",
+  //     description: [
+  //       "Led the development of a real-time dashboard using React and WebSockets",
+  //       "Optimized database queries, reducing page load times by 40%",
+  //       "Mentored junior developers and conducted code reviews",
+  //     ],
+  //     longDescription: `## About the Role
 
-// At StartupXYZ, I worked as a Full Stack Developer building real-time analytics tools for e-commerce businesses.
+  // At StartupXYZ, I worked as a Full Stack Developer building real-time analytics tools for e-commerce businesses.
 
-// ## Key Projects
+  // ## Key Projects
 
-// ### Real-time Analytics Dashboard
-// Led the development of a live dashboard showing business metrics:
-// - Built React frontend with real-time WebSocket updates
-// - Implemented efficient data aggregation on the backend
-// - Created customizable widget system for user preferences
-// - Dashboard used by 50+ enterprise clients
+  // ### Real-time Analytics Dashboard
+  // Led the development of a live dashboard showing business metrics:
+  // - Built React frontend with real-time WebSocket updates
+  // - Implemented efficient data aggregation on the backend
+  // - Created customizable widget system for user preferences
+  // - Dashboard used by 50+ enterprise clients
 
-// ### Performance Optimization
-// Significantly improved application performance:
-// - Profiled and optimized slow database queries
-// - Implemented query result caching
-// - Added database indexes for common access patterns
-// - Reduced average page load time by 40%
+  // ### Performance Optimization
+  // Significantly improved application performance:
+  // - Profiled and optimized slow database queries
+  // - Implemented query result caching
+  // - Added database indexes for common access patterns
+  // - Reduced average page load time by 40%
 
-// ### Team Leadership
-// - Mentored 2 junior developers
-// - Established code review practices
-// - Wrote technical documentation
+  // ### Team Leadership
+  // - Mentored 2 junior developers
+  // - Established code review practices
+  // - Wrote technical documentation
 
-// ## Impact
-// The dashboard became the company's flagship product and was instrumental in closing several enterprise deals.`,
-//     technologies: ["React", "Node.js", "MongoDB", "WebSocket", "AWS"],
-//   },
+  // ## Impact
+  // The dashboard became the company's flagship product and was instrumental in closing several enterprise deals.`,
+  //     technologies: ["React", "Node.js", "MongoDB", "WebSocket", "AWS"],
+  //   },
 ];
 
 export const education: Education[] = [
@@ -319,6 +319,85 @@ export const skills: Skill[] = [
 
 export const projects: Project[] = [
   {
+    id: "proj-krypsis",
+    slug: "krypsis-adaptive-privacy-threat-detection",
+    title: "Krypsis: Adaptive Privacy & Threat Detection System",
+    shortDescription: "A real-time desktop security application that monitors Wi-Fi safety, detects web trackers, profiles system behavior for anomalies using Z-score statistics, and calculates dynamic threat scores with automated responses.",
+    longDescription: `Built Krypsis, a comprehensive real-time desktop security platform that monitors Wi-Fi networks, evaluates host system behavior, tracks web privacy risks, and dynamically calculates overall threat scores.
+
+The system features a modular architecture combining Wi-Fi scanning (detecting rogue APs and evil twins), statistical behavioral profiling (Z-score anomaly detection on CPU, memory, and processes), and DNS-level web tracker monitoring. Threat scores are calculated using a weighted aggregation engine (Wi-Fi 35%, Behavioral 40%, Web 25%) categorized into dynamic risk tiers.
+
+Equipped with an automated responder for threat mitigation (VPN triggers, DNS hardening, escalation alerts), exportable session reports (JSON/TXT), and a modern PySide6 glassmorphic desktop dashboard with live metrics and real-time visualization charts.
+
+**Features**
+- Real-time Wi-Fi threat analysis & rogue AP / evil twin detection
+- System behavioral profiling with Z-score anomaly detection on CPU/RAM/process counts
+- Web tracker & browser fingerprinting detection across DNS & network connections
+- Unified weighted threat scoring engine (0–100 score with dynamic severity tiers)
+- Automated threat auto-responder with VPN triggers, DNS hardening, and alerts
+- Exportable privacy session reports (JSON/TXT) with hardening recommendations
+- Modern glassmorphic PySide6 desktop interface with live charts and real-time metrics`,
+    features: [
+      "Real-time Wi-Fi threat analysis & rogue AP / evil twin detection",
+      "System behavioral profiling with Z-score anomaly detection on CPU/RAM/process counts",
+      "Web tracker & browser fingerprinting detection across DNS & network connections",
+      "Unified weighted threat scoring engine (0–100 score with dynamic severity tiers)",
+      "Automated threat auto-responder with VPN triggers, DNS hardening, and alerts",
+      "Exportable privacy session reports (JSON/TXT) with hardening recommendations",
+    ],
+    images: [
+      "/images/projects/proj-4/img1.png",
+    ],
+    codeUrl: "https://github.com/AmeyaMorgaonkar/adaptive-privacy-threat-detection",
+    technologies: ["Python", "PySide6", "OpenCV", "Scikit-Learn", "PyTest"],
+    tags: [],
+    featured: true,
+    hasResearchPaper: false,
+    hasPatent: false,
+    relatedResearch: [],
+    createdAt: "2026-03-01",
+  },
+  {
+    id: "proj-4",
+    slug: "face-recognition",
+    title: "Face recognition Attendence System",
+    shortDescription: "Developed a face recognition-based attendance system with anti-spoofing, enabling secure, real-time attendance marking while preventing fraudulent access using photos or videos.",
+    longDescription: `Built a secure face recognition attendance system that automates attendance marking using real-time computer vision, enhanced with anti-spoofing mechanisms to prevent fraudulent identification attempts. The system captures facial data, trains recognition models, and verifies users through live detection before marking attendance.
+
+Implemented a complete pipeline including face detection, recognition, and liveness verification, ensuring that only genuine users (not images or recorded videos) are authenticated. Integrated webcam-based input with real-time processing to deliver fast and reliable identification.
+
+Attendance data is automatically recorded with timestamps and stored in structured formats for tracking and analysis. The project demonstrates strong understanding of computer vision, security-focused ML systems, and real-time application design, making it suitable for deployment in educational institutions or workplaces.
+
+**Features**
+- Real-time face detection and recognition using webcam input
+- Anti-spoofing (liveness detection) to prevent photo/video-based fraud
+- Automated attendance marking with accurate timestamp logging
+- Efficient computer vision processing using OpenCV and ML techniques
+- End-to-end pipeline from data collection to real-time deployment`,
+    features: [
+      "Real-time face detection and recognition using webcam input",
+      "Anti-spoofing (liveness detection) to prevent photo/video-based fraud",
+      "Automated attendance marking with accurate timestamp logging",
+      "End-to-end pipeline from data collection to real-time deployment",
+      "Efficient computer vision processing using OpenCV and ML techniques"
+    ],
+    images: [
+      "/images/projects/proj-4/img1.png",
+      "/images/projects/proj-4/img2.png",
+      "/images/projects/proj-4/img3.png",
+      "/images/projects/proj-4/img4.png",
+    ],
+    demoVideo: "https://www.youtube.com/watch?v=ldsA45p05M0",
+    codeUrl: "https://github.com/AmeyaMorgaonkar/face-recognition-attendance-system",
+    technologies: ["Python", "OpenCV", "Django", "MySQL", "CNN"],
+    tags: [],
+    featured: true,
+    hasResearchPaper: false,
+    hasPatent: false,
+    relatedResearch: [],
+    createdAt: "2024-11-05",
+  },
+  {
     id: "proj-1",
     slug: "monolity",
     title: "Monolity - The pinnacle of Modern Living",
@@ -336,9 +415,9 @@ export const projects: Project[] = [
   - Optimized performance with fast load times via Vercel deployment
   - *EO-friendly structure for improved discoverability`,
     features: [
-    "Responsive real estate UI optimized for mobile, tablet, and desktop",
-    "Dynamic property listing interface with clean, card-based layout",
-    "Smooth navigation and transitions for enhanced user experience",
+      "Responsive real estate UI optimized for mobile, tablet, and desktop",
+      "Dynamic property listing interface with clean, card-based layout",
+      "Smooth navigation and transitions for enhanced user experience",
     ],
     images: [
       "/images/projects/proj-1/img1.png",
@@ -375,10 +454,10 @@ Built using a component-driven architecture, enabling scalable development and r
 - Modern, responsive UI optimized for mobile, tablet, and desktop devices
 - Component-based architecture for scalable and maintainable frontend development`,
     features: [
-  "Structured property listings with categorized browsing and location-based filtering",
-  "Lead generation forms and strong call-to-action components for user conversion",
-  "Modern, responsive UI optimized for mobile, tablet, and desktop devices",
-],
+      "Structured property listings with categorized browsing and location-based filtering",
+      "Lead generation forms and strong call-to-action components for user conversion",
+      "Modern, responsive UI optimized for mobile, tablet, and desktop devices",
+    ],
     images: [
       "/images/projects/proj-3/img1.png",
       "/images/projects/proj-3/img2.jpeg",
@@ -394,44 +473,6 @@ Built using a component-driven architecture, enabling scalable development and r
     hasPatent: false,
     relatedResearch: [],
     createdAt: "2025-01-10",
-  },
-   {
-    id: "proj-4",
-    slug: "face-recognition",
-    title: "Face recognition Attendence System",
-    shortDescription: "Developed a face recognition-based attendance system with anti-spoofing, enabling secure, real-time attendance marking while preventing fraudulent access using photos or videos.",
-    longDescription: `Built a secure face recognition attendance system that automates attendance marking using real-time computer vision, enhanced with anti-spoofing mechanisms to prevent fraudulent identification attempts. The system captures facial data, trains recognition models, and verifies users through live detection before marking attendance.
-
-Implemented a complete pipeline including face detection, recognition, and liveness verification, ensuring that only genuine users (not images or recorded videos) are authenticated. Integrated webcam-based input with real-time processing to deliver fast and reliable identification.
-
-Attendance data is automatically recorded with timestamps and stored in structured formats for tracking and analysis. The project demonstrates strong understanding of computer vision, security-focused ML systems, and real-time application design, making it suitable for deployment in educational institutions or workplaces.
-
-**Features**
-- Real-time face detection and recognition using webcam input
-- Anti-spoofing (liveness detection) to prevent photo/video-based fraud
-- Automated attendance marking with accurate timestamp logging
-- Efficient computer vision processing using OpenCV and ML techniques
-- End-to-end pipeline from data collection to real-time deployment`,
-    features: [
-  "Real-time face detection and recognition using webcam input",
-  "Anti-spoofing (liveness detection) to prevent photo/video-based fraud",
-  "Automated attendance marking with accurate timestamp logging",
-],
-    images: [
-      "/images/projects/proj-4/img1.png",
-      "/images/projects/proj-4/img2.png",
-      "/images/projects/proj-4/img3.png",
-      "/images/projects/proj-4/img4.png",
-    ],
-    demoVideo: "https://www.youtube.com/watch?v=ldsA45p05M0",
-    codeUrl: "https://github.com/AmeyaMorgaonkar/face-recognition-attendance-system",
-    technologies: ["Python", "OpenCV", "Django", "MySQL", "CNN"],
-    tags: [],
-    featured: true,
-    hasResearchPaper: false,
-    hasPatent: false,
-    relatedResearch: [],
-    createdAt: "2024-11-05",
   },
   {
     id: "proj-2",
@@ -450,10 +491,10 @@ Optimized the application for performance and seamless deployment, leveraging mo
 - Production-level layout mimicking real-world real estate platforms
 - Optimized frontend performance with fast loading and routing`,
     features: [
-  "Advanced property browsing with structured listing and detail pages",
-  "Scalable component-based architecture for reusable UI elements",
-  "Production-level layout mimicking real-world real estate platforms",
-],
+      "Advanced property browsing with structured listing and detail pages",
+      "Scalable component-based architecture for reusable UI elements",
+      "Production-level layout mimicking real-world real estate platforms",
+    ],
     images: [
       "/images/projects/proj-2/img1.png",
       "/images/projects/proj-2/img2.png",
@@ -469,81 +510,81 @@ Optimized the application for performance and seamless deployment, leveraging mo
     relatedResearch: ["research-2"],
     createdAt: "2025-03-20",
   },
-//   {
-//     id: "proj-5",
-//     slug: "task-management-app",
-//     title: "TaskFlow - Project Management Tool",
-//     shortDescription: "A collaborative task management application with real-time updates and team features",
-//     longDescription: `# TaskFlow - Project Management Tool
+  //   {
+  //     id: "proj-5",
+  //     slug: "task-management-app",
+  //     title: "TaskFlow - Project Management Tool",
+  //     shortDescription: "A collaborative task management application with real-time updates and team features",
+  //     longDescription: `# TaskFlow - Project Management Tool
 
-// ## Overview
-// A modern project management tool designed for teams to collaborate effectively.
+  // ## Overview
+  // A modern project management tool designed for teams to collaborate effectively.
 
-// ## Features
-// - **Real-time Collaboration**: Live updates across all team members
-// - **Kanban Boards**: Visual task organization
-// - **Time Tracking**: Built-in time logging
-// - **Integrations**: Slack, GitHub, and more
+  // ## Features
+  // - **Real-time Collaboration**: Live updates across all team members
+  // - **Kanban Boards**: Visual task organization
+  // - **Time Tracking**: Built-in time logging
+  // - **Integrations**: Slack, GitHub, and more
 
-// ## Technical Details
-// Built with Next.js and Socket.io for real-time features, with PostgreSQL for data persistence.`,
-//     features: [
-//       "Real-time collaboration with live updates",
-//       "Visual Kanban boards for task organization",
-//       "Built-in time tracking and logging",
-//       "Integrations with Slack, GitHub, and more"
-//     ],
-//     images: [
-//       "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
-//       "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&h=600&fit=crop",
-//     ],
-//     liveUrl: "https://taskflow-demo.vercel.app",
-//     codeUrl: "https://github.com/example/taskflow",
-//     technologies: ["Next.js", "Socket.io", "PostgreSQL", "Prisma", "TailwindCSS"],
-//     tags: ["Full Stack", "SaaS", "Productivity"],
-//     featured: true,
-//     hasResearchPaper: false,
-//     hasPatent: false,
-//     relatedResearch: [],
-//     createdAt: "2024-09-15",
-//   },
-//   {
-//     id: "proj-6",
-//     slug: "ai-code-reviewer",
-//     title: "CodeSense - AI Code Reviewer",
-//     shortDescription: "An intelligent code review assistant powered by GPT-4 for automated PR reviews",
-//     longDescription: `# CodeSense - AI Code Reviewer
+  // ## Technical Details
+  // Built with Next.js and Socket.io for real-time features, with PostgreSQL for data persistence.`,
+  //     features: [
+  //       "Real-time collaboration with live updates",
+  //       "Visual Kanban boards for task organization",
+  //       "Built-in time tracking and logging",
+  //       "Integrations with Slack, GitHub, and more"
+  //     ],
+  //     images: [
+  //       "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
+  //       "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&h=600&fit=crop",
+  //     ],
+  //     liveUrl: "https://taskflow-demo.vercel.app",
+  //     codeUrl: "https://github.com/example/taskflow",
+  //     technologies: ["Next.js", "Socket.io", "PostgreSQL", "Prisma", "TailwindCSS"],
+  //     tags: ["Full Stack", "SaaS", "Productivity"],
+  //     featured: true,
+  //     hasResearchPaper: false,
+  //     hasPatent: false,
+  //     relatedResearch: [],
+  //     createdAt: "2024-09-15",
+  //   },
+  //   {
+  //     id: "proj-6",
+  //     slug: "ai-code-reviewer",
+  //     title: "CodeSense - AI Code Reviewer",
+  //     shortDescription: "An intelligent code review assistant powered by GPT-4 for automated PR reviews",
+  //     longDescription: `# CodeSense - AI Code Reviewer
 
-// ## Overview
-// An AI-powered tool that automatically reviews pull requests and suggests improvements.
+  // ## Overview
+  // An AI-powered tool that automatically reviews pull requests and suggests improvements.
 
-// ## Features
-// - **Automated Reviews**: AI analyzes code changes automatically
-// - **Best Practices**: Suggests improvements based on coding standards
-// - **Security Scanning**: Identifies potential vulnerabilities
-// - **GitHub Integration**: Seamless integration with GitHub PRs
+  // ## Features
+  // - **Automated Reviews**: AI analyzes code changes automatically
+  // - **Best Practices**: Suggests improvements based on coding standards
+  // - **Security Scanning**: Identifies potential vulnerabilities
+  // - **GitHub Integration**: Seamless integration with GitHub PRs
 
-// ## Technical Details
-// Uses OpenAI's GPT-4 API with custom prompts for code analysis, integrated via GitHub Actions.`,
-//     features: [
-//       "Automated AI-powered code reviews",
-//       "Best practices and standards suggestions",
-//       "Security vulnerability scanning",
-//       "Seamless GitHub PR integration"
-//     ],
-//     images: [
-//       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop",
-//       "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
-//     ],
-//     codeUrl: "https://github.com/example/codesense",
-//     technologies: ["Python", "OpenAI", "GitHub Actions", "FastAPI", "Redis"],
-//     tags: ["AI/ML", "DevTools", "Automation"],
-//     featured: true,
-//     hasResearchPaper: false,
-//     hasPatent: false,
-//     relatedResearch: [],
-//     createdAt: "2024-08-20",
-//   },
+  // ## Technical Details
+  // Uses OpenAI's GPT-4 API with custom prompts for code analysis, integrated via GitHub Actions.`,
+  //     features: [
+  //       "Automated AI-powered code reviews",
+  //       "Best practices and standards suggestions",
+  //       "Security vulnerability scanning",
+  //       "Seamless GitHub PR integration"
+  //     ],
+  //     images: [
+  //       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop",
+  //       "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
+  //     ],
+  //     codeUrl: "https://github.com/example/codesense",
+  //     technologies: ["Python", "OpenAI", "GitHub Actions", "FastAPI", "Redis"],
+  //     tags: ["AI/ML", "DevTools", "Automation"],
+  //     featured: true,
+  //     hasResearchPaper: false,
+  //     hasPatent: false,
+  //     relatedResearch: [],
+  //     createdAt: "2024-08-20",
+  //   },
 ];
 
 export const research: Research[] = [
@@ -620,127 +661,127 @@ export const research: Research[] = [
 ];
 
 export const blogPosts: BlogPost[] = [
-//   {
-//     id: "blog-1",
-//     slug: "getting-started-with-ml",
-//     title: "Getting Started with Machine Learning: A Practical Guide",
-//     excerpt: "A comprehensive guide for beginners looking to dive into the world of machine learning, covering essential concepts, tools, and your first project.",
-//     content: `# Getting Started with Machine Learning: A Practical Guide
+  //   {
+  //     id: "blog-1",
+  //     slug: "getting-started-with-ml",
+  //     title: "Getting Started with Machine Learning: A Practical Guide",
+  //     excerpt: "A comprehensive guide for beginners looking to dive into the world of machine learning, covering essential concepts, tools, and your first project.",
+  //     content: `# Getting Started with Machine Learning: A Practical Guide
 
-// Machine learning has become one of the most exciting fields in technology. In this post, I'll share my journey and provide a practical roadmap for beginners.
+  // Machine learning has become one of the most exciting fields in technology. In this post, I'll share my journey and provide a practical roadmap for beginners.
 
-// ## Why Machine Learning?
+  // ## Why Machine Learning?
 
-// Machine learning is transforming industries from healthcare to finance. Understanding these fundamentals opens doors to countless opportunities.
+  // Machine learning is transforming industries from healthcare to finance. Understanding these fundamentals opens doors to countless opportunities.
 
-// ## Prerequisites
+  // ## Prerequisites
 
-// Before diving in, make sure you have:
-// - Basic Python programming skills
-// - Understanding of linear algebra and statistics
-// - Curiosity and patience!
+  // Before diving in, make sure you have:
+  // - Basic Python programming skills
+  // - Understanding of linear algebra and statistics
+  // - Curiosity and patience!
 
-// ## Your First Steps
+  // ## Your First Steps
 
-// 1. **Learn Python**: If you haven't already, master Python basics
-// 2. **Understand the Math**: Linear algebra, calculus, and statistics
-// 3. **Pick a Framework**: Start with scikit-learn, then move to TensorFlow or PyTorch
-// 4. **Build Projects**: Apply what you learn to real problems
+  // 1. **Learn Python**: If you haven't already, master Python basics
+  // 2. **Understand the Math**: Linear algebra, calculus, and statistics
+  // 3. **Pick a Framework**: Start with scikit-learn, then move to TensorFlow or PyTorch
+  // 4. **Build Projects**: Apply what you learn to real problems
 
-// ## Resources I Recommend
+  // ## Resources I Recommend
 
-// - Andrew Ng's Coursera course
-// - Fast.ai practical deep learning
-// - Kaggle competitions for practice
+  // - Andrew Ng's Coursera course
+  // - Fast.ai practical deep learning
+  // - Kaggle competitions for practice
 
-// ## Final Thoughts
+  // ## Final Thoughts
 
-// The key is consistency. Spend time every day learning and building. The field is vast, but every expert started as a beginner.`,
-//     coverImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
-//     date: "2025-09-15",
-//     tags: ["Machine Learning", "Tutorial", "Python"],
-//     readingTime: "8 min read",
-//   },
-//   {
-//     id: "blog-2",
-//     slug: "building-scalable-systems",
-//     title: "Lessons Learned Building Scalable Systems",
-//     excerpt: "Insights from building systems that handle millions of requests, including architecture decisions, pitfalls to avoid, and best practices.",
-//     content: `# Lessons Learned Building Scalable Systems
+  // The key is consistency. Spend time every day learning and building. The field is vast, but every expert started as a beginner.`,
+  //     coverImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
+  //     date: "2025-09-15",
+  //     tags: ["Machine Learning", "Tutorial", "Python"],
+  //     readingTime: "8 min read",
+  //   },
+  //   {
+  //     id: "blog-2",
+  //     slug: "building-scalable-systems",
+  //     title: "Lessons Learned Building Scalable Systems",
+  //     excerpt: "Insights from building systems that handle millions of requests, including architecture decisions, pitfalls to avoid, and best practices.",
+  //     content: `# Lessons Learned Building Scalable Systems
 
-// After working on several high-traffic applications, I've gathered some insights that might help others facing similar challenges.
+  // After working on several high-traffic applications, I've gathered some insights that might help others facing similar challenges.
 
-// ## Start Simple, Scale Later
+  // ## Start Simple, Scale Later
 
-// One of the biggest mistakes I see is over-engineering from day one. Start with a monolith, understand your bottlenecks, then optimize.
+  // One of the biggest mistakes I see is over-engineering from day one. Start with a monolith, understand your bottlenecks, then optimize.
 
-// ## Key Principles
+  // ## Key Principles
 
-// ### 1. Measure Everything
-// You can't optimize what you don't measure. Implement comprehensive logging and monitoring from the start.
+  // ### 1. Measure Everything
+  // You can't optimize what you don't measure. Implement comprehensive logging and monitoring from the start.
 
-// ### 2. Cache Aggressively
-// Most read-heavy applications benefit enormously from caching. Redis is your friend.
+  // ### 2. Cache Aggressively
+  // Most read-heavy applications benefit enormously from caching. Redis is your friend.
 
-// ### 3. Database Design Matters
-// Spend time on your schema. Bad database design is expensive to fix later.
+  // ### 3. Database Design Matters
+  // Spend time on your schema. Bad database design is expensive to fix later.
 
-// ## Tools That Helped
+  // ## Tools That Helped
 
-// - **Prometheus + Grafana**: For monitoring
-// - **Redis**: For caching
-// - **Kafka**: For async processing
+  // - **Prometheus + Grafana**: For monitoring
+  // - **Redis**: For caching
+  // - **Kafka**: For async processing
 
-// ## Conclusion
+  // ## Conclusion
 
-// Building scalable systems is an iterative process. Learn from your metrics, and don't be afraid to refactor.`,
-//     coverImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop",
-//     date: "2025-08-20",
-//     tags: ["System Design", "Architecture", "Backend"],
-//     readingTime: "6 min read",
-//   },
-//   {
-//     id: "blog-3",
-//     slug: "research-to-production",
-//     title: "From Research Paper to Production: Bridging the Gap",
-//     excerpt: "The journey of taking a research prototype and turning it into a production-ready system, with all the challenges in between.",
-//     content: `# From Research Paper to Production: Bridging the Gap
+  // Building scalable systems is an iterative process. Learn from your metrics, and don't be afraid to refactor.`,
+  //     coverImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop",
+  //     date: "2025-08-20",
+  //     tags: ["System Design", "Architecture", "Backend"],
+  //     readingTime: "6 min read",
+  //   },
+  //   {
+  //     id: "blog-3",
+  //     slug: "research-to-production",
+  //     title: "From Research Paper to Production: Bridging the Gap",
+  //     excerpt: "The journey of taking a research prototype and turning it into a production-ready system, with all the challenges in between.",
+  //     content: `# From Research Paper to Production: Bridging the Gap
 
-// The gap between a research prototype and a production system is often underestimated. Here's what I learned deploying our medical imaging model.
+  // The gap between a research prototype and a production system is often underestimated. Here's what I learned deploying our medical imaging model.
 
-// ## The Reality Check
+  // ## The Reality Check
 
-// Research code is optimized for experimentation. Production code needs to be:
-// - Reliable
-// - Maintainable
-// - Scalable
-// - Secure
+  // Research code is optimized for experimentation. Production code needs to be:
+  // - Reliable
+  // - Maintainable
+  // - Scalable
+  // - Secure
 
-// ## Challenges We Faced
+  // ## Challenges We Faced
 
-// ### 1. Data Quality
-// Research datasets are clean. Real-world data is messy. We spent weeks building data validation pipelines.
+  // ### 1. Data Quality
+  // Research datasets are clean. Real-world data is messy. We spent weeks building data validation pipelines.
 
-// ### 2. Latency Requirements
-// Our model worked great offline but was too slow for real-time use. Model optimization became crucial.
+  // ### 2. Latency Requirements
+  // Our model worked great offline but was too slow for real-time use. Model optimization became crucial.
 
-// ### 3. Integration
-// Healthcare systems have strict requirements. HIPAA compliance added complexity.
+  // ### 3. Integration
+  // Healthcare systems have strict requirements. HIPAA compliance added complexity.
 
-// ## What Worked
+  // ## What Worked
 
-// - **Iterative deployment**: Start with a small pilot
-// - **Feedback loops**: Work closely with end users
-// - **Monitoring**: Catch issues before users report them
+  // - **Iterative deployment**: Start with a small pilot
+  // - **Feedback loops**: Work closely with end users
+  // - **Monitoring**: Catch issues before users report them
 
-// ## Key Takeaway
+  // ## Key Takeaway
 
-// Production is a different beast. Plan for it from the start of your research project.`,
-//     coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-//     date: "2025-07-10",
-//     tags: ["Research", "MLOps", "Production"],
-//     readingTime: "7 min read",
-//   },
+  // Production is a different beast. Plan for it from the start of your research project.`,
+  //     coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+  //     date: "2025-07-10",
+  //     tags: ["Research", "MLOps", "Production"],
+  //     readingTime: "7 min read",
+  //   },
 ];
 
 // Helper functions
