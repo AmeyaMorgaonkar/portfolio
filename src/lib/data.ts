@@ -344,7 +344,11 @@ Equipped with an automated responder for threat mitigation (VPN triggers, DNS ha
       "Exportable privacy session reports (JSON/TXT) with hardening recommendations",
     ],
     images: [
-      "/images/projects/proj-4/img1.png",
+      "/images/projects/proj-krypsis/dashboard.png",
+      "/images/projects/proj-krypsis/wifi.png",
+      "/images/projects/proj-krypsis/behaviour.png",
+      "/images/projects/proj-krypsis/report.png",
+      "/images/projects/proj-krypsis/notif.png",
     ],
     codeUrl: "https://github.com/AmeyaMorgaonkar/adaptive-privacy-threat-detection",
     technologies: ["Python", "PySide6", "OpenCV", "Scikit-Learn", "PyTest"],
