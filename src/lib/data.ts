@@ -397,6 +397,46 @@ Attendance data is automatically recorded with timestamps and stored in structur
     createdAt: "2024-11-05",
   },
     {
+    id: "proj-campuscoin",
+    slug: "campuschain",
+    title: "CampusCoin: Campus Payments on Blockchain",
+    shortDescription: "Unifying campus payments: event tickets, library fees, and canteen orders on-chain, with student wallets funded via UPI-style top-ups.",
+    longDescription: `Built CampusChain, a Web3-based campus payments platform that consolidates event ticketing, library transactions, and canteen payments into a single blockchain-backed system. Every transaction on campus — booking an event ticket, paying a library fine, or ordering food — is recorded on-chain, giving a transparent and tamper-proof transaction history.
+
+At the core of the system is a custodial student wallet that abstracts away crypto complexity. Students don't need a MetaMask or any external crypto wallet, the platform manages wallet keys internally, while parents and students can load funds through a simple UPI-style top-up flow, with the underlying conversion to on-chain balance handled transparently by the system. Students can also add their own money directly into their wallet.
+
+The platform doubles as a unified campus portal: students can browse upcoming events and book tickets, view the library catalog and reserve or return books, and check the live canteen menu to place food orders — all from within the same interface, with payment settled instantly from their on-chain wallet balance.
+
+**Features**
+- Custodial student wallets abstracting away MetaMask/crypto complexity
+- UPI-style fund top-ups from parents and students (no external wallet needed)
+- On-chain transaction ledger for events, library, and canteen payments
+- Event browsing & ticket booking with blockchain-recorded purchases
+- Library catalog with book browsing, reservation, and fine payments
+- Live canteen menu with in-app ordering and instant wallet-based payment`,
+    features: [
+      "UPI-style wallet top-ups for parents and students",
+      "On-chain ledger for events, library, and canteen transactions",
+      "Event browsing, library catalog and live canteen menu along with booking",
+    ],
+    images: [
+      "/images/projects/proj-campus_coin/1.png",
+      "/images/projects/proj-campus_coin/2.png",
+      "/images/projects/proj-campus_coin/3.png",
+      "/images/projects/proj-campus_coin/4.png",
+      "/images/projects/proj-campus_coin/5.png",
+    ],
+    liveUrl: "https://campus-coin-dapp.vercel.app/",
+    codeUrl: "https://github.com/AmeyaMorgaonkar/campus-coin",
+    technologies: ["Solidity", "Ethereum", "Ether.js", "Vite"],
+    tags: ["Web3", "Full Stack"],
+    featured: true,
+    hasResearchPaper: false,
+    hasPatent: false,
+    relatedResearch: [],
+    createdAt: "",
+  },
+    {
     id: "proj-mrs",
     slug: "movie-recommendation-system",
     title: "Hybrid Movie Recommendation System",
@@ -438,6 +478,115 @@ The entire ML pipeline is documented across staged Jupyter notebooks covering da
     createdAt: "2026-08-21",
   },
   {
+    id: "proj-nlp",
+    slug: "nlp",
+    title: "Natural Language Processing",
+    shortDescription: "An NLP tool that analyzes text to surface word frequency patterns, optional stop-word filtering, and overall sentiment/tone.",
+    longDescription: `Built Lexitone, a lightweight NLP-based text analysis tool that takes a paragraph as input and returns key linguistic insights, including word frequency distribution, and sentiment tone classification.
+
+The system tokenizes and preprocesses input text (case normalization, punctuation stripping, lemmatization), then computes word occurrence counts with a toggleable option to include or exclude common stop words for cleaner frequency analysis. A sentiment/tone classification layer, built on top of a pretrained NLP pipeline, evaluates the overall emotional tone of the paragraph (e.g., positive, negative, neutral) along with a confidence score.
+
+Designed with a clean, minimal interface for quick text analysis, Lexitone is useful for writers, students, and researchers looking to quickly understand word usage patterns and the emotional tone of their writing.
+
+**Features**
+- Word frequency analysis with occurrence counts, sorted by usage
+- Toggleable stop-word inclusion/exclusion for refined results
+- Tone/sentiment detection (positive, negative, neutral) with confidence scoring
+- Text preprocessing pipeline (tokenization, normalization, lemmatization)
+- Simple, interactive UI for pasting text and viewing instant results`,
+    features: [
+      "Word frequency analysis with occurrence counts",
+      "Toggleable stop-word inclusion/exclusion",
+      "Sentiment/tone detection with confidence scoring",
+    ],
+    images: [
+      "/images/projects/proj-nlp/1.png",
+      "/images/projects/proj-nlp/2.png",
+    ],
+    liveUrl: "https://npl-basic-ameya.streamlit.app/",
+    codeUrl: "https://github.com/AmeyaMorgaonkar/NLP",
+    technologies: ["Python", "NLTK"],
+    tags: ["AIML"],
+    featured: false,
+    hasResearchPaper: false,
+    hasPatent: false,
+    relatedResearch: [],
+    createdAt: "",
+  },
+  {
+    id: "proj-todo-on-chain",
+    slug: "decentralized-todo-app",
+    title: "Decentralized On-Chain Todo App",
+    shortDescription: "Todo application where tasks are created, completed, and stored directly on the blockchain.",
+    longDescription: `Built ChainTask, a decentralized todo application that stores tasks on-chain instead of a traditional database. Every task a user adds, marks complete, or deletes is recorded as a blockchain transaction, giving a persistent and tamper-proof task history tied to the user's wallet address.
+
+Users connect their crypto wallet (e.g. MetaMask) to authenticate and interact with the app. A smart contract handles the core todo logic — adding tasks, toggling completion status, and removing tasks — with each action reflected transparently on-chain. Since data is scoped to the connected wallet address, each user has their own private, wallet-linked task list without needing a separate backend or login system.
+
+Designed as a simple, focused Web3 starter project, ChainTask demonstrates core dApp concepts — smart contract interaction, wallet-based authentication, and on-chain state management — through a familiar, everyday use case.
+
+**Features**
+- Wallet-based authentication (MetaMask) with no separate login system
+- Smart contract-managed task creation, completion, and deletion
+- On-chain, tamper-proof task history per wallet address
+- Real-time UI sync with blockchain transaction state
+- Minimal, clean interface for quick task management`,
+    features: [
+      "Wallet-based authentication (MetaMask), no separate login",
+      "On-chain, tamper-proof task history per wallet",
+      "Real-time UI sync with blockchain transaction state",
+    ],
+    images: [
+      "/images/projects/proj-todo-on-chain/1.png",
+      "/images/projects/proj-todo-on-chain/2.png",
+    ],
+    liveUrl: "https://todo-list-on-chain-dapp.vercel.app/",
+    codeUrl: "https://github.com/AmeyaMorgaonkar/ToDo-dApp",
+    technologies: ["Solidity", "Ethereum"],
+    tags: ["Web3"],
+    featured: false,
+    hasResearchPaper: false,
+    hasPatent: false,
+    relatedResearch: [],
+    createdAt: "",
+  },
+  {
+    id: "proj-digitalitem",
+    slug: "digitalitem",
+    title: "DigitalItem: On-Chain Digital Marketplace",
+    shortDescription: "A simple Web3 marketplace where transactions are recorded on-chain.",
+    longDescription: `Built DigitalItem, a blockchain-based marketplace that enables users to list, buy, and transfer digital items in a fully decentralized manner. Every listing, purchase, and ownership transfer is executed as a smart contract transaction, giving a transparent and verifiable record of who owns what and how it changed hands.
+
+Sellers can buy a digital item with a name, description, and price, which gets recorded on-chain and made visible to all users. Buyers can browse available listings and purchase an item directly through their connected wallet. The smart contract handles payment transfer to the seller and reassigns ownership of the item atomically, ensuring the transaction either fully completes or fails safely.
+
+Designed as a focused Web3 project, DigitalItem demonstrates core marketplace mechanics. Listing, ownership tracking, and peer-to-peer payment, using smart contracts instead of a centralized backend, with wallet-based identity replacing traditional user accounts.
+
+**Features**
+- Wallet-based authentication (MetaMask) with no centralized accounts
+- On-chain item listing with name, description, and price
+- Smart contract-driven buy flow with atomic payment & ownership transfer
+- Transparent, verifiable ownership history per item
+- Browse-and-buy marketplace interface for available listings`,
+    features: [
+      "Wallet-based authentication (MetaMask), no centralized accounts",
+      "On-chain items with price and description",
+      "Atomic smart contract buy flow (payment + ownership transfer)",
+      "Browse-and-buy marketplace interface",
+    ],
+    images: [
+      "/images/projects/proj-trans-chain/1.png",
+      "/images/projects/proj-trans-chain/2.png",
+      "/images/projects/proj-trans-chain/3.png",
+    ],
+    codeUrl: "https://github.com/AmeyaMorgaonkar/transaction-on-blockchain",
+    technologies: ["Solidity", "Ethereum","Ethers.js"],
+    tags: ["Web3"],
+    featured: false,
+    hasResearchPaper: false,
+    hasPatent: false,
+    relatedResearch: [],
+    createdAt: "",
+  },
+  {
     id: "proj-1",
     slug: "monolity",
     title: "Monolity - The pinnacle of Modern Living",
@@ -471,7 +620,7 @@ The entire ML pipeline is documented across staged Jupyter notebooks covering da
     codeUrl: "https://github.com/AmeyaMorgaonkar/monolith-estates-ui",
     technologies: ["Next.js", "Typescript", "React", "Vercel"],
     tags: ["Web Development"],
-    featured: true,
+    featured: false,
     hasResearchPaper: false,
     hasPatent: false,
     relatedResearch: ["research-1", "patent-1"],
