@@ -8,13 +8,8 @@ import { ProjectCard } from "@/components/project-card";
 
 export default function ProjectsPage() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedTech, setSelectedTech] = useState<string | null>(null);
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [filterType, setFilterType] = useState<string | null>(null);
-
-  const technologies = Array.from(
-    new Set(projects.flatMap((project) => project.technologies))
-  ).sort((a, b) => a.localeCompare(b));
 
   const tags = Array.from(
     new Set(projects.flatMap((project) => project.tags))
@@ -32,7 +27,6 @@ export default function ProjectsPage() {
       project.technologies.some((tech) => tech.toLowerCase().includes(normalizedQuery)) ||
       project.tags.some((tag) => tag.toLowerCase().includes(normalizedQuery));
 
-    const matchesTech = !selectedTech || project.technologies.includes(selectedTech);
     const matchesTag = !selectedTag || project.tags.includes(selectedTag);
 
     const matchesType =
@@ -40,18 +34,17 @@ export default function ProjectsPage() {
       (filterType === "paper" && project.hasResearchPaper) ||
       (filterType === "patent" && project.hasPatent);
 
-    return matchesSearch && matchesTech && matchesTag && matchesType;
+    return matchesSearch && matchesTag && matchesType;
   });
 
   const clearFilters = () => {
     setSearchQuery("");
-    setSelectedTech(null);
     setSelectedTag(null);
     setFilterType(null);
   };
 
   const hasActiveFilters = Boolean(
-    searchQuery || selectedTech || selectedTag || filterType
+    searchQuery || selectedTag || filterType
   );
 
   const handleBack = (e: React.MouseEvent) => {
@@ -100,19 +93,6 @@ export default function ProjectsPage() {
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
-          <select
-            value={selectedTech ?? ""}
-            onChange={(e) => setSelectedTech(e.target.value || null)}
-            className="min-w-[180px] px-3 py-2 bg-[var(--card)] border border-[var(--border)] rounded-lg text-sm text-[var(--foreground)] focus:outline-none focus:border-[var(--foreground)]"
-          >
-            <option value="">All Technologies</option>
-            {technologies.map((tech) => (
-              <option key={tech} value={tech}>
-                {tech}
-              </option>
-            ))}
-          </select>
-
           <select
             value={selectedTag ?? ""}
             onChange={(e) => setSelectedTag(e.target.value || null)}

@@ -216,8 +216,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </ul>
           )}
 
+          {/* Spacer to push links to bottom */}
+          <div className="flex-grow"></div>
+
           {/* Technologies */}
-          <div className="flex flex-wrap gap-2 mb-4 content-start">
+          <div className="flex flex-wrap gap-2 mb-6 content-start">
             {project.technologies.slice(0, 4).map((tech) => (
               <span
                 key={tech}
@@ -232,9 +235,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
               </span>
             )}
           </div>
-
-          {/* Spacer to push links to bottom */}
-          <div className="flex-grow"></div>
 
           {/* Links */}
           <div className="flex items-center gap-3 mt-auto">

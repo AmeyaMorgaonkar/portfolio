@@ -312,7 +312,6 @@ export const skills: Skill[] = [
   { name: "MongoDB" },
   { name: "Docker" },
   { name: "Git" },
-  { name: "AWS" },
 ];
 
 export const projects: Project[] = [
@@ -320,8 +319,8 @@ export const projects: Project[] = [
     id: "proj-krypsis",
     slug: "krypsis-adaptive-privacy-threat-detection",
     title: "Krypsis: Adaptive Privacy & Threat Detection System",
-    shortDescription: "A real-time desktop security application that monitors Wi-Fi safety, detects web trackers, profiles system behavior for anomalies using Z-score statistics, and calculates dynamic threat scores with automated responses.",
-    longDescription: `Built Krypsis, a comprehensive real-time desktop security platform that monitors Wi-Fi networks, evaluates host system behavior, tracks web privacy risks, and dynamically calculates overall threat scores.
+    shortDescription: "A real-time desktop security application that monitors Wi-Fi safety, detects web trackers, profiles system behavior.",
+    longDescription: `Built Krypsis, a comprehensive real-time desktop security platform that monitors Wi-Fi networks, evaluates system behavior, tracks web privacy risks, for anomalies using Z-score statistics, and calculates dynamic threat scores with automated responses.
 
 The system features a modular architecture combining Wi-Fi scanning (detecting rogue APs and evil twins), statistical behavioral profiling (Z-score anomaly detection on CPU, memory, and processes), and DNS-level web tracker monitoring. Threat scores are calculated using a weighted aggregation engine (Wi-Fi 35%, Behavioral 40%, Web 25%) categorized into dynamic risk tiers.
 
@@ -333,15 +332,13 @@ Equipped with an automated responder for threat mitigation (VPN triggers, DNS ha
 - Web tracker & browser fingerprinting detection across DNS & network connections
 - Unified weighted threat scoring engine (0–100 score with dynamic severity tiers)
 - Automated threat auto-responder with VPN triggers, DNS hardening, and alerts
-- Exportable privacy session reports (JSON/TXT) with hardening recommendations
-- Modern glassmorphic PySide6 desktop interface with live charts and real-time metrics`,
+- Exportable privacy session reports (JSON/TXT) with hardening recommendations`,
     features: [
       "Real-time Wi-Fi threat analysis & rogue AP / evil twin detection",
-      "System behavioral profiling with Z-score anomaly detection on CPU/RAM/process counts",
-      "Web tracker & browser fingerprinting detection across DNS & network connections",
-      "Unified weighted threat scoring engine (0–100 score with dynamic severity tiers)",
-      "Automated threat auto-responder with VPN triggers, DNS hardening, and alerts",
-      "Exportable privacy session reports (JSON/TXT) with hardening recommendations",
+      "Z-score anomaly detection on CPU/RAM/process counts",
+      "Browser fingerprinting detection across DNS & network connections",
+      "Automated threat responder with VPN triggers, DNS hardening, and alerts",
+      "Exportable privacy reports (JSON/TXT) with hardening recommendations",
     ],
     images: [
       "/images/projects/proj-krypsis/dashboard.png",
@@ -353,8 +350,8 @@ Equipped with an automated responder for threat mitigation (VPN triggers, DNS ha
       "/images/projects/proj-krypsis/notif.png",
     ],
     codeUrl: "https://github.com/AmeyaMorgaonkar/adaptive-privacy-threat-detection",
-    technologies: ["Python", "PySide6", "OpenCV", "Scikit-Learn", "PyTest"],
-    tags: [],
+    technologies: ["Python", "PySide6", "OpenVPN", "Scikit-Learn"],
+    tags: ["Cyber Security", "AIML", "Full Stack"],
     featured: true,
     hasResearchPaper: false,
     hasPatent: false,
@@ -365,7 +362,7 @@ Equipped with an automated responder for threat mitigation (VPN triggers, DNS ha
     id: "proj-4",
     slug: "face-recognition",
     title: "Face recognition Attendence System",
-    shortDescription: "Developed a face recognition-based attendance system with anti-spoofing, enabling secure, real-time attendance marking while preventing fraudulent access using photos or videos.",
+    shortDescription: "Face recognition-based attendance system with anti-spoofing, enabling secure, real-time attendance marking.",
     longDescription: `Built a secure face recognition attendance system that automates attendance marking using real-time computer vision, enhanced with anti-spoofing mechanisms to prevent fraudulent identification attempts. The system captures facial data, trains recognition models, and verifies users through live detection before marking attendance.
 
 Implemented a complete pipeline including face detection, recognition, and liveness verification, ensuring that only genuine users (not images or recorded videos) are authenticated. Integrated webcam-based input with real-time processing to deliver fast and reliable identification.
@@ -373,17 +370,15 @@ Implemented a complete pipeline including face detection, recognition, and liven
 Attendance data is automatically recorded with timestamps and stored in structured formats for tracking and analysis. The project demonstrates strong understanding of computer vision, security-focused ML systems, and real-time application design, making it suitable for deployment in educational institutions or workplaces.
 
 **Features**
-- Real-time face detection and recognition using webcam input
+- Real-time face detection and recognition
 - Anti-spoofing (liveness detection) to prevent photo/video-based fraud
 - Automated attendance marking with accurate timestamp logging
 - Efficient computer vision processing using OpenCV and ML techniques
 - End-to-end pipeline from data collection to real-time deployment`,
     features: [
-      "Real-time face detection and recognition using webcam input",
+      "Real-time face detection and recognition",
       "Anti-spoofing (liveness detection) to prevent photo/video-based fraud",
       "Automated attendance marking with accurate timestamp logging",
-      "End-to-end pipeline from data collection to real-time deployment",
-      "Efficient computer vision processing using OpenCV and ML techniques"
     ],
     images: [
       "/images/projects/proj-4/img1.png",
@@ -393,13 +388,54 @@ Attendance data is automatically recorded with timestamps and stored in structur
     ],
     demoVideo: "https://www.youtube.com/watch?v=ldsA45p05M0",
     codeUrl: "https://github.com/AmeyaMorgaonkar/face-recognition-attendance-system",
-    technologies: ["Python", "OpenCV", "Django", "MySQL", "CNN"],
-    tags: [],
+    technologies: ["Python", "OpenCV", "Django", "MySQL", "CNN",],
+    tags: ["AIML", "Full Stack"],
     featured: true,
     hasResearchPaper: false,
     hasPatent: false,
     relatedResearch: [],
     createdAt: "2024-11-05",
+  },
+    {
+    id: "proj-mrs",
+    slug: "movie-recommendation-system",
+    title: "Hybrid Movie Recommendation System",
+    shortDescription: "Engine combining content-based filtering, popularity ranking, and collaborative filtering.",
+    longDescription: `Built a hybrid movie recommendation system that suggests films using three complementary approaches: content similarity, popularity ranking, and collaborative filtering, unified behind a single API and an interactive web interface.
+
+The system processes movie metadata, cast/crew credits, and user ratings into engineered feature sets. Content-based recommendations use TF-IDF vectorization over genres, cast, crew, and keywords with cosine similarity, while popularity-based ranking applies a weighted rating formula that balances vote count against vote average to avoid bias toward low-sample outliers. Collaborative filtering builds a user-item ratings matrix to surface recommendations based on behavioral patterns across users.
+
+The entire ML pipeline is documented across staged Jupyter notebooks covering data exploration, preprocessing, and each recommendation method, with trained artifacts exported for fast inference. A lightweight FastAPI backend loads precomputed models at startup and serves recommendations through REST endpoints, paired with a custom-designed frontend that lets users compare all three recommendation strategies side by side for the same movie.
+
+**Features**
+- Content-based recommendations via TF-IDF + cosine similarity on genres, cast, crew, and keywords
+- Popularity-based ranking using a weighted rating formula (vote count vs. vote average)
+- Collaborative filtering on a user-item ratings matrix
+- Side-by-side comparison view across all three recommendation methods for a given movie
+- FastAPI backend serving precomputed model artifacts for fast inference
+- Documented end-to-end ML pipeline across staged Jupyter notebooks`,
+    features: [
+      "Content-based recommendations via TF-IDF + cosine similarity",
+      // "Popularity-based ranking using a weighted rating formula",
+      "Collaborative filtering on a user-item ratings matrix",
+      "Side-by-side comparison across all recommendation methods",
+      // "End-to-end ML pipeline across staged Jupyter notebooks",
+    ],
+    images: [
+      "/images/projects/proj-mrs/1.jpg",
+      "/images/projects/proj-mrs/2.png",
+      "/images/projects/proj-mrs/3.jpg",
+      "/images/projects/proj-mrs/4.jpg",
+      "/images/projects/proj-mrs/5.png",
+    ],
+    codeUrl: "https://github.com/AmeyaMorgaonkar/movie-recommendation-system",
+    technologies: ["Python", "Pandas", "Scikit-Learn", "FastAPI", "JavaScript"],
+    tags: ["AIML", "Full Stack"],
+    featured: true,
+    hasResearchPaper: false,
+    hasPatent: false,
+    relatedResearch: [],
+    createdAt: "2026-08-21",
   },
   {
     id: "proj-1",
@@ -434,7 +470,7 @@ Attendance data is automatically recorded with timestamps and stored in structur
     liveUrl: "https://monolith-estates-ui.vercel.app/",
     codeUrl: "https://github.com/AmeyaMorgaonkar/monolith-estates-ui",
     technologies: ["Next.js", "Typescript", "React", "Vercel"],
-    tags: [],
+    tags: ["Web Development"],
     featured: true,
     hasResearchPaper: false,
     hasPatent: false,
@@ -471,7 +507,7 @@ Built using a component-driven architecture, enabling scalable development and r
     liveUrl: "https://real-estate-agency-fixed-ia48.vercel.app/",
     codeUrl: "https://github.com/AmeyaMorgaonkar/real-estate-agency",
     technologies: ["Next.js", "TypeScript", "React", "Tailwind"],
-    tags: [],
+    tags: ["Web Development"],
     featured: true,
     hasResearchPaper: false,
     hasPatent: false,
@@ -507,88 +543,13 @@ Optimized the application for performance and seamless deployment, leveraging mo
     liveUrl: "https://monolith-estates-ui-5k16.vercel.app/",
     codeUrl: "https://github.com/AmeyaMorgaonkar/sterling-estates-ui",
     technologies: ["React", "Node.js", "InfluxDB", "Next.js", "TypeScript"],
-    tags: [],
-    featured: true,
+    tags: ["Web Development"],
+    featured: false,
     hasResearchPaper: false,
     hasPatent: false,
     relatedResearch: ["research-2"],
     createdAt: "2025-03-20",
   },
-  //   {
-  //     id: "proj-5",
-  //     slug: "task-management-app",
-  //     title: "TaskFlow - Project Management Tool",
-  //     shortDescription: "A collaborative task management application with real-time updates and team features",
-  //     longDescription: `# TaskFlow - Project Management Tool
-
-  // ## Overview
-  // A modern project management tool designed for teams to collaborate effectively.
-
-  // ## Features
-  // - **Real-time Collaboration**: Live updates across all team members
-  // - **Kanban Boards**: Visual task organization
-  // - **Time Tracking**: Built-in time logging
-  // - **Integrations**: Slack, GitHub, and more
-
-  // ## Technical Details
-  // Built with Next.js and Socket.io for real-time features, with PostgreSQL for data persistence.`,
-  //     features: [
-  //       "Real-time collaboration with live updates",
-  //       "Visual Kanban boards for task organization",
-  //       "Built-in time tracking and logging",
-  //       "Integrations with Slack, GitHub, and more"
-  //     ],
-  //     images: [
-  //       "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
-  //       "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&h=600&fit=crop",
-  //     ],
-  //     liveUrl: "https://taskflow-demo.vercel.app",
-  //     codeUrl: "https://github.com/example/taskflow",
-  //     technologies: ["Next.js", "Socket.io", "PostgreSQL", "Prisma", "TailwindCSS"],
-  //     tags: ["Full Stack", "SaaS", "Productivity"],
-  //     featured: true,
-  //     hasResearchPaper: false,
-  //     hasPatent: false,
-  //     relatedResearch: [],
-  //     createdAt: "2024-09-15",
-  //   },
-  //   {
-  //     id: "proj-6",
-  //     slug: "ai-code-reviewer",
-  //     title: "CodeSense - AI Code Reviewer",
-  //     shortDescription: "An intelligent code review assistant powered by GPT-4 for automated PR reviews",
-  //     longDescription: `# CodeSense - AI Code Reviewer
-
-  // ## Overview
-  // An AI-powered tool that automatically reviews pull requests and suggests improvements.
-
-  // ## Features
-  // - **Automated Reviews**: AI analyzes code changes automatically
-  // - **Best Practices**: Suggests improvements based on coding standards
-  // - **Security Scanning**: Identifies potential vulnerabilities
-  // - **GitHub Integration**: Seamless integration with GitHub PRs
-
-  // ## Technical Details
-  // Uses OpenAI's GPT-4 API with custom prompts for code analysis, integrated via GitHub Actions.`,
-  //     features: [
-  //       "Automated AI-powered code reviews",
-  //       "Best practices and standards suggestions",
-  //       "Security vulnerability scanning",
-  //       "Seamless GitHub PR integration"
-  //     ],
-  //     images: [
-  //       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop",
-  //       "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
-  //     ],
-  //     codeUrl: "https://github.com/example/codesense",
-  //     technologies: ["Python", "OpenAI", "GitHub Actions", "FastAPI", "Redis"],
-  //     tags: ["AI/ML", "DevTools", "Automation"],
-  //     featured: true,
-  //     hasResearchPaper: false,
-  //     hasPatent: false,
-  //     relatedResearch: [],
-  //     createdAt: "2024-08-20",
-  //   },
 ];
 
 export const research: Research[] = [
