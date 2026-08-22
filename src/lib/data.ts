@@ -350,7 +350,7 @@ Equipped with an automated responder for threat mitigation (VPN triggers, DNS ha
       "/images/projects/proj-krypsis/notif.png",
     ],
     codeUrl: "https://github.com/AmeyaMorgaonkar/adaptive-privacy-threat-detection",
-    technologies: ["Python", "PySide6", "OpenVPN", "Scikit-Learn"],
+    technologies: ["Python", "PySide6", "OpenVPN"],
     tags: ["Cyber Security", "AIML", "Full Stack"],
     featured: true,
     hasResearchPaper: false,
