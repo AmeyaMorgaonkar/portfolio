@@ -99,7 +99,7 @@ export default function ProjectsPage() {
             disabled={!hasTags}
             className="min-w-[150px] px-3 py-2 bg-[var(--card)] border border-[var(--border)] rounded-lg text-sm text-[var(--foreground)] focus:outline-none focus:border-[var(--foreground)] disabled:opacity-50"
           >
-            <option value="">{hasTags ? "All Tags" : "No Tags Available"}</option>
+            <option value="">{hasTags ? "All" : "No Tags Available"}</option>
             {tags.map((tag) => (
               <option key={tag} value={tag}>
                 {tag}

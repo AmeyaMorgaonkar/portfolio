@@ -365,7 +365,7 @@ Equipped with an automated responder for threat mitigation (VPN triggers, DNS ha
     shortDescription: "Face recognition-based attendance system with anti-spoofing, enabling secure, real-time attendance marking.",
     longDescription: `Built a secure face recognition attendance system that automates attendance marking using real-time computer vision, enhanced with anti-spoofing mechanisms to prevent fraudulent identification attempts. The system captures facial data, trains recognition models, and verifies users through live detection before marking attendance.
 
-Implemented a complete pipeline including face detection, recognition, and liveness verification, ensuring that only genuine users (not images or recorded videos) are authenticated. Integrated webcam-based input with real-time processing to deliver fast and reliable identification.
+Implemented a complete pipeline including face detection, recognition, and liveness verification, ensuring that only genuine users (not images or recorded videos) are authenticated. Integrated real-time processing to deliver fast and reliable identification.
 
 Attendance data is automatically recorded with timestamps and stored in structured formats for tracking and analysis. The project demonstrates strong understanding of computer vision, security-focused ML systems, and real-time application design, making it suitable for deployment in educational institutions or workplaces.
 
@@ -401,11 +401,11 @@ Attendance data is automatically recorded with timestamps and stored in structur
     slug: "campuschain",
     title: "CampusCoin: Campus Payments on Blockchain",
     shortDescription: "Unifying campus payments: event tickets, library fees, and canteen orders on-chain, with student wallets funded via UPI-style top-ups.",
-    longDescription: `Built CampusChain, a Web3-based campus payments platform that consolidates event ticketing, library transactions, and canteen payments into a single blockchain-backed system. Every transaction on campus — booking an event ticket, paying a library fine, or ordering food — is recorded on-chain, giving a transparent and tamper-proof transaction history.
+    longDescription: `Built CampusChain, a Web3-based campus payments platform that consolidates event ticketing, library transactions, and canteen payments into a single blockchain-backed system. Every transaction on campus, booking an event ticket, paying a library fine, or ordering food is recorded on-chain, giving a transparent and tamper-proof transaction history.
 
-At the core of the system is a custodial student wallet that abstracts away crypto complexity. Students don't need a MetaMask or any external crypto wallet, the platform manages wallet keys internally, while parents and students can load funds through a simple UPI-style top-up flow, with the underlying conversion to on-chain balance handled transparently by the system. Students can also add their own money directly into their wallet.
+At the core of the system is a custodial student wallet that abstracts away crypto complexity. Parents don't need a MetaMask or any external crypto wallet, the platform manages wallet keys internally, while parents and students can load funds through a simple UPI-style top-up flow, with the underlying conversion to on-chain balance handled transparently by the system.
 
-The platform doubles as a unified campus portal: students can browse upcoming events and book tickets, view the library catalog and reserve or return books, and check the live canteen menu to place food orders — all from within the same interface, with payment settled instantly from their on-chain wallet balance.
+The platform doubles as a unified campus portal: students can browse upcoming events and book tickets, view the library catalog and reserve or return books, and check the live canteen menu to place food orders: all from within the same interface, with payment settled instantly from their on-chain wallet balance.
 
 **Features**
 - Custodial student wallets abstracting away MetaMask/crypto complexity
@@ -451,7 +451,7 @@ The entire ML pipeline is documented across staged Jupyter notebooks covering da
 - Content-based recommendations via TF-IDF + cosine similarity on genres, cast, crew, and keywords
 - Popularity-based ranking using a weighted rating formula (vote count vs. vote average)
 - Collaborative filtering on a user-item ratings matrix
-- Side-by-side comparison view across all three recommendation methods for a given movie
+- Side-by-side comparison view across all three recommendation methods
 - FastAPI backend serving precomputed model artifacts for fast inference
 - Documented end-to-end ML pipeline across staged Jupyter notebooks`,
     features: [
@@ -482,11 +482,11 @@ The entire ML pipeline is documented across staged Jupyter notebooks covering da
     slug: "nlp",
     title: "Natural Language Processing",
     shortDescription: "An NLP tool that analyzes text to surface word frequency patterns, optional stop-word filtering, and overall sentiment/tone.",
-    longDescription: `Built Lexitone, a lightweight NLP-based text analysis tool that takes a paragraph as input and returns key linguistic insights, including word frequency distribution, and sentiment tone classification.
+    longDescription: `Built a lightweight NLP-based text analysis tool that takes a paragraph as input and returns key linguistic insights, including word frequency distribution, and sentiment tone classification.
 
 The system tokenizes and preprocesses input text (case normalization, punctuation stripping, lemmatization), then computes word occurrence counts with a toggleable option to include or exclude common stop words for cleaner frequency analysis. A sentiment/tone classification layer, built on top of a pretrained NLP pipeline, evaluates the overall emotional tone of the paragraph (e.g., positive, negative, neutral) along with a confidence score.
 
-Designed with a clean, minimal interface for quick text analysis, Lexitone is useful for writers, students, and researchers looking to quickly understand word usage patterns and the emotional tone of their writing.
+Designed with a clean, minimal interface for quick text analysis, it is useful for writers, students, and researchers looking to quickly understand word usage patterns and the emotional tone of their writing.
 
 **Features**
 - Word frequency analysis with occurrence counts, sorted by usage
@@ -520,9 +520,9 @@ Designed with a clean, minimal interface for quick text analysis, Lexitone is us
     shortDescription: "Todo application where tasks are created, completed, and stored directly on the blockchain.",
     longDescription: `Built ChainTask, a decentralized todo application that stores tasks on-chain instead of a traditional database. Every task a user adds, marks complete, or deletes is recorded as a blockchain transaction, giving a persistent and tamper-proof task history tied to the user's wallet address.
 
-Users connect their crypto wallet (e.g. MetaMask) to authenticate and interact with the app. A smart contract handles the core todo logic — adding tasks, toggling completion status, and removing tasks — with each action reflected transparently on-chain. Since data is scoped to the connected wallet address, each user has their own private, wallet-linked task list without needing a separate backend or login system.
+Users connect their crypto wallet (e.g. MetaMask) to authenticate and interact with the app. A smart contract handles the core todo logic: adding tasks, toggling completion status, and removing tasks with each action reflected transparently on-chain. Since data is scoped to the connected wallet address, each user has their own private, wallet-linked task list without needing a separate backend or login system.
 
-Designed as a simple, focused Web3 starter project, ChainTask demonstrates core dApp concepts — smart contract interaction, wallet-based authentication, and on-chain state management — through a familiar, everyday use case.
+ChainTask demonstrates core dApp concepts: smart contract interaction, wallet-based authentication, and on-chain state management, through a familiar, everyday use case.
 
 **Features**
 - Wallet-based authentication (MetaMask) with no separate login system
@@ -554,7 +554,7 @@ Designed as a simple, focused Web3 starter project, ChainTask demonstrates core 
     slug: "digitalitem",
     title: "DigitalItem: On-Chain Digital Marketplace",
     shortDescription: "A simple Web3 marketplace where transactions are recorded on-chain.",
-    longDescription: `Built DigitalItem, a blockchain-based marketplace that enables users to list, buy, and transfer digital items in a fully decentralized manner. Every listing, purchase, and ownership transfer is executed as a smart contract transaction, giving a transparent and verifiable record of who owns what and how it changed hands.
+    longDescription: `Built DigitalItem, a blockchain-based marketplace that enables users to buy digital items in a fully decentralized manner. Every listing, purchase, and ownership transfer is executed as a smart contract transaction, giving a transparent and verifiable record of who owns what and how it changed hands.
 
 Sellers can buy a digital item with a name, description, and price, which gets recorded on-chain and made visible to all users. Buyers can browse available listings and purchase an item directly through their connected wallet. The smart contract handles payment transfer to the seller and reassigns ownership of the item atomically, ensuring the transaction either fully completes or fails safely.
 
