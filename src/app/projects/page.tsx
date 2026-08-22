@@ -55,7 +55,7 @@ export default function ProjectsPage() {
     }
   };
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
       <div className="mb-6">
         <a href="/" onClick={handleBack} className="inline-flex items-center gap-2 text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
           <ArrowLeft className="w-4 h-4" />

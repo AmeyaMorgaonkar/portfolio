@@ -12,8 +12,6 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="border-t mt-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -21,7 +19,7 @@ export function Footer() {
           {/* Left side */}
           <div className="text-center md:text-left">
             <p className="text-sm text-[var(--muted)]">
-              © {currentYear} {profile.name} {profile.lastName}. All rights reserved.
+              © 2026 {profile.name} {profile.lastName}
             </p>
             <p className="text-xs text-[var(--muted)] mt-1">
               {/* Built with Next.js & Tailwind CSS */}
