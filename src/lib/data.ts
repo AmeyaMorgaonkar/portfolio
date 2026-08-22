@@ -299,17 +299,18 @@ export const education: Education[] = [
 ];
 
 export const skills: Skill[] = [
+  { name: "Python"},
+  { name: "AIML"},
+  { name: "Django"},
+  { name: "FastAPI"},
   { name: "Next.js" },
   { name: "React" },
-  { name: "Tailwind CSS" },
   { name: "TypeScript" },
-  { name: "JavaScript" },
   { name: "Node.js" },
-  { name: "Python" },
-  { name: "Django" },
-  { name: "FastAPI" },
   { name: "PostgreSQL" },
   { name: "MongoDB" },
+  { name: "Blockchain" },
+  { name: "Solidity" },
   { name: "Docker" },
   { name: "Git" },
 ];
